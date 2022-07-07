@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressBar {
+  width: 345px;
+  height: 45px;
+}
+
+.icons {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.smallIcon{
+  width: 45px;
+  height: 45px;
+}
