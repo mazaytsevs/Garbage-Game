@@ -1,0 +1,8 @@
+.bins{
+  width: 1500px;
+  height: 345px;
+}
+
+.gameBins{
+display: flex;
+}
