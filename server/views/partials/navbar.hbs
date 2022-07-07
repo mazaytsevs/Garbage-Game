@@ -12,17 +12,17 @@
         {{#unless user.id}}
         {{!-- Регистрация --}}
         <li class="nav-item">
-          <a class="nav-link" href="/user/signup">sign up</a>
+          <a class="nav-link" href="/auth/reg">reg</a>
         </li>
         {{!-- Авторизация --}}
         <li class="nav-item">
-          <a class="nav-link" href="/user/signin">sign in</a>
+          <a class="nav-link" href="/auth/login">login</a>
         </li>
         {{/unless}}
         {{#if user.id}}
         {{!-- Выход --}}
         <li class="nav-item">
-          <a class="nav-link" href="/user/logout">log out</a>
+          <a class="nav-link" href="/auth/logout">log out</a>
         </li>
         {{/if}}
 

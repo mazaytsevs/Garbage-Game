@@ -15,7 +15,6 @@ const userRouter = require('./routes/userRouter');
 const infoRouter = require('./routes/infoRouter');
 const progressRouter = require('./routes/progressRouter');
 
-
 const PORT = process.env.PORT ?? 3003;
 
 const app = express();
