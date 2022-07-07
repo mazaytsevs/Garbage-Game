@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Trash extends Model {
     /**
@@ -9,8 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
-      // define association here
+    static associate({ TrashCan, Progress }) {
+      this.belongsTo(TrashCan, { foreignKey: 'trash_can_id' });
+      this.hasMany(Progress, { foreignKey: 'trash_id' });
     }
   }
   Trash.init({
@@ -19,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     trash_img_src: DataTypes.STRING,
     info: DataTypes.TEXT,
     score: DataTypes.INTEGER,
-    bonus: DataTypes.BOOLEAN
+    bonus: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'Trash',
