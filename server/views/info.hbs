@@ -1,0 +1,13 @@
+<div>
+  {{#each info}}
+    <div class="TrashCan">
+      <h1>{{trash_can_name}}</h1>
+      <img src="{{trash_can_img_src}}" />
+      {{#each trashes}}
+      <h2>{{trash_name}}</h2>
+      <img src="{{trash_img_src}}" />
+      {{/each}}
+    </div>
+  {{/each}}
+{{!-- HELLO {{info}} --}}
+</div>
