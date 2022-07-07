@@ -12,10 +12,10 @@ const checkSession = (req, res, next) => {
 
 const checkLogin = (req, res, next) => {
   // ПРОВЕРКА АВТОРИЗАЦИИ ЮЗЕРА
-  if (req.session.user) {
-    return res.redirect('/');
+  if (!req.session.user) {
+    return res.sendStatus(401);
   }
-  next();
+  return next();
 };
 
 module.exports = { checkSession, checkLogin };

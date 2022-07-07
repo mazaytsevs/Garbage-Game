@@ -22,6 +22,7 @@ router.post('/reg', async (req, res) => {
     email,
     password,
   } = req.body;
+  console.log(req.body)
 
   try {
     if (name && password && email) {
