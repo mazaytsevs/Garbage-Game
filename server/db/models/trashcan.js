@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   TrashCan.init({
     trash_can_name: DataTypes.STRING,
+    trash_can_info: DataTypes.TEXT,
     trash_can_img_src: DataTypes.STRING,
   }, {
     sequelize,

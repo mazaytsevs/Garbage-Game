@@ -10,6 +10,9 @@ module.exports = {
       trash_can_name: {
         type: Sequelize.STRING,
       },
+      trash_can_info: {
+        type: Sequelize.TEXT,
+      },
       trash_can_img_src: {
         type: Sequelize.STRING,
       },
