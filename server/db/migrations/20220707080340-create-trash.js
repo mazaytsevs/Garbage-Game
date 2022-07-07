@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Trashes', {
@@ -6,37 +5,42 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       trash_can_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'TrashCans',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
       trash_name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       trash_img_src: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       info: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
       score: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       bonus: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Trashes');
-  }
+  },
 };
