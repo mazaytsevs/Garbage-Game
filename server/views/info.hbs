@@ -3,9 +3,10 @@
     <div class="TrashCan">
       <h1>{{trash_can_name}}</h1>
       <img src="{{trash_can_img_src}}" />
+      МУСОР:
       {{#each trashes}}
-      <h2>{{trash_name}}</h2>
-      <img src="{{trash_img_src}}" />
+      <p>{{trash_name}}</p>
+      <img src="{{trash_img_src}}" style="width: 250px"/>
       {{/each}}
     </div>
   {{/each}}
