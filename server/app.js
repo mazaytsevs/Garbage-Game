@@ -13,6 +13,8 @@ const homeRouter = require('./routes/homeRouter');
 // const deleteRouter = require('./routes/deleteRouter');
 const userRouter = require('./routes/userRouter');
 const infoRouter = require('./routes/infoRouter');
+const progressRouter = require('./routes/progressRouter');
+
 
 const PORT = process.env.PORT ?? 3003;
 
@@ -52,6 +54,7 @@ app.use('/', homeRouter);
 // app.use('/deleteProduct', deleteRouter);
 app.use('/auth', userRouter);
 app.use('/info', infoRouter);
+app.use('/progress', progressRouter);
 
 app.listen(PORT, () => {
   console.log('server start on ', PORT, '...');
