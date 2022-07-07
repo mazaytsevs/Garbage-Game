@@ -8,13 +8,12 @@ router.get('/check', checkLogin, (req, res) => {
     id: req.session.user.id,
     name: req.session.user.name,
   };
-
   try {
-    res.json(user); // отправляет статус 200 если пользователь в сессии
+    res.json(user); // отправляет зарегестрированного юзера и id если такой залогинен
   } catch (err) {
     console.log('Не удалось проверить регистрацию', err);
   }
-});
+}); // проверка авторизации
 
 router.post('/reg', async (req, res) => {
   const {
@@ -22,7 +21,6 @@ router.post('/reg', async (req, res) => {
     email,
     password,
   } = req.body;
-
   try {
     if (name && password && email) {
       console.log('REQ BODY-------> SIGNUP', JSON.parse(JSON.stringify(req.body)));
@@ -46,14 +44,13 @@ router.post('/reg', async (req, res) => {
   } catch (err) {
     console.log('Не получилось зарегистрировать', err);
   }
-});
+}); // регистрация
 
 router.post('/login', checkLogin, async (req, res) => {
   const {
     email,
     password,
   } = req.body;
-
   try {
     if (email && password) {
       const currentUser = await User.findOne({
@@ -74,7 +71,7 @@ router.post('/login', checkLogin, async (req, res) => {
   } catch (err) {
     console.log('Не удалось загрузить игровые элементы', err);
   }
-});
+}); // авторизация
 
 router.get('/logout', async (req, res) => {
   try {
@@ -84,6 +81,6 @@ router.get('/logout', async (req, res) => {
   } catch (err) {
     console.log('Не удалось выйти из системы', err);
   }
-});
+}); // разлогинивание
 
 module.exports = router;
