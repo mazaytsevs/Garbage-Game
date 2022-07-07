@@ -503,6 +503,26 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        trash_can_id: 6,
+        trash_name: 'старая футболка',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 3,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        trash_can_id: 6,
+        trash_name: 'ушные палочки',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 1,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
