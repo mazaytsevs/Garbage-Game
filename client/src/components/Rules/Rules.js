@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Document, Page } from 'react-pdf';
 import { getInfoThunk } from '../../redux/actions/actions';
 import Modal from '../Modal/Modal';
 
