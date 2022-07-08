@@ -32,7 +32,7 @@ app.use(
 );
 
 app.use(session({
-  name: 'sID',
+  name: 'sid',
   store: new FileStore({}),
   secret: process.env.SESSION,
   resave: true,

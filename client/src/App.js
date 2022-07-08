@@ -1,16 +1,25 @@
 import './App.css';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Info from './components/Info/Info';
 import Rules from './components/Rules/Rules';
 import Sample from './components/PDFDoc/PDFDoc';
+
 import Game from './components/Game/Game';
 import Navbar from './components/Nav/Navbar';
 import PrivateRoute from './components/PrivateRouter/PrivateRouter';
 import Registration from './components/Forms/Reg/Registration';
 import Login from './components/Forms/Login/Login';
+import { checkAuth } from './redux/actions/user.action';
 import Logout from './components/Forms/Logout/Logout';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, []);
   return (
     <div className="App">
       <Routes>

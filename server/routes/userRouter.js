@@ -21,6 +21,9 @@ router.post('/reg', async (req, res) => {
     email,
     password,
   } = req.body;
+
+  console.log(req.body);
+
   try {
     if (name && password && email) {
       console.log('REQ BODY-------> SIGNUP', JSON.parse(JSON.stringify(req.body)));
@@ -37,7 +40,7 @@ router.post('/reg', async (req, res) => {
         id: newUser.id,
         name: newUser.name,
       };
-      res.sendStatus(200); // отправляет статус 200, если юзер зарегестрировался
+      res.json(newUser); // отправляет статус 200, если юзер зарегестрировался
     } else {
       console.log('Введите все данные для пользователя');
     }
@@ -76,7 +79,7 @@ router.post('/login', checkLogin, async (req, res) => {
 router.get('/logout', async (req, res) => {
   try {
     req.session.destroy();
-    res.clearCookie('sid').redirect('/');
+    res.clearCookie('sid');
     res.sendStatus(200); // отправляет статус 200, если юзер раззалогинился
   } catch (err) {
     console.log('Не удалось выйти из системы', err);

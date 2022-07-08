@@ -7,7 +7,7 @@ function Registration() {
   const [userSignUp, setUserSignUp] = useState({
     email: '',
     password: '',
-    userName: '',
+    name: '',
   });
 
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ function Registration() {
         </div>
 
         <div className="mb-3">
-          <input onChange={changeHandler} className="form-control" value={userSignUp.userName} type="text" name="userName" placeholder="Name" />
+          <input onChange={changeHandler} className="form-control" value={userSignUp.name} type="text" name="name" placeholder="Name" />
         </div>
 
         <div className="mb-3">
