@@ -21,9 +21,16 @@
 .gameBoard {
   /* height: 40%; */
   /* max-height: 650px; */
-  height: 650px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  height: 450px;
   left: 0px;
   top: 0px;
   border-radius: 0px;
   bottom:0
+}
+
+.trashBag{
+  margin-top: 100px;
 }
