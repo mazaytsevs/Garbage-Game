@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -13,11 +12,11 @@ import { checkAuth } from './redux/actions/user.action';
 import Logout from './components/Forms/Logout/Logout';
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(checkAuth());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(checkAuth());
+  // }, []);
   return (
     <div className="App">
       <Routes>

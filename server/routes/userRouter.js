@@ -32,10 +32,10 @@ router.post('/reg', async (req, res) => {
         email,
         password: await bcrypt.hash(password, Number(process.env.SALTROUNDS)),
       });
-      req.session.name = {
-        id: newUser.id,
-        name: newUser.name,
-      };
+      // req.session.name = {
+      //   id: newUser.id,
+      //   name: newUser.name,
+      // };
       req.session.user = {
         id: newUser.id,
         name: newUser.name,
@@ -54,6 +54,7 @@ router.post('/login', checkLogin, async (req, res) => {
     email,
     password,
   } = req.body;
+  console.log('--->', req.body);
   try {
     if (email && password) {
       const currentUser = await User.findOne({
@@ -66,8 +67,10 @@ router.post('/login', checkLogin, async (req, res) => {
           id: currentUser.id,
           name: currentUser.name,
         };
+        console.log('currentuse', currentUser.dataValues);
+
+        return res.sendStatus(200); // отправляет статус 200, если юзер залогинился
       }
-      res.sendStatus(200); // отправляет статус 200, если юзер залогинился
     } else {
       console.log('Введите все данные для пользователя');
     }
