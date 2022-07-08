@@ -9,6 +9,7 @@ function GameBomzh() {
           className="man"
           src="man/image19.png"
           alt="man"
+          width="100"
         />
       </div>
     </div>
