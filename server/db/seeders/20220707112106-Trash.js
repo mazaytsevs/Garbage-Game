@@ -523,6 +523,86 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        trash_can_id: 7,
+        trash_name: 'батарейки',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 1,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        trash_can_id: 7,
+        trash_name: 'ртутный градусник',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 1,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        trash_can_id: 7,
+        trash_name: 'лампочка',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 1,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        trash_can_id: 7,
+        trash_name: 'просроченные лекарства',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 2,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        trash_can_id: 7,
+        trash_name: 'лакокрасочные материалы',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 2,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        trash_can_id: 8,
+        trash_name: 'крыса',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 3,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        trash_can_id: 8,
+        trash_name: 'костюм',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 3,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        trash_can_id: 8,
+        trash_name: 'телефон',
+        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        info: 'blablabla',
+        score: 3,
+        bonus: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 

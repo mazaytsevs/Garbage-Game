@@ -44,6 +44,20 @@ module.exports = {
         trash_can_img_src: 'https://www.dor.expert/upload/iblock/987/9877244c10ddb37c5c8f97fdd05bfb9d.jpg',
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        trash_can_name: 'опасные отходы',
+        trash_can_info: 'Батарейки, градусники, аккумуляторы, просроченные лекарства, бытовая химия, растворители и краски, техника — это опасные отходы. Их ни в коем случае нельзя выкидывать вместе с остальными отходами, иначе опасные вещества (ртуть, свинец, никель, кадмий, щелочи) попадут в окружающую среду. Во дворах специальных контейнеров нет, поэтому опасные отходы надо везти в специальные пункты приема.',
+        trash_can_img_src: 'https://www.dor.expert/upload/iblock/987/9877244c10ddb37c5c8f97fdd05bfb9d.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        trash_can_name: 'человек',
+        trash_can_info: 'Есть два варианта утилизации старых или ненужных вещей: переработка (recycling) и вторичное использование (upcycling). Последнее является более экологичным методом, так как не требует затрат природных ресурсов. Попробуй угадать, каким вещам наш герой сможет дать вторую жизнь и использовать их по назначению.',
+        trash_can_img_src: 'https://www.dor.expert/upload/iblock/987/9877244c10ddb37c5c8f97fdd05bfb9d.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ], {});
   },
