@@ -21,23 +21,30 @@ export const getUserFromServer = (id) => async (dispatch) => {
 
 export const signUp = (payload, navigate) => async (dispatch) => {
   dispatch(enableLoader());
-  const response = await fetch(endPoints.signUp(), {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    // for cookie
-    credentials: 'include',
-    body: JSON.stringify(payload),
-  });
-  if (response.status === 200) {
-    const user = await response.json();
-    dispatch(setUser(user));
-    navigate('/');
-  } else {
-    navigate('/auth/reg');
+  console.log(payload);
+  try {
+    const response = await fetch(endPoints.signUp(), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // for cookie
+      credentials: 'include',
+      body: JSON.stringify(payload),
+    });
+    console.log(response);
+    console.log(navigate);
+    if (response.status === 200) {
+      const user = await response.json();
+      dispatch(setUser(user));
+      navigate('/');
+    } else {
+      navigate('/auth/reg');
+    }
+    dispatch(disableLoader());
+  } catch (error) {
+    console.log(error);
   }
-  dispatch(disableLoader());
 };
 
 export const signIn = (payload, navigate) => async (dispatch) => {

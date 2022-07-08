@@ -5,7 +5,7 @@ const checkSession = (req, res, next) => {
       id: req.session.user.id,
     };
 
-    return next();
+    // return next();
   }
   next();
 };
@@ -13,7 +13,7 @@ const checkSession = (req, res, next) => {
 const checkLogin = (req, res, next) => {
   // ПРОВЕРКА АВТОРИЗАЦИИ ЮЗЕРА
   if (!req.session.user) {
-    return res.sendStatus(401);
+    res.sendStatus(401);
   }
   return next();
 };

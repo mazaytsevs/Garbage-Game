@@ -22,7 +22,7 @@ router.post('/reg', async (req, res) => {
     email,
     password,
   } = req.body;
-  console.log(req.body)
+  console.log(req.body);
 
   try {
     if (name && password && email) {
@@ -40,7 +40,7 @@ router.post('/reg', async (req, res) => {
         id: newUser.id,
         name: newUser.name,
       };
-      res.sendStatus(200); // отправляет статус 200, если юзер зарегестрировался
+      res.json(newUser); // отправляет статус 200, если юзер зарегестрировался
     } else {
       console.log('Введите все данные для пользователя');
     }
