@@ -2,6 +2,10 @@ import './App.css';
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Info from './components/Info/Info';
+import Rules from './components/Rules/Rules';
+import Sample from './components/PDFDoc/PDFDoc';
+
 import Game from './components/Game/Game';
 import Navbar from './components/Nav/Navbar';
 import PrivateRoute from './components/PrivateRouter/PrivateRouter';
@@ -19,7 +23,6 @@ function App() {
   return (
     <div className="App">
       <Routes>
-
         <Route path="/" element={<Navbar />} />
         <Route path="/start" element={<PrivateRoute>Start</PrivateRoute>} />
         <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} />
@@ -28,7 +31,8 @@ function App() {
         <Route path="/auth/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
         <Route path="/auth/reg" element={<Registration />} />
         <Route path="/auth/login" element={<Login />} />
-
+         <Route path="*" element={<div>404</div>} />
+         <Route path="/doc" element={<Sample />} />
       </Routes>
     </div>
   );

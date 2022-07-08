@@ -8,12 +8,10 @@ const FileStore = require('session-file-store')(session);
 const cors = require('cors');
 const { checkSession } = require('./middlewares/middleware');
 
-const homeRouter = require('./routes/homeRouter');
-// const addRouter = require('./routes/addRouter');
-// const deleteRouter = require('./routes/deleteRouter');
 const userRouter = require('./routes/userRouter');
 const infoRouter = require('./routes/infoRouter');
 const progressRouter = require('./routes/progressRouter');
+const gameRouter = require('./routes/gameRouter');
 
 const PORT = process.env.PORT ?? 3003;
 
@@ -48,12 +46,10 @@ app.use(session({
 
 app.use(checkSession);
 
-app.use('/', homeRouter);
-// app.use('/addProduct', addRouter);
-// app.use('/deleteProduct', deleteRouter);
-app.use('/auth', userRouter);
-app.use('/info', infoRouter);
+app.use('/auth', userRouter); // проверка авторизации, регистрация, авторизация, разлогинивание
+app.use('/info', infoRouter); // выдает данные для страницы с информацией о мусоре
 app.use('/progress', progressRouter);
+app.use('/game', gameRouter);
 
 app.listen(PORT, () => {
   console.log('server start on ', PORT, '...');
