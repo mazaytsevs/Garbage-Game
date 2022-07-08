@@ -45,7 +45,7 @@ function GameBoard() {
       <div className="trashBag">
         <img
           className="bag"
-          src="https://img.freepik.com/premium-vector/garbage-bags-with-waste-around-vector-flat-illustration_650087-179.jpg?w=740"
+          src="/trashbag/trashbag.png"
           alt="bag"
         />
       </div>
