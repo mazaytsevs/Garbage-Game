@@ -6,7 +6,10 @@
 .progressBar {
   width: 545px;
   height: 45px;
-  background-image: url(../../../public/gameNavPic/progressbar.png);
+  background: url('../../../public/gameNavPic/progressbar.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .icons {
