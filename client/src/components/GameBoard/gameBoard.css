@@ -4,6 +4,15 @@
 }
 
 .randomTrash{
-width: 345px;
-height: 345px;
+  width: 145px;
+  height: 145px;
+}
+
+.trashes{
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
