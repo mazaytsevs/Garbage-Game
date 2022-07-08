@@ -7,7 +7,7 @@ function GameBomzh() {
       <div className="bomzh">
         <img
           className="man"
-          src="https://img.freepik.com/free-vector/vector-isolated-man-standing-flat-style_566661-1425.jpg"
+          src="man/image19.png"
           alt="man"
         />
       </div>
