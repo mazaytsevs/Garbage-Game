@@ -3,14 +3,6 @@ const { Trash, TrashCan } = require('../db/models');
 
 router.get('/', async (req, res) => {
   try {
-    const trashes = await Trash.findAll({
-      attributes: ['id', 'trash_can_id', 'trash_name', 'trash_img_src', 'info', 'score', 'bonus'],
-      raw: true,
-    }); // отдельно мусор весь
-    const trashCans = await TrashCan.findAll({
-      attributes: ['id', 'trash_can_name', 'trash_can_img_src'],
-      raw: true,
-    }); // отдельно мусорки все
     const infoOrigin = await TrashCan.findAll({
       attributes: ['id', 'trash_can_name', 'trash_can_img_src'],
       include: [{ model: Trash, attributes: ['id', 'trash_can_id', 'trash_name', 'trash_img_src', 'info', 'score', 'bonus'] }],
@@ -28,14 +20,15 @@ router.get('/', async (req, res) => {
         bonus: trash.bonus,
       })),
     }));
-    console.log('info', JSON.parse(JSON.stringify(info)));
     // res.send(info);
     res.json(info);
+
     // ДЛЯ ФРОНТА ВСТАВЛЯЕМ ЭТО
     // res.render('info', { info });
+
   } catch (err) {
     console.log('Не получилось отобразить информацию', err);
   }
-});
+}); // отправляет данные из базы с информацией о виде мусора и мусоре
 
 module.exports = router;
