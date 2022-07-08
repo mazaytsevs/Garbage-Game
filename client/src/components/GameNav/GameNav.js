@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProgressThunk } from '../../redux/actions/progress.action';
 import './gameNav.css';
 
 function GameNav() {
+  const dispatch = useDispatch();
+  const progress = useSelector((state) => state.progress);
+  useEffect(() => {
+    dispatch(getProgressThunk());
+  }, []);
+  console.log('progresssssssssssssssss', progress);
   return (
     <div className="main">
       <div className="header">
