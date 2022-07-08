@@ -1,0 +1,7 @@
+.backGround {
+  position: absolute;
+  width: 1920px;
+  height: 850px;
+  background: url('../../../public/backBround/image\ 30.png');
+  background-size: 1920px 850px;
+}

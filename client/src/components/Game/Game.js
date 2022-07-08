@@ -3,10 +3,11 @@ import GameBins from '../GameBins/GameBins';
 import GameBoard from '../GameBoard/GameBoard';
 import GameBomzh from '../GameBomzh/GameBomzh';
 import GameNav from '../GameNav/GameNav';
+import './game.css';
 
 function Game() {
   return (
-    <div>
+    <div className="backGround">
       <div>
         <GameNav />
       </div>
