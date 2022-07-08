@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GameBinsDragAndDrop from '../GameBinsDragAndDrop/GameBinsDragAndDrop';
 import { generateTrashThunk } from '../../redux/actions/actions';
-import GameBinsDragAndDrop from '../GameBinsDragAndDrop/GameBinsDragAndDrop';
 import './gameBins.css';
 
 function GameBins() {
@@ -15,11 +14,7 @@ function GameBins() {
 
   return (
     <div className="GameBins">
-
-      {/* <div><GameBinsDragAndDrop /></div> */}
-      <div className="gameBinsFromDB">
-        {trashBins?.map((el) => <img alt="" width="100" key={el.id} trashCanId={el.id} src={el.trash_can_img_src} />)}
-      </div>
+      <GameBinsDragAndDrop trashBins={trashBins} />
       <div className="gameBinsDno" />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './GameBinsDragAndDrop.css';
 
-function GameBinsDragAndDrop({ trash }) {
+function GameBinsDragAndDrop({ trash, trashBins }) {
   // const [trash, SetTrash] = useState([
   //   { id: 1, order: 3, text: 'card 3' },
   //   { id: 2, order: 1, text: 'card 1' },
@@ -12,9 +12,9 @@ function GameBinsDragAndDrop({ trash }) {
   const [currentState, setCurrentState] = useState(null);
 
   // взятие объекта
-  function dragStartHandler(e, card) {
-    console.log('drag', card);
-    setCurrentState(card);
+  function dragStartHandler(e, picture) {
+    console.log('drag', picture);
+    setCurrentState(picture);
   }
   function dragLeaveHandler(e) {}
 
@@ -27,11 +27,10 @@ function GameBinsDragAndDrop({ trash }) {
     e.preventDefault();
     e.target.style.background = 'lightgray';
   }
-  function dropHandler(e, card) {
+  function dropHandler(e, picture) {
     e.preventDefault();
-    console.log('drop', card);
-    // SetTrash(
-    //   trash.map((t) => {
+    console.log('drop', picture);
+    // if()
     //     if (t.id === trash.id) {
     //       return { ...t, order: currentState.order };
     //     }
@@ -64,7 +63,20 @@ function GameBinsDragAndDrop({ trash }) {
             onDrop={(e) => dropHandler(e, pic)}
             className="trash"
           >
-            <img className="randomTrash" alt="text" src={pic.trash_img_src} />
+            <img className="randomTrash" alt="text" key={pic.id} oneTrashId={pic.trash_can_id} src={pic.trash_img_src} />
+          </div>
+        ))}
+        {trashBins?.map((pic) => (
+          <div
+            draggable
+            onDragStart={(e) => dragStartHandler(e, pic)}
+            onDragLeave={(e) => dragLeaveHandler(e)}
+            onDragEnd={(e) => dragEndHandler(e)}
+            onDragOver={(e) => dragOverHandler(e)}
+            onDrop={(e) => dropHandler(e, pic)}
+            className="trash"
+          >
+            <img className="gameBinsFromDB" alt="" width="100" key={pic.id} trashCanId={pic.id} src={pic.trash_can_img_src} />
           </div>
         ))}
       </div>
@@ -74,17 +86,3 @@ function GameBinsDragAndDrop({ trash }) {
 }
 
 export default GameBinsDragAndDrop;
-
-// return (
-//   <div className="trashes">
-//     <div
-//       draggable
-//       onDragStart={(e) => dragStartHandler(e, image)}
-//       onDragLeave={(e) => dragLeaveHandler(e)}
-//       onDragEnd={(e) => dragEndHandler(e)}
-//       onDragOver={(e) => dragOverHandler(e)}
-//       onDrop={(e) => dropHandler(e, image)}
-//       className="trash"
-//     />
-//   </div>
-// );
