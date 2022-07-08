@@ -40,6 +40,7 @@ function App() {
             </PrivateRoute>
 )}
         />
+
         <Route path="/auth/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
         <Route path="/auth/reg" element={<Registration />} />
         <Route path="/auth/login" element={<Login />} />
