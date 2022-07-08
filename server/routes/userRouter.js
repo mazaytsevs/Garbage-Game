@@ -80,7 +80,7 @@ router.post('/login', checkLogin, async (req, res) => {
 router.get('/logout', async (req, res) => {
   try {
     req.session.destroy();
-    res.clearCookie('sid').redirect('/');
+    res.clearCookie('sid');
     res.sendStatus(200); // отправляет статус 200, если юзер раззалогинился
   } catch (err) {
     console.log('Не удалось выйти из системы', err);
