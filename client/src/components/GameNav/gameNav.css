@@ -4,8 +4,9 @@
 }
 
 .progressBar {
-  width: 345px;
+  width: 545px;
   height: 45px;
+  background-image: url(../../../public/gameNavPic/progressbar.png);
 }
 
 .icons {
@@ -13,6 +14,11 @@
   justify-content: flex-end;
 }
 .smallIcon{
+  width: 45px;
+  height: 45px;
+}
+
+.progressBar img {
   width: 45px;
   height: 45px;
 }

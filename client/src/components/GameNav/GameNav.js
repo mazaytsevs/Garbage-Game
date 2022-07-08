@@ -10,32 +10,83 @@ function GameNav() {
           <div />
           <div className="progressBar">
             <img
-              className="progressBar"
-              src="https://img.freepik.com/premium-vector/loading-new-year-2021-to-2022-progress-bar-with-blue-background_443193-375.jpg?w=740"
+              className="progressBarTrashCan1"
+              src="/gameNavPic/trashcan.png"
+              alt="progressBar"
+            />
+            <img
+              className="progressBarTrashCan2"
+              src="/gameNavPic/trashcan.png"
+              alt="progressBar"
+            />
+            <img
+              className="progressBarTrashCan3"
+              src="/gameNavPic/trashcan.png"
+              alt="progressBar"
+            />
+            <img
+              className="progressBarTrashCan4"
+              src="/gameNavPic/trashcan.png"
+              alt="progressBar"
+            />
+            <img
+              className="progressBarTrashCan5"
+              src="/gameNavPic/trashcan.png"
+              alt="progressBar"
+            />
+            <img
+              className="progressBarTrashCan6"
+              src="/gameNavPic/trashcan.png"
+              alt="progressBar"
+            />
+            <img
+              className="progressBarTrashCan7"
+              src="/gameNavPic/trashcan.png"
+              alt="progressBar"
+            />
+            <img
+              className="progressBarTrashCan8"
+              src="/gameNavPic/trashcan.png"
+              alt="progressBar"
+            />
+            <img
+              className="progressBarTrashCan9"
+              src="/gameNavPic/trashcan.png"
+              alt="progressBar"
+            />
+            <img
+              className="progressBarTrashCan10"
+              src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           </div>
           <div className="icons">
             <div className="rules">
-              <img
-                className="smallIcon"
-                src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
-                alt="rules"
-              />
+              <span type="button">
+                <img
+                  className="smallIcon"
+                  src="/gameNavPic/rules.png"
+                  alt="rules"
+                />
+              </span>
             </div>
             <div className="info">
-              <img
-                className="smallIcon"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Question_mk_grey.png/1200px-Question_mk_grey.png"
-                alt="info"
-              />
+              <span type="button">
+                <img
+                  className="smallIcon"
+                  src="/gameNavPic/rules.png"
+                  alt="info"
+                />
+              </span>
             </div>
             <div className="exit">
-              <img
-                className="smallIcon"
-                src="https://www.clipartmax.com/png/middle/217-2179335_exit-clipart-svg-exit-icon-vector-png.png"
-                alt="exit"
-              />
+              <span type="button">
+                <img
+                  className="smallIcon"
+                  src="/gameNavPic/logout.png"
+                  alt="exit"
+                />
+              </span>
             </div>
           </div>
         </div>
