@@ -505,7 +505,7 @@ module.exports = {
       },
       {
         trash_can_id: 6,
-        trash_name: 'старая футболка',
+        trash_name: 'старая порванная футболка',
         trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
         info: 'blablabla',
         score: 3,
