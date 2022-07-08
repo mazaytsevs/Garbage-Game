@@ -14,7 +14,7 @@ function GameBins() {
   return (
     <div className="GameBins">
       <div className="gameBins">
-        {trashBins.map((el) => <img alt="" src={el.trash_can_img_src} />)}
+        {trashBins.map((el) => <img alt="" trashCanId={el.id} src={el.trash_can_img_src} />)}
       </div>
     </div>
   );

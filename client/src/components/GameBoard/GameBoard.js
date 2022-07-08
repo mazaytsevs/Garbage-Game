@@ -52,7 +52,7 @@ function GameBoard() {
         />
       </div>
       <div className="trashes">
-        {randomTrashes.map((el) => <img className="randomTrash" alt="text" src={el.trash_img_src} />)}
+        {randomTrashes.map((el) => <img className="randomTrash" alt="text" trashCanId={el.trash_can_id} src={el.trash_img_src} />)}
       </div>
     </div>
   );
