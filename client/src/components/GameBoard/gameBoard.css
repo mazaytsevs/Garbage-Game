@@ -9,10 +9,21 @@
 }
 
 .trashes{
-  width: 1000px;
+  width: 40%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin-left: 50px;
+}
+
+/* MARIA ZOBNINA */
+.gameBoard {
+  /* height: 40%; */
+  /* max-height: 650px; */
+  height: 650px;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  bottom:0
 }
