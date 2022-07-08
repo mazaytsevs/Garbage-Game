@@ -9,7 +9,7 @@ function GameBoard() {
   const dispatch = useDispatch();
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
   useEffect(() => {
-    console.log('MUUUUSOOOOOOOOOR', trashes);
+    // console.log('MUUUUSOOOOOOOOOR', trashes);
     dispatch(generateTrashThunk());
   }, []);
 
@@ -33,13 +33,12 @@ function GameBoard() {
     }
     for (let x = 0; x < indexArr.length; x += 1) {
       randomTrashes.push(arr[indexArr[x]]);
-      console.log(indexArr[x]);
     }
     return randomTrashes;
   }
 
   const randomTrashes = getTrashes(trashes);
-  console.log('RANDOOOOOOM', getTrashes(trashes));
+  // console.log('RANDOOOOOOM', getTrashes(trashes));
 
   return (
     <div className="gameBoard">
@@ -50,7 +49,9 @@ function GameBoard() {
           alt="bag"
         />
       </div>
+
       <GameBinsDragAndDrop trash={randomTrashes} />
+
     </div>
   );
 }
