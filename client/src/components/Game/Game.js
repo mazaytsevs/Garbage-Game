@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateTrashThunk } from '../../redux/actions/actions';
+import { getProgressThunk } from '../../redux/actions/progress.action';
 import GameBomzh from '../GameBomzh/GameBomzh';
 import Container from '../GameLogic/Container';
 import GameNav from '../GameNav/GameNav';
@@ -56,8 +57,15 @@ function Game() {
     setFlag(!flag);
     // setBagPic('/trashBins/dangerous.png');
   };
+
+  const progress = useSelector((state) => state.progress);
+  useEffect(() => {
+    dispatch(getProgressThunk());
+  }, []);
+  const { background } = progress;
+
   return (
-    <div className="backGround">
+    <div className={background}>
       <div>
         <GameNav />
       </div>
