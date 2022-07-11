@@ -10,13 +10,10 @@ import './game.css';
 
 function Game() {
   const dispatch = useDispatch();
-
   const progress = useSelector((state) => state.progress);
-
   useEffect(() => {
     dispatch(getProgressThunk());
   }, []);
-
   const { background } = progress;
 
   return (

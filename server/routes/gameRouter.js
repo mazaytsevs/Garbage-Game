@@ -30,7 +30,6 @@ router.get('/', async (req, res) => { // ! ДЕЛАТЬ ЗАПРОС НА ЭТУ
       trashes, // мусор, который еще НЕ отгадали
       played, // id отгаданного мусора
     };
-    // res.send(data);
     res.json(data);
   } catch (err) {
     console.log('Не удалось загрузить игровые элементы', err);
