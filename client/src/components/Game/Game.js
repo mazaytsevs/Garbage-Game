@@ -17,11 +17,7 @@ function Game() {
     dispatch(getProgressThunk());
   }, []);
 
-  console.log('PROGRESS1', progress);
-
   const { background } = progress;
-
-  console.log('IMG', background);
 
   return (
     <div className={background}>
