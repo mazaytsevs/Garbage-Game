@@ -11,8 +11,7 @@ import Login from './components/Forms/Login/Login';
 import { checkAuth } from './redux/actions/user.action';
 import Logout from './components/Forms/Logout/Logout';
 import GameRat from './components/GameRat/GameRat';
-import GamePictures from './components/GamePictures/GamePictures';
-// import Container from './components/GameBinsDragAndDrop/Container';
+import Container from './components/GameLogic/Container';
 
 function App() {
   // const dispatch = useDispatch();
