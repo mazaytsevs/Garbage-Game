@@ -13,7 +13,7 @@
     height: 100vh;
     background: url('../../../public/authPics/back2.png') no-repeat;
     background-size: cover;
-    padding: 150px 0px 0px 100px ;
+    /* padding: 150px 0px 0px 100px ; */
   }
 
   .start {
@@ -56,7 +56,7 @@
 li {
   list-style-type: none;
 }
-.signin{
+.primaryBtn{
   font-family: 'Amatic SC', cursive;
   font-size: 60px;
   
@@ -66,6 +66,7 @@ li {
   background-clip: text;
 
   text-shadow: 0px 15px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 
 }
 .arrow{
@@ -78,5 +79,28 @@ li {
   display: flex;
   align-items: end;
   padding: 20px 0px 0px 0px;
+}
+
+.div3{
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+
+}
+.div2{
+  width: 100%;
+  padding: 100px
+}
+.div1 {
+  position: absolute;
+  bottom: 0;
+  right: 80px;
+  z-index:10;
+}
+.bomj{
+width: 550px;
+height: 550px;
+z-index: 1;
+position: relative;
 }
 

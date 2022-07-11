@@ -12,5 +12,8 @@ module.exports = {
     ecmaVersion: 2021,
   },
   rules: {
+    'no-restricted-syntax': 0,
+    'guard-for-in': 0,
+    'camelcase': 0,
   },
 };

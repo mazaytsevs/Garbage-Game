@@ -36,7 +36,6 @@ function GameTrashBag() {
   }
 
   const randomTrashes = getTrashes(trashes);
-  
   return (
     <div className="trashBag">
       <img

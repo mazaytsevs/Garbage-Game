@@ -1,10 +1,11 @@
+/* стили для мусора */
 /* body {
   background-color: #E9E9E9;
   color: #333;
   font-family:"Lucida handwriting", "Snell Roundhand", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 16px;
 } */
-a.polaroid {
+div.polaroid {
   display: block;
   text-decoration: none;
   /* color: #333; */
@@ -19,7 +20,7 @@ a.polaroid {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
   -webkit-transition: -webkit-transform 0.5s ease-in;
 }
-a.polaroid:hover, a.polaroid:focus, a.polaroid:active {
+div.polaroid:hover, div.polaroid:focus, div.polaroid:active {
   z-index: 999;
   border-color: #6A6A6A;
   /* -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -34,7 +35,7 @@ a.polaroid:hover, a.polaroid:focus, a.polaroid:active {
   width: 100%;
   height: 100%;
 }
-a img {
+div img {
   border: none;
   display: block;
 }
@@ -92,14 +93,14 @@ a img {
   -moz-transform: rotate(-4deg);
   transform: rotate(-4deg);
 } */
-.photo-album .img3 {
+.photo-album .img2 {
   left: 300px;
   top: 0;
   -webkit-transform: rotate(-5deg);
   -moz-transform: rotate(-5deg);
   transform: rotate(-5deg);
 }
-.photo-album .img4 {
+.photo-album .img3 {
   top: 10px;
   left: 400px;
   -webkit-transform: rotate(-20deg);
@@ -113,35 +114,35 @@ a img {
   -moz-transform: rotate(1deg);
   transform: rotate(1deg);
 } */
-.photo-album .img6 {
+.photo-album .img4 {
   bottom: 10px;
   right: 156px;
   -webkit-transform: rotate(6deg);
   -moz-transform: rotate(6deg);
   transform: rotate(6deg);
 }
-.photo-album .img7 {
+.photo-album .img5 {
   bottom:0;
   left:400px;
   -webkit-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
   transform: rotate(-10deg);
 }
-.photo-album .img8 {
+.photo-album .img6 {
   bottom: 0px;
   left: 580px;
   -webkit-transform: rotate(-8deg);
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 }
-.photo-album .img9 {
+.photo-album .img7 {
   bottom: 0;
   left: 0;
   -webkit-transform: rotate(-8deg);
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 }
-.photo-album .img10 {
+.photo-album .img8 {
   top: 0;
   left: 10px;
   -webkit-transform: rotate(8deg);
@@ -155,7 +156,7 @@ a img {
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 } */
-.photo-album .img12 {
+.photo-album .img9 {
   top: 0;
   left: 600px;
   -webkit-transform: rotate(18deg);
@@ -176,13 +177,41 @@ a img {
   -moz-transform: rotate(15deg);
   transform: rotate(15deg);
 } */
-.photo-album .img15 {
+.photo-album .img10 {
   left:120px;
   top:20px;
   -webkit-transform: rotate(-8deg);
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 }
-a:hover, a:focus {
+div:hover, div:focus {
   z-index: 5;
+}
+
+/* стили для мусорных баков */
+.bins{
+  width: 1500px;
+  height: 345px;
+}
+
+.GameBins{
+  position: absolute;
+  width: 70%;
+}
+
+.gameBinsDno{
+  max-height: 118px;
+  height: 118px;
+  border-radius: 700px/60px;
+  background: #EC8F8F;
+  opacity: 0.3;
+  bottom: 0;
+}
+
+.gameBinsFromDB{
+  position: relative;
+  bottom: -70px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
 }
