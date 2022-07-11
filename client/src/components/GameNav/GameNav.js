@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { getProgressThunk } from '../../redux/actions/progress.action';
 import Info from '../Info/Info';
 import Rules from '../Rules/Rules';
@@ -12,6 +13,7 @@ function GameNav() {
     dispatch(getProgressThunk());
   }, []);
   console.log('progresssssssssssssssss', progress);
+  const navigate = useNavigate();
   // MARIA -> повесила на кнокпи стейты чтобы открывать и закрывать модалки с инфой и правилами
   const [isModal, setModal] = React.useState(false);
   const [rulesModal, setRulesModal] = React.useState(false);
@@ -105,7 +107,13 @@ function GameNav() {
               <Info isModal={isModal} setModal={setModal} />
             </div>
             <div className="exit">
-              <span type="button">
+              <span
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate('/');
+                }}
+              >
                 <img
                   className="smallIcon"
                   src="/gameNavPic/logout.png"
