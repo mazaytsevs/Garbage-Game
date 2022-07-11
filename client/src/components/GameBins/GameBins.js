@@ -17,14 +17,7 @@ function GameBins() {
   return (
     <div className="GameBins">
 
-
-
-
-      <GameBinsDragAndDrop trashBins={trashBins} />
-
-
-
-
+      <GameBinsDragAndDrop trashBinsFromDB={trashBinsFromDB} />
 
       {/* <div><GameBinsDragAndDrop /></div> */}
       {trashBinsFromDB
@@ -33,9 +26,6 @@ function GameBins() {
         {trashBinsFromDB?.slice(0, (trashBinsFromDB.length - 1)).map((el) => <img alt="" height="150" key={el.id} trashCanId={el.id} src={el.trash_can_img_src} />)}
       </div>
       )}
-
-
-
 
       <div className="gameBinsDno" />
     </div>
