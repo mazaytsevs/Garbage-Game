@@ -4,6 +4,7 @@ import userReducer from './userReducer';
 import infoReducer from './infoReducer';
 import trashGeneratereducer from './trashGeneratereducer';
 import progressReducer from './progressReducer';
+import homelessReducer from './homelessReducer';
 
 const rootReducer = combineReducers({
   info: infoReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   loader: loaderReducer,
   trashGenerate: trashGeneratereducer,
   progress: progressReducer,
+  homeless: homelessReducer,
 });
 
 export default rootReducer;

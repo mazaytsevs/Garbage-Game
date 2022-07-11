@@ -5,3 +5,5 @@ export const SET_USER = 'SET_USER';
 export const DELETE_USER = 'DELETE_USER';
 
 export const GET_PROGRESS = 'GET_PROGRESS';
+
+export const GET_HOMELESS = 'GET_HOMELESS';
