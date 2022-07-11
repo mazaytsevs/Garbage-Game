@@ -69,7 +69,7 @@ router.post('/login', checkLogin, async (req, res) => {
         };
         console.log('currentuse', currentUser.dataValues);
 
-        return res.sendStatus(200); // отправляет статус 200, если юзер залогинился
+        return res.json(currentUser); // отправляет статус 200, если юзер залогинился
       }
     } else {
       console.log('Введите все данные для пользователя');

@@ -17,6 +17,7 @@ function GameBins() {
   // }, []);
 
   return (
+
     <div>
       <GameBinsDragAndDrop trashBins={trashBinsFromDB} />
     </div>
