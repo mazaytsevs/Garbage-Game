@@ -21,57 +21,61 @@ function GameNav() {
         <div className="navbar">
           {/* TODO размер дива ниже должен быть равен ширине икнок справа */}
           <div />
+          <div>
+            Прогресс
+            {' '}
+            {progress.score || 0}
+            /120
+          </div>
           <div className="progressBar">
+            {(Math.floor(progress.score / 20) > 0)
+            && (
             <img
               className="progressBarTrashCan1"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
+            )}
+            {(Math.floor(progress.score / 20) > 1)
+            && (
             <img
               className="progressBarTrashCan2"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
+            )}
+            {(Math.floor(progress.score / 20) > 2)
+            && (
             <img
               className="progressBarTrashCan3"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
+            )}
+            {(Math.floor(progress.score / 20) > 3)
+            && (
             <img
               className="progressBarTrashCan4"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
+            )}
+            {(Math.floor(progress.score / 20) > 4)
+            && (
             <img
               className="progressBarTrashCan5"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
+            )}
+            {(Math.floor(progress.score / 20) > 5)
+            && (
             <img
               className="progressBarTrashCan6"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
-            <img
-              className="progressBarTrashCan7"
-              src="/gameNavPic/trashcan.png"
-              alt="progressBar"
-            />
-            <img
-              className="progressBarTrashCan8"
-              src="/gameNavPic/trashcan.png"
-              alt="progressBar"
-            />
-            <img
-              className="progressBarTrashCan9"
-              src="/gameNavPic/trashcan.png"
-              alt="progressBar"
-            />
-            <img
-              className="progressBarTrashCan10"
-              src="/gameNavPic/trashcan.png"
-              alt="progressBar"
-            />
+            )}
           </div>
           <div className="icons">
             <div className="rules">
