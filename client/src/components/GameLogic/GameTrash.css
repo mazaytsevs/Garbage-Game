@@ -20,9 +20,11 @@ div.polaroid {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
   -webkit-transition: -webkit-transform 0.5s ease-in;
 }
-div.polaroid:hover, div.polaroid:focus, div.polaroid:active {
+div.polaroid:hover,
+div.polaroid:focus,
+div.polaroid:active {
   z-index: 999;
-  border-color: #6A6A6A;
+  border-color: #6a6a6a;
   /* -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
@@ -41,7 +43,7 @@ div img {
 }
 .photo-album {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: 0;
   max-width: 70em;
   height: 450px;
@@ -56,8 +58,8 @@ div img {
   width: 75px;
   padding: 6px 6px 12px 6px;
   font-size: 0.6em;
-} */
-/* .photo-album .small img {
+}
+.photo-album .small img {
   width: 75px;
   height: 75px;
 } */
@@ -70,15 +72,15 @@ div img {
   width: 150px;
   height: 100%;
 }
-.photo-album .large {
+/* .photo-album .large {
   width: 300px;
   padding: 20px 20px 30px 20px;
-  /* font-size: 1em; */
-}
-.photo-album .large img {
+  font-size: 1em;
+} */
+/* .photo-album .large img {
   width: 300px;
   height: 340px;
-}
+} */
 .photo-album .img1 {
   bottom: 10px;
   right: 365px;
@@ -122,8 +124,8 @@ div img {
   transform: rotate(6deg);
 }
 .photo-album .img5 {
-  bottom:0;
-  left:400px;
+  bottom: 0;
+  left: 400px;
   -webkit-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
   transform: rotate(-10deg);
@@ -178,40 +180,45 @@ div img {
   transform: rotate(15deg);
 } */
 .photo-album .img10 {
-  left:120px;
-  top:20px;
+  left: 120px;
+  top: 20px;
   -webkit-transform: rotate(-8deg);
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 }
-div:hover, div:focus {
+div:hover,
+div:focus {
   z-index: 5;
 }
 
 /* стили для мусорных баков */
-.bins{
+.bins {
   width: 1500px;
   height: 345px;
 }
 
-.GameBins{
+.GameBins {
   position: absolute;
   width: 70%;
 }
 
-.gameBinsDno{
+.gameBinsDno {
   max-height: 118px;
   height: 118px;
   border-radius: 700px/60px;
-  background: #EC8F8F;
+  background: #ec8f8f;
   opacity: 0.3;
   bottom: 0;
 }
 
-.gameBinsFromDB{
+.gameBinsFromDB {
   position: relative;
   bottom: -70px;
   z-index: 1;
   display: flex;
   justify-content: space-around;
+}
+
+.trashBag {
+  
 }

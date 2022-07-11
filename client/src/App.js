@@ -46,7 +46,7 @@ function App() {
         <Route path="/auth/reg" element={<Registration />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/game" element={<Game />} />
-        {/* <Route path="/gamerat" element={<Container />} /> */}
+        <Route path="/gamerat" element={<GameRat />} />
         <Route path="/rules" element={<Rules />} />
         <Route path="/info" element={<Info />} />
       </Routes>
