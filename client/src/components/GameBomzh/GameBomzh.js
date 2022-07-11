@@ -14,7 +14,7 @@ function GameBomzh() {
                 className="man"
                 src="man/image19.png"
                 alt="man"
-                width="500"
+                width="250"
               />
             </div>
             )}

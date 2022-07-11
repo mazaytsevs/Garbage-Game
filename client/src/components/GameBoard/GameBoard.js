@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateTrashThunk } from '../../redux/actions/actions';
+import Container from '../GameBinsDragAndDrop/Container';
 import GameBinsDragAndDrop from '../GameBinsDragAndDrop/GameBinsDragAndDrop';
+import GamePictures from '../GamePictures/GamePictures';
 import './gameBoard.css';
 
 function GameBoard() {
@@ -18,8 +20,8 @@ function GameBoard() {
   function getTrashes(arr) {
     const trashesFromDB = trashes?.length;
     let trashesNum = 0;
-    if (trashesFromDB > 6) {
-      trashesNum = 6;
+    if (trashesFromDB > 10) {
+      trashesNum = 10;
     } else {
       trashesNum = trashesFromDB;
     }
@@ -57,6 +59,8 @@ function GameBoard() {
           alt="bag"
         />
       </div>
+      {/* <GameBinsDragAndDrop trash={randomTrashes} /> */}
+      <GamePictures trash={randomTrashes} />
       {flag
         ? <GameBinsDragAndDrop trash={randomTrashes} /> : null}
     </div>
