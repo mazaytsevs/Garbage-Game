@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link, NavLink } from 'react-router-dom';
 import classes from './Info.module.css';
 import { getInfoThunk } from '../../redux/actions/actions';
 import InfoTrashCard from '../InfoTrashCard/InfoTrashCard';
 import infoFromBack from './fakeDB';
 import Modal from '../Modal/Modal';
+import Load from '../loader/loader';
 
 function Info({ isModal, setModal }) {
   // const [isModal, setModal] = React.useState(false);
@@ -28,6 +30,13 @@ function Info({ isModal, setModal }) {
             <img width="950" alt="page9" src="/infoPics/9.jpg" />
           </div>
       )}
+        footer={(
+          <Link
+            to="/mp"
+          >
+            TRY ME
+          </Link>
+)}
         onClose={() => setModal(false)}
       />
 

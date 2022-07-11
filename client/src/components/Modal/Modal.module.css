@@ -16,6 +16,8 @@
   /* animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
   /* animation: scaleUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
   animation: fadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;;
+  font-family: 'Amatic SC', cursive;
+  font-size: xx-large;
 }
 
 /* .four {
