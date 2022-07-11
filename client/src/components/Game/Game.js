@@ -24,7 +24,7 @@ function Game() {
   console.log('IMG', background);
 
   return (
-    <div className="backGround">
+    <div className={background}>
       <div>
         <GameNav />
       </div>
