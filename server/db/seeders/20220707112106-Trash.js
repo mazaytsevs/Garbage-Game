@@ -6,7 +6,7 @@ module.exports = {
       {
         trash_can_id: 1,
         trash_name: 'стеклянная банка',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/jar.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -16,7 +16,7 @@ module.exports = {
       {
         trash_can_id: 1,
         trash_name: 'стеклянная бутылка',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/glassBottle.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -26,7 +26,7 @@ module.exports = {
       {
         trash_can_id: 1,
         trash_name: 'флакон от духов',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/perfume.png',
         info: 'blablabla',
         score: 2,
         bonus: false,
@@ -166,7 +166,7 @@ module.exports = {
       {
         trash_can_id: 3,
         trash_name: 'алюминиевая банка',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/aluminium.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -176,7 +176,7 @@ module.exports = {
       {
         trash_can_id: 3,
         trash_name: 'фольга',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/foil.png',
         info: 'blablabla',
         score: 3,
         bonus: false,
@@ -186,7 +186,7 @@ module.exports = {
       {
         trash_can_id: 3,
         trash_name: 'аэрозольные балончики',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/spray.png',
         info: 'blablabla',
         score: 2,
         bonus: false,
@@ -196,7 +196,7 @@ module.exports = {
       {
         trash_can_id: 3,
         trash_name: 'сломанный фен',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/hair.png',
         info: 'blablabla',
         score: 3,
         bonus: false,
@@ -256,7 +256,7 @@ module.exports = {
       {
         trash_can_id: 4,
         trash_name: 'цветной картон',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/colorPaper.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -266,7 +266,7 @@ module.exports = {
       {
         trash_can_id: 4,
         trash_name: 'разрисованный альбом для рисования',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/album.png',
         info: 'blablabla',
         score: 2,
         bonus: false,
@@ -276,7 +276,7 @@ module.exports = {
       {
         trash_can_id: 4,
         trash_name: 'картонная коробка',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/box.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -286,7 +286,7 @@ module.exports = {
       {
         trash_can_id: 5,
         trash_name: 'огрызок',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/stub.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -296,7 +296,7 @@ module.exports = {
       {
         trash_can_id: 5,
         trash_name: 'кожура овощей и фруктов',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/peel.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -306,7 +306,7 @@ module.exports = {
       {
         trash_can_id: 5,
         trash_name: 'яичная скорлупа',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/chickenHome.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -315,8 +315,8 @@ module.exports = {
       },
       {
         trash_can_id: 5,
-        trash_name: 'кофейная гуща',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_name: 'чайный пакетик',
+        trash_img_src: '/trashes/teaBag.png',
         info: 'blablabla',
         score: 2,
         bonus: false,
@@ -326,7 +326,7 @@ module.exports = {
       {
         trash_can_id: 5,
         trash_name: 'увядшие цветы',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/flowers.png',
         info: 'blablabla',
         score: 3,
         bonus: false,
@@ -336,7 +336,7 @@ module.exports = {
       {
         trash_can_id: 5,
         trash_name: 'недоеденный салат',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/salad.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -346,7 +346,7 @@ module.exports = {
       {
         trash_can_id: 5,
         trash_name: 'продукты животного происхождения',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/chicken.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -366,7 +366,7 @@ module.exports = {
       {
         trash_can_id: 6,
         trash_name: 'чек из магазина',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/cheque.png',
         info: 'blablabla',
         score: 3,
         bonus: false,
@@ -406,7 +406,7 @@ module.exports = {
       {
         trash_can_id: 6,
         trash_name: 'бутыль из поликарбоната(обычно с ручкой)',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/bigBottle.png',
         info: 'blablabla',
         score: 3,
         bonus: false,
@@ -426,7 +426,7 @@ module.exports = {
       {
         trash_can_id: 6,
         trash_name: 'зубная щетка',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/toothbrush.png',
         info: 'blablabla',
         score: 3,
         bonus: false,
@@ -486,7 +486,7 @@ module.exports = {
       {
         trash_can_id: 6,
         trash_name: 'разбитое зеркало',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/mirror.png',
         info: 'blablabla',
         score: 2,
         bonus: false,
@@ -526,7 +526,7 @@ module.exports = {
       {
         trash_can_id: 7,
         trash_name: 'батарейки',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/battery.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -536,7 +536,7 @@ module.exports = {
       {
         trash_can_id: 7,
         trash_name: 'ртутный градусник',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/thermometer.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -546,7 +546,7 @@ module.exports = {
       {
         trash_can_id: 7,
         trash_name: 'лампочка',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/bulb.png',
         info: 'blablabla',
         score: 1,
         bonus: false,
@@ -556,7 +556,7 @@ module.exports = {
       {
         trash_can_id: 7,
         trash_name: 'просроченные лекарства',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/medicines.png',
         info: 'blablabla',
         score: 2,
         bonus: false,
@@ -566,7 +566,7 @@ module.exports = {
       {
         trash_can_id: 7,
         trash_name: 'лакокрасочные материалы',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/varnish.png',
         info: 'blablabla',
         score: 2,
         bonus: false,
@@ -578,7 +578,7 @@ module.exports = {
         trash_name: 'крыса',
         trash_img_src: '/trashes/rat.png',
         info: 'blablabla',
-        score: 13,
+        score: 5,
         bonus: false,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -586,9 +586,9 @@ module.exports = {
       {
         trash_can_id: 8,
         trash_name: 'костюм',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/clothers.png',
         info: 'blablabla',
-        score: 10,
+        score: 4,
         bonus: false,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -596,9 +596,9 @@ module.exports = {
       {
         trash_can_id: 8,
         trash_name: 'телефон',
-        trash_img_src: 'https://e7.pngegg.com/pngimages/963/1016/png-clipart-shrek-the-musical-donkey-princess-fiona-shrek-film-series-shrek-heroes-fictional-character.png',
+        trash_img_src: '/trashes/phone.png',
         info: 'blablabla',
-        score: 10,
+        score: 4,
         bonus: false,
         createdAt: new Date(),
         updatedAt: new Date()

@@ -3,17 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getInfoThunk } from '../../redux/actions/actions';
 import Modal from '../Modal/Modal';
 
-function Rules() {
+function Rules({ rulesModal, setRulesModal }) {
   // для обращения к бэку
   // const dispatch = useDispatch();
   // const info = useSelector((state) => state.info);
   // useEffect(() => {
   //   dispatch(getInfoThunk());
   // }, []);
-  const [rulesModal, setRulesModal] = React.useState(false);
+  // const [rulesModal, setRulesModal] = React.useState(false);
   return (
     <div className="rulesContainer">
-      <button type="button" onClick={() => setRulesModal(true)}>УЗНАТЬ ПРАВИЛА</button>
+      {/* <button type="button" onClick={() => setRulesModal(true)}>УЗНАТЬ ПРАВИЛА</button> */}
       <Modal
         isVisible={rulesModal}
         title={<h1>Правила игры</h1>}
@@ -26,7 +26,7 @@ function Rules() {
             Удачи!
           </div>
             )}
-        footer={<button type="button" onClick={() => setRulesModal(false)}> OK </button>}
+        // footer={<button type="button" onClick={() => setRulesModal(false)}> OK </button>}
         onClose={() => setRulesModal(false)}
       />
     </div>
