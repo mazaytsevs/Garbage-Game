@@ -3,6 +3,7 @@ import GameBins from '../GameBins/GameBins';
 import GameBoard from '../GameBoard/GameBoard';
 import GameBomzh from '../GameBomzh/GameBomzh';
 import GameNav from '../GameNav/GameNav';
+import GameRat from '../GameRat/GameRat';
 import './game.css';
 
 function Game() {
@@ -12,6 +13,7 @@ function Game() {
         <GameNav />
       </div>
       <div>
+        {/* <GameRat /> */}
         <GameBoard />
       </div>
       <div>
