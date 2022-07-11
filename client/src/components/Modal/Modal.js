@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Modal.module.css';
 
 function Modal({
-  isVisible = false, title, content, footer, onClose,
+  isVisible = false, closeBtn, title, content, footer, onClose,
 }) {
   const keydownHandler = ({ key }) => {
     switch (key) {
@@ -24,7 +24,7 @@ function Modal({
           <div className={styles.modal_header}>
             <h3 className={styles.modal_title}>{title}</h3>
             <span className={styles.modal_close} onClick={onClose}>
-              &times;
+              <img width="50" alt="krestik" src="/modalPics/krestik.png" />
             </span>
           </div>
           <div className={styles.modal_body}>
@@ -35,6 +35,9 @@ function Modal({
             {footer}
           </div>
           )}
+          <span className={styles.modal_gotovo} onClick={onClose}>
+            <img width="100" alt="gotovo" src="/modalPics/gotovo.png" />
+          </span>
         </div>
       </div>
     )

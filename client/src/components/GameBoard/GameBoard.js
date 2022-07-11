@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateTrashThunk } from '../../redux/actions/actions';
 import GameBinsDragAndDrop from '../GameBinsDragAndDrop/GameBinsDragAndDrop';
 import './gameBoard.css';
 
 function GameBoard() {
+  const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
   // для обращения к бэку
   const dispatch = useDispatch();
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
@@ -38,20 +39,26 @@ function GameBoard() {
   }
 
   const randomTrashes = getTrashes(trashes);
-  // console.log('RANDOOOOOOM', getTrashes(trashes));
+  console.log('RANDOOOOOOM', getTrashes(trashes));
+
+  const [flag, setFlag] = useState(false);
+  const showTrash = () => {
+    setFlag(!flag);
+    // setBagPic('/trashBins/dangerous.png');
+  };
 
   return (
     <div className="gameBoard">
-      <div className="trashBag">
+      <div className="trashBag" onClick={showTrash}>
         <img
           className="bag"
-          src="/trashbag/trashbag.png"
+          src={flag
+            ? '/trashbag/openTrashBag.png' : '/trashbag/trashbag.png'}
           alt="bag"
         />
       </div>
-
-      <GameBinsDragAndDrop trash={randomTrashes} />
-
+      {flag
+        ? <GameBinsDragAndDrop trash={randomTrashes} /> : null}
     </div>
   );
 }
