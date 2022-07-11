@@ -1,22 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateTrashThunk } from '../../redux/actions/actions';
-import { getProgressThunk } from '../../redux/actions/progress.action';
-import GameBomzh from '../GameBomzh/GameBomzh';
-import Container from '../GameLogic/Container';
-import GameNav from '../GameNav/GameNav';
-import GameRat from '../GameRat/GameRat';
-import Load from '../loader/loader';
-import './game.css';
+// import Container from '../GameBinsDragAndDrop/Container';
+// import GameBinsDragAndDrop from '../GameBinsDragAndDrop/GameBinsDragAndDrop';
+// import GamePictures from '../GamePictures/GamePictures';
+// import './gameBoard.css';
 
-function Game() {
-  // получаем мусорные баки
-  const trashBinsFromDB = useSelector(
-    (state) => state.trashGenerate?.trashCans,
-  );
-  const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
-
-  // получаем мусор
+function GameBoard() {
   const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
   // для обращения к бэку
   const dispatch = useDispatch();
@@ -59,26 +49,22 @@ function Game() {
     // setBagPic('/trashBins/dangerous.png');
   };
 
-  const progress = useSelector((state) => state.progress);
-  useEffect(() => {
-    dispatch(getProgressThunk());
-  }, []);
-  const { background } = progress;
-
   return (
-    <div className={background}>
-      <div>
-        <GameNav />
+    <div className="gameBoard">
+      <div className="trashBag" onClick={showTrash}>
+        <img
+          className="bag"
+          src={flag
+            ? '/trashbag/openTrashBag.png' : '/trashbag/trashbag.png'}
+          alt="bag"
+        />
       </div>
-      <div>
-        {/* <GameRat /> */}
-        <Container trash={randomTrashes} trashBin={trashWithoutMan} />
-      </div>
-      <div>
-        <GameBomzh />
-      </div>
+      {/* <GameBinsDragAndDrop trash={randomTrashes} /> */}
+      {/* <GamePictures trash={randomTrashes} /> */}
+      {flag
+        ? <GameBinsDragAndDrop trash={randomTrashes} /> : null}
     </div>
   );
 }
 
-export default Game;
+export default GameBoard;
