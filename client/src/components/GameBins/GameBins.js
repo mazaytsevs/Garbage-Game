@@ -6,7 +6,9 @@ import './gameBins.css';
 
 function GameBins() {
   // const dispatch = useDispatch();
-  const trashBinsFromDB = useSelector((state) => state.trashGenerate?.trashCans);
+  const trashBinsFromDB = useSelector(
+    (state) => state.trashGenerate?.trashCans,
+  );
   // const trashBins = trashBinsFromDB.slice(0, (trashBinsFromDB.length - 1));
   // console.log(trashBins);
   // useEffect(() => {
@@ -15,19 +17,9 @@ function GameBins() {
   // }, []);
 
   return (
-    <div className="GameBins">
 
-      <GameBinsDragAndDrop trashBinsFromDB={trashBinsFromDB} />
-
-      {/* <div><GameBinsDragAndDrop /></div> */}
-      {trashBinsFromDB
-      && (
-      <div className="gameBinsFromDB">
-        {trashBinsFromDB?.slice(0, (trashBinsFromDB.length - 1)).map((el) => <img alt="" height="150" key={el.id} trashCanId={el.id} src={el.trash_can_img_src} />)}
-      </div>
-      )}
-
-      <div className="gameBinsDno" />
+    <div>
+      <GameBinsDragAndDrop trashBins={trashBinsFromDB} />
     </div>
   );
 }
