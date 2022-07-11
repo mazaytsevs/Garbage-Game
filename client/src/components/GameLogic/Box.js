@@ -30,7 +30,7 @@ export const Box = function Box(props) {
     }),
   }));
   const opacity = isDragging ? 0.4 : 1;
-  const nashClass = `medium polaroid img${className + 1}`;
+  const nashClass = `small polaroid img${className + 1}`;
   return (
     <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
       {name}
