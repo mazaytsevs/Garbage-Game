@@ -1,0 +1,7 @@
+DB_NAME=garbage-game
+DB_USER=admin
+DB_PASS=123
+DB_URL=localhost
+PORT=3003
+SESSION=dsfhklyutykugfxmcghjhdgjgd
+SALTROUND=10
