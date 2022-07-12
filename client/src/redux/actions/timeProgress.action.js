@@ -1,9 +1,10 @@
-import { GET_PROGRESS } from '../types/types';
+import { GET_TIME_PROGRESS } from '../types/types';
 
-export const getProgress = (data) => ({ type: GET_PROGRESS, payload: data });
+export const getTimeProgress = (data) => ({ type: GET_TIME_PROGRESS, payload: data });
 
-export const getProgressThunk = () => async (dispatch) => {
-  const response = await fetch('/progress');
+export const getTimeProgressThunk = () => async (dispatch) => {
+  console.log('getTimeProgressThunk');
+  const response = await fetch('/timeprogress');
   const result = await response.json();
   const progress = {
     id: result.id,
@@ -11,16 +12,17 @@ export const getProgressThunk = () => async (dispatch) => {
     score: result.score,
     background: (result.score === null || result.score < 20) ? 'lvl-1' : (result.score < 40) ? 'lvl-2' : 'lvl-3',
   };
-  dispatch(getProgress(progress));
+  dispatch(getTimeProgress(progress));
 };
 
-export const postProgressThunk = (body) => async (dispatch) => {
+export const postTimeProgressThunk = (body) => async (dispatch) => {
   const answer = {
     trash_id: body.id,
     score: body.score,
   };
+  console.log(answer);
   const response = await fetch(
-    '/progress/answer',
+    '/timeprogress/answer',
     {
       method: 'post',
       headers: {
@@ -30,7 +32,7 @@ export const postProgressThunk = (body) => async (dispatch) => {
     },
   );
   if (response.ok) {
-    const resp = await fetch('/progress');
+    const resp = await fetch('/timeprogress');
     const result = await resp.json();
     const progress = {
       id: result.id,
@@ -38,6 +40,6 @@ export const postProgressThunk = (body) => async (dispatch) => {
       score: result.score,
       background: (result.score === null || result.score < 20) ? 'lvl-1' : (result.score < 40) ? 'lvl-2' : 'lvl-3',
     };
-    dispatch(getProgress(progress));
+    dispatch(getTimeProgress(progress));
   }
 };

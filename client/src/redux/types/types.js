@@ -7,3 +7,8 @@ export const DELETE_USER = 'DELETE_USER';
 export const GET_PROGRESS = 'GET_PROGRESS';
 
 export const GET_HOMELESS = 'GET_HOMELESS';
+
+export const GET_INFO = 'GET_INFO';
+export const GENERATE_TRASH = 'GENERATE_TRASH';
+export const DELETE_TRASH = 'DELETE_TRASH';
+export const GET_TIME_PROGRESS = 'GET_TIME_PROGRESS';

@@ -1,8 +1,10 @@
 import React, { memo, useState } from 'react';
-import { Box } from './Box';
-import { Dustbin } from './Dustbin';
+import { Box } from '../components/GameLogic/Box';
+import { Dustbin2 } from './Dustbin2';
 // import { ItemTypes } from './ItemTypes';
-import './GameTrash.css';
+import '../components/GameLogic/GameTrash.css';
+import ModalHardMode from './ModalHardMode';
+import Timer from './Timer';
 
 const Container = memo(({ trash, trashBin }) => {
   const getVisibilityInitState = () => {
@@ -19,42 +21,43 @@ const Container = memo(({ trash, trashBin }) => {
   // const [visible, setVisible] = useState(visibilityInitState && '');
   // const [score, setScore] = useState(0);
   const [visible, setVisible] = useState(visibilityInitState);
-  const [trashSorted, setTrashSorted] = useState(trash);
 
   const [flag, setFlag] = useState(false);
   const showTrash = () => {
     setFlag(!flag);
-    setTrashSorted(trash);
   };
 
-  // для удаления мусора
+  const [initialMinute, setInitialMinute] = useState(3);
+  const [initialSeconds, setInitialSeconds] = useState(30);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="gameBoard">
+    <div>
+      {/* <p>{`ты набрал ${score} баллов`}</p> */}
+
       <div className="trashBag" onClick={showTrash}>
         <img
           className="bag"
-          src={
-            flag ? '/trashbag/trashbagOPEN.png' : '/trashbag/trashbagCLOSED.png'
-          }
+          src={flag ? '/trashbag/trashbagOPEN.png' : '/trashbag/trashbagCLOSED.png'}
           alt="bag"
           width="200"
         />
       </div>
-
       {flag ? (
         <div
           className="photo-album"
           style={{ overflow: 'hidden', clear: 'both' }}
         >
-          {trashSorted?.map((el, index) => (
+          <Timer props={{ initialMinute, initialSeconds, setIsOpen }} />
+          {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
+          {trash?.map((el, index) => (
             <Box
               score={el.score}
               // setScore={setScore}
               setVisible={setVisible}
               visible={visible[el.id]}
               id={el.id}
-              key={el.id}
+              key={el.name}
               name={el.trash_name}
               itemType={el.trash_can_id}
               className={index}
@@ -72,15 +75,12 @@ const Container = memo(({ trash, trashBin }) => {
               key={el.id}
               style={{ overflow: 'hidden', clear: 'both' }}
             >
-              <Dustbin
-                // score={score}
+              <Dustbin2
+                score={el.score}
                 // setScore={setScore}
                 binName={el.id}
                 backgroundImage={el.trash_can_img_src}
                 itemType={el.id}
-                trashSorted={trashSorted}
-                setTrashSorted={setTrashSorted}
-                key={el.id}
               />
             </div>
           ))}

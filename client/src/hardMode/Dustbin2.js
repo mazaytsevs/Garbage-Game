@@ -1,15 +1,15 @@
-import './Dustbin.css'; // стили перенесла сюда!!!
+import '../components/GameLogic/Dustbin.css'; // стили перенесла сюда!!!
 
 import React, { useSelector } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useDrop } from 'react-dnd';
-import { postProgressThunk } from '../../redux/actions/progress.action';
-import { deleteTrashThunk } from '../../redux/actions/actions';
+import { postTimeProgressThunk } from '../redux/actions/timeProgress.action';
+import { deleteTrashThunk } from '../redux/actions/actions';
 
 // комопонент корзины
 // eslint-disable-next-line import/prefer-default-export
-export function Dustbin(props) {
+export function Dustbin2(props) {
   const dispatch = useDispatch();
   // eslint-disable-next-line object-curly-newline
   const { backgroundImage, binName, score, trashSorted, setTrashSorted, setScore } = props;
@@ -22,11 +22,11 @@ export function Dustbin(props) {
 
       drop: (item) => {
         if (item.itemType === binName) {
-          dispatch(postProgressThunk(item));
-          setTrashSorted(((prev) => {
-            dispatch(deleteTrashThunk(item.id));
-            return prev.filter((el) => el.id !== item.id);
-          }));
+          // setScore(score + 1);
+          console.log('item', item);
+          dispatch(postTimeProgressThunk(item));
+          dispatch(deleteTrashThunk(item.id));
+          // setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)));
         }
         return { name: binName };
       },
@@ -54,13 +54,7 @@ export function Dustbin(props) {
       }}
       data-testid="dustbin"
     >
-
-      {/* <img width="100" height="200" cobject-fit="cover" src={backgroundImage} alt="" /> */}
-      {/* //бомж контейнер */}
-      {binName !== 8 ? <img width="100" height="200" cobject-fit="cover" src={backgroundImage} alt="" /> : null}
-
       <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" />
-
       {isActive && 'Бросай'}
     </div>
   );

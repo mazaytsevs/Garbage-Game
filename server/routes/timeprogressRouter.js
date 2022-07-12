@@ -1,15 +1,15 @@
 const router = require('express').Router();
 const Sequelize = require('sequelize');
-const { User, Progress, Trash } = require('../db/models');
+const { User, Trash, TimeProgress } = require('../db/models');
 const { checkSession } = require('../middlewares/middleware');
 
 router.get('/', checkSession, async (req, res) => {
   try {
     const progress = await User.findOne({
       where: { id: req.session.user.id },
-      include: [{ model: Progress, attributes: [] }],
+      include: [{ model: TimeProgress, attributes: [] }],
       attributes:
-        ['id', 'name', [Sequelize.fn('SUM', Sequelize.col('Progresses.score')), 'score']],
+        ['id', 'name', [Sequelize.fn('SUM', Sequelize.col('TimeProgresses.score')), 'score']],
       group: ['User.id'],
     });
     res.json(progress);
@@ -20,7 +20,7 @@ router.get('/', checkSession, async (req, res) => {
 
 router.get('/homeless', checkSession, async (req, res) => {
   try {
-    const originBonuses = await Progress.findAll({
+    const originBonuses = await TimeProgress.findAll({
       where: { user_id: req.session.user.id },
       include: [{
         model: Trash,
@@ -41,16 +41,13 @@ router.get('/homeless', checkSession, async (req, res) => {
 });
 
 router.post('/answer', checkSession, async (req, res) => {
-  console.log(req.body);
   const { trash_id, score } = req.body;
   try {
-    // if (trash_id === id) {
-    await Progress.create({
+    await TimeProgress.create({
       user_id: req.session.user.id,
       trash_id,
       score,
     });
-    // }
     res.sendStatus(200);
   } catch (err) {
     console.log('Не удалось добавить ответ в прогресс', err);

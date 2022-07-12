@@ -16,13 +16,13 @@ function Rules({ rulesModal, setRulesModal }) {
   const trashCans = useSelector(
     (state) => state.trashGenerate?.trashCans,
   );
-  console.log('ololololololololololololollo', trashCans);
+  // console.log('ololololololololololololollo', trashCans);
   return (
     <div className="rulesContainer">
       {/* <button type="button" onClick={() => setRulesModal(true)}>УЗНАТЬ ПРАВИЛА</button> */}
       <Modal
         isVisible={rulesModal}
-        title={<h1>Правила игры</h1>}
+        title={<>Правила игры</>}
         content={(
           <div className="rulesText">
             Привет!

@@ -21,7 +21,7 @@ export const getUserFromServer = (id) => async (dispatch) => {
 
 export const signUp = (payload, navigate) => async (dispatch) => {
   dispatch(enableLoader());
-  console.log(payload);
+  // console.log(payload);
   try {
     const response = await fetch(endPoints.signUp(), {
       method: 'POST',
@@ -32,8 +32,8 @@ export const signUp = (payload, navigate) => async (dispatch) => {
       credentials: 'include',
       body: JSON.stringify(payload),
     });
-    console.log(response);
-    console.log(navigate);
+    // console.log(response);
+    // console.log(navigate);
     if (response.status === 200) {
       const user = await response.json();
       dispatch(setUser(user));
