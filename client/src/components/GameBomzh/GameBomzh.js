@@ -14,7 +14,7 @@ function GameBomzh() {
     dispatch(getHomelessThunk());
   }, []);
 
-  console.log('HOMELESS', homeless);
+  // console.log('HOMELESS', homeless);
 
   return (
     <div className="GameBomzh">

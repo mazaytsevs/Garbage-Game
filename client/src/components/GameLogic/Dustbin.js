@@ -29,7 +29,6 @@ export function Dustbin(props) {
       // drop сработает когда бросаем итем в корзину, тут добавь удаление итемки, передаю сюда пропсом функцию установки визибл для итема и вызови в ondrop
 
       drop: (item) => {
-        console.log('======================', item)
         if (item.itemType === binName) {
           setScore(score + 1);
           setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)))
@@ -62,7 +61,9 @@ export function Dustbin(props) {
       }}
       data-testid="dustbin"
     >
-      <img width="100" height="200" cobject-fit="cover" src={backgroundImage} alt="" />
+      {/* <img width="100" height="200" cobject-fit="cover" src={backgroundImage} alt="" /> */}
+      {/* //бомж контейнер */}
+      {binName !== 8 ? <img width="100" height="200" cobject-fit="cover" src={backgroundImage} alt="" /> : null}
       {isActive && 'Бросай'}
     </div>
   );
