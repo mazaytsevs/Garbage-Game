@@ -2,11 +2,14 @@ import React, { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './nav.module.css';
-import Modal from '../Forms/Modal/Modal';
+import Modal from '../Forms/Modal/ModalReg';
+import ModalLog from '../Forms/Modal/ModalLog';
 
 function Navbar() {
   const user = useSelector((state) => state.user);
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenLog, setIsOpenLog] = useState(false);
+
   return (
     <div className={styles.backAuth}>
       <div className={styles.back2Auth}>
@@ -19,7 +22,7 @@ function Navbar() {
                 <ul>
                   {user ? (
                     <>
-                      <li className={styles.signin}>
+                      <li className={styles.signOut}>
                         <Link
                           to="/auth/logout"
                         >
@@ -27,14 +30,14 @@ function Navbar() {
                         </Link>
                       </li>
 
-                      <li>
+                      <li className={styles.signOut}>
                         <NavLink
                           to="/info"
                         >
                           Info
                         </NavLink>
                       </li>
-                      <li>
+                      <li className={styles.signOut}>
                         <NavLink
                           to="/rules"
                         >
@@ -57,7 +60,7 @@ function Navbar() {
 
                       </li>
                       <li>
-                        <span className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
+                        <span className={styles.primaryBtn} onClick={() => setIsOpenLog(true)}>
                           Вход
                         </span>
                         <img
@@ -65,7 +68,7 @@ function Navbar() {
                           src="/authPics/arrow.png"
                           alt="k"
                         />
-                        {isOpen && <Modal setIsOpen={setIsOpen} />}
+                        {isOpenLog && <ModalLog setIsOpenLog={setIsOpenLog} />}
 
                       </li>
 
