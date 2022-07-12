@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { getProgressThunk } from '../../redux/actions/progress.action';
-import Info from '../Info/Info';
-import Rules from '../Rules/Rules';
-import './gameNav.css';
+import Info from '../components/Info/Info';
+import Rules from '../components/Rules/Rules';
+import { getTimeProgressThunk } from '../redux/actions/timeProgress.action';
 
-function GameNav() {
+// import '../components/GameNav/gameNav.css';
+
+function GameNav2() {
   const dispatch = useDispatch();
-  const progress = useSelector((state) => state.progress);
+  const timeProgress = useSelector((state) => state.timeprogress);
   useEffect(() => {
-    dispatch(getProgressThunk());
+    dispatch(getTimeProgressThunk());
   }, []);
-  console.log('progresssssssssssssssss', progress.score);
+  console.log('timeprogresssssssssssssssss', timeProgress);
   const navigate = useNavigate();
   // MARIA -> повесила на кнокпи стейты чтобы открывать и закрывать модалки с инфой и правилами
   const [isModal, setModal] = React.useState(false);
@@ -21,48 +22,48 @@ function GameNav() {
     <div className="main">
       <div className="header">
         <div>
-          <p className="score">{`Прогресс ${progress.score || 0}/120`}</p>
+          <p className="score">{`Прогресс ${timeProgress.score || 0}/120`}</p>
         </div>
       </div>
       <div className="navbar">
         {/* TODO размер дива ниже должен быть равен ширине икнок справа */}
         <div className="progressBar">
-          {Math.floor(progress.score / 20) > 0 && (
+          {Math.floor(timeProgress.score / 20) > 0 && (
             <img
               className="progressBarTrashCan1"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 1 && (
+          {Math.floor(timeProgress.score / 20) > 1 && (
             <img
               className="progressBarTrashCan2"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 2 && (
+          {Math.floor(timeProgress.score / 20) > 2 && (
             <img
               className="progressBarTrashCan3"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 3 && (
+          {Math.floor(timeProgress.score / 20) > 3 && (
             <img
               className="progressBarTrashCan4"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 4 && (
+          {Math.floor(timeProgress.score / 20) > 4 && (
             <img
               className="progressBarTrashCan5"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 5 && (
+          {Math.floor(timeProgress.score / 20) > 5 && (
             <img
               className="progressBarTrashCan6"
               src="/gameNavPic/trashcan.png"
@@ -109,4 +110,4 @@ function GameNav() {
   );
 }
 
-export default GameNav;
+export default GameNav2;
