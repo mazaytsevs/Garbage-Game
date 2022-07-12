@@ -30,41 +30,42 @@ const Container = memo(({ trash, trashBin }) => {
 
   return (
     <div className="gameBoard">
-      <p>{`ты набрал ${score} баллов`}</p>
-
-      <div className="trashBag" onClick={showTrash}>
-        <img
-          className="bag"
-          src={
-            flag ? '/trashbag/trashbagOPEN.png' : '/trashbag/trashbagCLOSED.png'
-          }
-          alt="bag"
-          width="200"
-        />
-      </div>
-
-      {flag ? (
-        <div
-          className="photo-album"
-          style={{ overflow: 'hidden', clear: 'both' }}
-        >
-          {trashSorted?.map((el, index) => (
-            <Box
-              score={el.score}
-              // setScore={setScore}
-              setVisible={setVisible}
-              visible={visible[el.id]}
-              id={el.id}
-              key={el.id}
-              name={el.trash_name}
-              itemType={el.trash_can_id}
-              className={index}
-              image={el.trash_img_src}
-            />
-          ))}
+      <div className="garbageForSort">
+        <div className="trashBag" onClick={showTrash}>
+          <img
+            className="bag"
+            src={
+              flag
+                ? '/trashbag/trashbagOPEN.png'
+                : '/trashbag/trashbagCLOSED.png'
+            }
+            alt="bag"
+            width="200"
+          />
         </div>
-      ) : null}
 
+        {flag ? (
+          <div
+            className="photo-album"
+            style={{ overflow: 'hidden', clear: 'both' }}
+          >
+            {trashSorted?.map((el, index) => (
+              <Box
+                score={el.score}
+                // setScore={setScore}
+                setVisible={setVisible}
+                visible={visible[el.id]}
+                id={el.id}
+                key={el.id}
+                name={el.trash_name}
+                itemType={el.trash_can_id}
+                className={index}
+                image={el.trash_img_src}
+              />
+            ))}
+          </div>
+        ) : null}
+      </div>
       <div className="bins">
         <div className="GameBins" style={{ display: 'flex' }}>
           {trashBin?.map((el) => (

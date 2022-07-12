@@ -1,6 +1,9 @@
 /* .gameBoard {
   display: inline-flex;
 } */
+.garbageForSort {
+  display: inline-flex;
+}
 
 /* стили для мусора */
 /* body {
@@ -51,9 +54,12 @@ div img {
   margin: 0;
   max-width: 70em;
   height: 450px;
-  margin-top: 5em;
+  margin-top: 4em;
+  margin-left: 6em;
   min-width: 800px;
   max-width: 900px;
+  display: flex;
+  justify-content: center;
 }
 .photo-album .polaroid {
   position: absolute;
@@ -80,8 +86,8 @@ div img {
   width: 300px;
   padding: 20px 20px 30px 20px;
   font-size: 1em;
-} */
-/* .photo-album .large img {
+}
+.photo-album .large img {
   width: 300px;
   height: 340px;
 } */
@@ -202,8 +208,8 @@ div:focus {
 }
 
 .GameBins {
-  position: relative;
-  bottom: -230px; left: 40px;
+  position: fixed;
+  bottom: 80px; left: 40px;
 }
 
 .gameBinsDno {
@@ -224,5 +230,9 @@ div:focus {
 }
 
 .trashBag {
-  
+  display: flex;
+  align-items: center;
+  margin-top: 6rem;
+  margin-left: 3rem;
+
 }

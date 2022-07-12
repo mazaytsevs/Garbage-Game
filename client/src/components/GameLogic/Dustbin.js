@@ -22,7 +22,6 @@ export function Dustbin(props) {
 
       drop: (item) => {
         if (item.itemType === binName) {
-          setScore(score + 1);
           dispatch(postProgressThunk(item));
           setTrashSorted(((prev) => {
             dispatch(deleteTrashThunk(item.id));
