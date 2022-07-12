@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
 import { Box } from '../components/GameLogic/Box';
-import { Dustbin } from '../components/GameLogic/Dustbin';
+import { Dustbin2 } from './Dustbin2';
 // import { ItemTypes } from './ItemTypes';
 import '../components/GameLogic/GameTrash.css';
 import ModalHardMode from './ModalHardMode';
@@ -52,7 +52,7 @@ const Container = memo(({ trash, trashBin }) => {
           {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
           {trash?.map((el, index) => (
             <Box
-              score={score}
+              score={el.score}
               setScore={setScore}
               setVisible={setVisible}
               visible={visible[el.id]}
@@ -75,7 +75,7 @@ const Container = memo(({ trash, trashBin }) => {
               key={el.id}
               style={{ overflow: 'hidden', clear: 'both' }}
             >
-              <Dustbin
+              <Dustbin2
                 score={score}
                 setScore={setScore}
                 binName={el.id}

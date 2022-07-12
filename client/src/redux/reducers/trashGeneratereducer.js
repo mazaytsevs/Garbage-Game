@@ -10,6 +10,7 @@ const trashGeneratereducer = (state = initialState, action) => {
     case GENERATE_TRASH:
       return payload;
     case DELETE_TRASH:
+
       console.log('STATEEE!', state.trashes);
       console.log('PAYLOAAAD', payload);
 
@@ -19,6 +20,7 @@ const trashGeneratereducer = (state = initialState, action) => {
       };
       console.log(newState);
       return newState;
+
     default:
       return state;
   }

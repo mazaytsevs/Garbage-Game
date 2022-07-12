@@ -18,7 +18,6 @@ import ModalHardMode from './hardMode/ModalHardMode';
 import Container2 from './hardMode/Container2';
 import Game2 from './hardMode/Game2';
 
-
 function App() {
   const dispatch = useDispatch();
 

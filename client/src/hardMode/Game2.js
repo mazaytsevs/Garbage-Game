@@ -11,6 +11,7 @@ import Rules from '../components/Rules/Rules';
 import '../components/Game/game.css';
 import Timer from './Timer';
 import ModalHardMode from './ModalHardMode';
+import { getTimeProgressThunk } from '../redux/actions/timeProgress.action';
 
 function Game() {
   // const [initialMinute, setInitialMinute] = useState(0);
@@ -65,11 +66,12 @@ function Game() {
     // setBagPic('/trashBins/dangerous.png');
   };
 
-  const progress = useSelector((state) => state.progress);
+  const timeProgress = useSelector((state) => state.timeProgress);
   useEffect(() => {
-    dispatch(getProgressThunk());
+    dispatch(getTimeProgressThunk());
+    console.log('------>', timeProgress);
   }, []);
-  const { background } = progress;
+  // const { background } = timeProgress;
   // для лоудера
   const [loading, setLoading] = useState(true);
   const componentDidMount = () => {
@@ -83,7 +85,7 @@ function Game() {
 
       {loading ? (<Load />)
         : (
-          <div className={background}>
+          <div>
             {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
             <Timer props={{ initialMinute, initialSeconds, setIsOpen }} /> */}
 
