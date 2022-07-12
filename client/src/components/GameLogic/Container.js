@@ -19,14 +19,15 @@ const Container = memo(({ trash, trashBin }) => {
   // const [visible, setVisible] = useState(visibilityInitState && '');
   // const [score, setScore] = useState(0);
   const [visible, setVisible] = useState(visibilityInitState);
+  const [trashSorted, setTrashSorted] = useState(trash);
 
   const [flag, setFlag] = useState(false);
   const showTrash = () => {
     setFlag(!flag);
+    setTrashSorted(trash);
   };
 
   // для удаления мусора
-  const [trashSorted, setTrashSorted] = useState(trash);
 
   return (
     <div className="gameBoard">

@@ -226,3 +226,38 @@ div:focus {
 .trashBag {
   
 }
+
+/* для крысы начало */
+.sprite-container {
+  height: 100vh; /*100% высоты экрана*/
+  display: flex;
+  align-items: center; /*чтобы картинка была по центру*/
+}
+
+.sprite-image {
+  height: 105px; /*высота спрайта (высота одного кадра)*/
+  width: 100px; /*ширина спрайта (ширина одного кадра)*/
+  background: url(https://d-nik.pro/images/stories/santa.jpg) 0px 0px; /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+  animation: play 0.8s steps(6) infinite, /*анимация называется play, скорость анимации 0.8s, нужно сделать 6 шагов (6 кадров), анимация происходит непрерывно (зациклено) - infinite*/
+  fly1 7s ease ;
+   /*ещё одна анимация, длительностью 15s, линейный, зацикленый*/
+  animation-delay: 2s;
+  position: absolute; 
+  left: 0;
+}
+
+@keyframes fly1 {
+  0% {
+    -webkit-transform: translate(130px, 45px);
+    transform: translate(130px, 45px);
+  }
+  50%{
+    -webkit-transform: translate(1170px, 227px) scaleX(-1);
+    transform: translate(1170px, 227px) scaleX(-1);
+  }
+  100% {
+    -webkit-transform: translate(130px, 45px);
+    transform: translate(130px, 45px);
+  }
+}
+/* конец крысы */
