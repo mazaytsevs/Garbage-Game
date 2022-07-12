@@ -45,7 +45,7 @@ function Rules({ rulesModal, setRulesModal }) {
               Этот мусор нужно рассортировать по контейнерам внизу экрана.
             </p>
             {trashCans?.map((el) => (
-              <div className="cansForRules">
+              <div className="cansForRules" key={el.id}>
                 <img width="339" height="385" src={el.trash_can_img_src} alt={el.trash_can_name} />
                 <span>{el.trash_can_info}</span>
               </div>

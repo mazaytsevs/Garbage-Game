@@ -25,6 +25,9 @@ const Container = memo(({ trash, trashBin }) => {
     setFlag(!flag);
   };
 
+  // для удаления мусора
+  const [trashSorted, setTrashSorted] = useState(trash);
+
   return (
     <div className="gameBoard">
       <p>{`ты набрал ${score} баллов`}</p>
@@ -39,19 +42,20 @@ const Container = memo(({ trash, trashBin }) => {
           width="200"
         />
       </div>
+
       {flag ? (
         <div
           className="photo-album"
           style={{ overflow: 'hidden', clear: 'both' }}
         >
-          {trash?.map((el, index) => (
+          {trashSorted?.map((el, index) => (
             <Box
               score={score}
               setScore={setScore}
               setVisible={setVisible}
               visible={visible[el.id]}
               id={el.id}
-              key={el.name}
+              key={el.id}
               name={el.trash_name}
               itemType={el.trash_can_id}
               className={index}
@@ -74,6 +78,9 @@ const Container = memo(({ trash, trashBin }) => {
                 binName={el.id}
                 backgroundImage={el.trash_can_img_src}
                 itemType={el.id}
+                trashSorted={trashSorted}
+                setTrashSorted={setTrashSorted}
+                key={el.id}
               />
             </div>
           ))}
