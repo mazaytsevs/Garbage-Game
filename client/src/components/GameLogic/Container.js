@@ -17,7 +17,7 @@ const Container = memo(({ trash, trashBin }) => {
 
   const visibilityInitState = getVisibilityInitState();
   // const [visible, setVisible] = useState(visibilityInitState && '');
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
   const [visible, setVisible] = useState(visibilityInitState);
 
   const [flag, setFlag] = useState(false);
@@ -30,7 +30,7 @@ const Container = memo(({ trash, trashBin }) => {
 
   return (
     <div>
-      <p>{`ты набрал ${score} баллов`}</p>
+      {/* <p>{`ты набрал ${score} баллов`}</p> */}
 
       <div className="trashBag" onClick={showTrash}>
         <img
@@ -50,8 +50,8 @@ const Container = memo(({ trash, trashBin }) => {
         >
           {trashSorted?.map((el, index) => (
             <Box
-              score={score}
-              setScore={setScore}
+              score={el.score}
+              // setScore={setScore}
               setVisible={setVisible}
               visible={visible[el.id]}
               id={el.id}
@@ -73,8 +73,8 @@ const Container = memo(({ trash, trashBin }) => {
               style={{ overflow: 'hidden', clear: 'both' }}
             >
               <Dustbin
-                score={score}
-                setScore={setScore}
+                // score={score}
+                // setScore={setScore}
                 binName={el.id}
                 backgroundImage={el.trash_can_img_src}
                 itemType={el.id}

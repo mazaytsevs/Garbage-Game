@@ -7,7 +7,7 @@ function PrivateRoute({ children }) {
   const auth = useSelector((state) => state.user);
   console.log(auth);
   return (
-    auth ? children : <Navigate to="/auth/reg" />
+    auth ? children : <Navigate to="/" />
 
   );
 }

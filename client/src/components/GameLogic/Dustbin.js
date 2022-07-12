@@ -1,26 +1,17 @@
-/* eslint-disable object-curly-newline */
-/* eslint-disable semi */
-import React, { useSelector } from 'react';
-import { useDrop } from 'react-dnd';
-// import { ItemTypes } from './ItemTypes';
+import './Dustbin.css'; // стили перенесла сюда!!!
 
-const style = {
-  height: '12rem',
-  width: '12rem',
-  marginRight: '1.5rem',
-  marginBottom: '1.5rem',
-  color: 'white',
-  // padding: '1rem',
-  textAlign: 'center',
-  fontSize: '1rem',
-  lineHeight: 'normal',
-  float: 'left',
-};
+import React, { useSelector } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { useDrop } from 'react-dnd';
+import { postProgressThunk } from '../../redux/actions/progress.action';
+
 // комопонент корзины
 // eslint-disable-next-line import/prefer-default-export
 export function Dustbin(props) {
+  const dispatch = useDispatch();
   // eslint-disable-next-line object-curly-newline
-  const { backgroundImage, binName, score, setScore, trashSorted, setTrashSorted } = props;
+  const { backgroundImage, binName, score, trashSorted, setTrashSorted } = props;
   // console.log('binName', binName);
   const [{ canDrop, isOver }, drop] = useDrop(
     () => ({
@@ -29,10 +20,9 @@ export function Dustbin(props) {
       // drop сработает когда бросаем итем в корзину, тут добавь удаление итемки, передаю сюда пропсом функцию установки визибл для итема и вызови в ondrop
 
       drop: (item) => {
-        console.log('======================', item)
         if (item.itemType === binName) {
-          setScore(score + 1);
-          setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)))
+          dispatch(postProgressThunk(item));
+          setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)));
         }
         return { name: binName };
       },
@@ -40,9 +30,7 @@ export function Dustbin(props) {
         isOver: monitor.isOver(),
         canDrop: monitor.canDrop(),
       }),
-      // eslint-disable-next-line max-len
     }),
-    [setScore, score],
   ); // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
 
   const isActive = canDrop && isOver;
@@ -55,7 +43,7 @@ export function Dustbin(props) {
     <div
       ref={drop}
       style={{
-        ...style,
+        // ...style,
         boxShadow,
         // backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'no-repeat',
