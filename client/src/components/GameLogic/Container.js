@@ -29,8 +29,8 @@ const Container = memo(({ trash, trashBin }) => {
   const [trashSorted, setTrashSorted] = useState(trash);
 
   return (
-    <div>
-      {/* <p>{`ты набрал ${score} баллов`}</p> */}
+    <div className="gameBoard">
+      <p>{`ты набрал ${score} баллов`}</p>
 
       <div className="trashBag" onClick={showTrash}>
         <img
