@@ -41,15 +41,13 @@ router.get('/homeless', checkSession, async (req, res) => {
 });
 
 router.post('/answer', checkSession, async (req, res) => {
-  const { trash_id, id, score } = req.body;
+  const { trash_id, score } = req.body;
   try {
-    if (trash_id === id) {
-      await TimeProgress.create({
-        user_id: req.session.user.id,
-        trash_id,
-        score,
-      });
-    }
+    await TimeProgress.create({
+      user_id: req.session.user.id,
+      trash_id,
+      score,
+    });
     res.sendStatus(200);
   } catch (err) {
     console.log('Не удалось добавить ответ в прогресс', err);
