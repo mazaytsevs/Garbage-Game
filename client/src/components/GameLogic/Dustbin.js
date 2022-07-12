@@ -57,8 +57,18 @@ export function Dustbin(props) {
 
       {/* <img width="100" height="200" cobject-fit="cover" src={backgroundImage} alt="" /> */}
       {/* //бомж контейнер */}
+      {/* {binName !== 8
+        ? (
+          <img
+            width="100"
+            height="200"
+            cobject-fit="cover"
+            src={backgroundImage}
+            alt=""
+          />
+        ) : null} */}
 
-      <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" />
+      <img width="200" height="250" object-fit="cover" src={backgroundImage} alt="" />
 
       {isActive && 'Бросай'}
     </div>
