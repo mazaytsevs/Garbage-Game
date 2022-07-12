@@ -62,7 +62,7 @@ export const signIn = (payload, navigate) => async (dispatch) => {
     dispatch(setUser(user));
     navigate('/');
   } else {
-    navigate('/auth/login');
+    navigate('/');
   }
   dispatch(disableLoader());
 };

@@ -26,8 +26,9 @@ const Container = memo(({ trash, trashBin }) => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div>
       <p>{`ты набрал ${score} баллов`}</p>
+
       <div className="trashBag" onClick={showTrash}>
         <img
           className="bag"
@@ -55,8 +56,30 @@ const Container = memo(({ trash, trashBin }) => {
               image={el.trash_img_src}
             />
           ))}
+
         </div>
-      ) : null}
+        {flag ? (
+          <div
+            className="photo-album"
+            style={{ overflow: 'hidden', clear: 'both' }}
+          >
+            {trash?.map((el, index) => (
+              <Box
+                score={score}
+                setScore={setScore}
+                setVisible={setVisible}
+                visible={visible[el.id]}
+                id={el.id}
+                key={el.name}
+                name={el.trash_name}
+                itemType={el.trash_can_id}
+                className={index}
+                image={el.trash_img_src}
+              />
+            ))}
+          </div>
+        ) : null}
+      </div>
       <div className="bins">
         <div className="GameBins" style={{ display: 'flex' }}>
           {trashBin?.map((el) => (
@@ -75,7 +98,6 @@ const Container = memo(({ trash, trashBin }) => {
             </div>
           ))}
         </div>
-        <div className="gameBinsDno" />
       </div>
     </div>
   );

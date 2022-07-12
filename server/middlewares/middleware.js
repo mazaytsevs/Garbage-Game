@@ -13,7 +13,7 @@ const checkSession = (req, res, next) => {
 const checkLogin = (req, res, next) => {
   console.log(req.session);
   // ПРОВЕРКА АВТОРИЗАЦИИ ЮЗЕРА
-  if (req.session.user) {
+  if (!req.session.user) {
     return res.sendStatus(401);
   }
   return next();

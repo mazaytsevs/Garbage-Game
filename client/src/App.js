@@ -14,21 +14,20 @@ import GameRat from './components/GameRat/GameRat';
 import Container from './components/GameLogic/Container';
 
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(checkAuth());
-  // }, []);
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, []);
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Navbar />} />
-        <Route path="/start" element={<PrivateRoute>Start</PrivateRoute>} />
-        <Route path="/auth/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
         <Route path="/auth/reg" element={<Registration />} />
         <Route path="/auth/login" element={<Login />} />
-        <Route path="/game" element={<Game />} />
-        {/* <Route path="/gamerat" element={<Container />} /> */}
+        <Route path="/auth/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
+        <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} />
+        <Route path="/gamerat" element={<GameRat />} />
       </Routes>
     </div>
   );

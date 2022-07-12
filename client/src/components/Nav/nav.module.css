@@ -69,6 +69,17 @@ li {
   cursor: pointer;
 
 }
+.signOut{
+  font-family: 'Amatic SC', cursive;
+  font-size: 60px;
+  
+  background: linear-gradient(354.28deg, #8A939A 5.07%, #FFFFFF 86.31%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow: 0px 15px 4px rgba(0, 0, 0, 0.25);
+}
 .arrow{
   height: 70px;
   width: 60px;
