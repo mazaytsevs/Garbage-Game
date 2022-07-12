@@ -8,6 +8,8 @@ router.get('/check', checkLogin, (req, res) => {
     id: req.session.user.id,
     name: req.session.user.name,
   };
+  console.log('enter');
+  
   try {
     res.json(user); // отправляет зарегестрированного юзера и id если такой залогинен
   } catch (err) {
@@ -49,7 +51,7 @@ router.post('/reg', async (req, res) => {
   }
 }); // регистрация
 
-router.post('/login', checkLogin, async (req, res) => {
+router.post('/login', async (req, res) => {
   const {
     email,
     password,
