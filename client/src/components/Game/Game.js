@@ -87,7 +87,6 @@ function Game() {
               <GameNav />
             </div>
             <div>
-              {/* <GameRat /> */}
               <Container
                 trash={randomTrashes}
                 trashBin={trashWithoutMan}
@@ -97,15 +96,7 @@ function Game() {
               <GameBomzh />
             </div>
           </div>
-          <div>
-            {/* <GameRat /> */}
-            <Container trash={randomTrashes} trashBin={trashWithoutMan} />
-          </div>
-          <div>
-            <GameBomzh />
-          </div>
-        </div>
-      )}
+        )}
     </div>
   );
 }
