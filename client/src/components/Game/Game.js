@@ -78,24 +78,13 @@ function Game() {
   const [rulesModal, setRulesModal] = React.useState(true);
   return (
     <div>
-
-      {loading ? (<Load />)
-        : (
-          <div className={background}>
-            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
-            <div>
-              <GameNav />
-            </div>
-            <div>
-              {/* <GameRat /> */}
-              <Container
-                trash={randomTrashes}
-                trashBin={trashWithoutMan}
-              />
-            </div>
-            <div>
-              <GameBomzh />
-            </div>
+      {loading ? (
+        <Load />
+      ) : (
+        <div className={background}>
+          <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+          <div>
+            <GameNav />
           </div>
           <div>
             {/* <GameRat /> */}
