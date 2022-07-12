@@ -37,6 +37,7 @@ const Container = memo(({ trash, trashBin }) => {
           width="200"
         />
       </div>
+
       {flag ? (
         <div
           className="photo-album"
@@ -56,30 +57,9 @@ const Container = memo(({ trash, trashBin }) => {
               image={el.trash_img_src}
             />
           ))}
-
         </div>
-        {flag ? (
-          <div
-            className="photo-album"
-            style={{ overflow: 'hidden', clear: 'both' }}
-          >
-            {trash?.map((el, index) => (
-              <Box
-                score={score}
-                setScore={setScore}
-                setVisible={setVisible}
-                visible={visible[el.id]}
-                id={el.id}
-                key={el.name}
-                name={el.trash_name}
-                itemType={el.trash_can_id}
-                className={index}
-                image={el.trash_img_src}
-              />
-            ))}
-          </div>
-        ) : null}
-      </div>
+      ) : null}
+
       <div className="bins">
         <div className="GameBins" style={{ display: 'flex' }}>
           {trashBin?.map((el) => (
