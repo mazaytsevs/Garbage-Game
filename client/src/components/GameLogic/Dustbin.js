@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import { useDrop } from 'react-dnd';
 import { postProgressThunk } from '../../redux/actions/progress.action';
+import { deleteTrashThunk } from '../../redux/actions/actions';
 
 // комопонент корзины
 // eslint-disable-next-line import/prefer-default-export
@@ -22,7 +23,8 @@ export function Dustbin(props) {
       drop: (item) => {
         if (item.itemType === binName) {
           dispatch(postProgressThunk(item));
-          setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)));
+          dispatch(deleteTrashThunk(item.id));
+          // setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)));
         }
         return { name: binName };
       },
