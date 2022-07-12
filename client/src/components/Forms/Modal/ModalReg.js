@@ -32,6 +32,11 @@ function Modal({ setIsOpen }) {
         <div className={styles.modal}>
           <div>
             <form onSubmit={submitHandler}>
+              <div className={styles.no}>
+                <button type="submit" onClick={() => setIsOpen(false)} className={styles.no2}>
+                  <img src="./authPics/no.png" alt="yes" />
+                </button>
+              </div>
               <legend className={styles.headIn}>Регистрация</legend>
               <div>
                 <input className={styles.input1} onChange={changeHandler} value={userSignUp.email} type="email" name="email" placeholder="Email" />

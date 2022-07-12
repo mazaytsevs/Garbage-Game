@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 import { Box } from './Box';
 import { Dustbin } from './Dustbin';
-import { ItemTypes } from './ItemTypes';
+// import { ItemTypes } from './ItemTypes';
 import './GameTrash.css';
 
 const Container = memo(({ trash, trashBin }) => {
@@ -16,26 +16,28 @@ const Container = memo(({ trash, trashBin }) => {
   }; // начальное состояние видимости, по дефолту тру, передавай это в компонент бокс, и если у соответствующего итема будет false то присваивай стиль display: none
 
   const visibilityInitState = getVisibilityInitState();
-
-  const [visible, setVisible] = useState(visibilityInitState && '');
+  // const [visible, setVisible] = useState(visibilityInitState && '');
   const [score, setScore] = useState(0);
+  const [visible, setVisible] = useState(visibilityInitState);
 
   const [flag, setFlag] = useState(false);
   const showTrash = () => {
     setFlag(!flag);
-    // setBagPic('/trashBins/dangerous.png');
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div>
       <p>{`ты набрал ${score} баллов`}</p>
+
       <div className="trashBag" onClick={showTrash}>
         <img
           className="bag"
-          src={flag ? '/trashbag/openTrashBag.png' : '/trashbag/trashbag.png'}
+          src={flag ? '/trashbag/trashbagOPEN.png' : '/trashbag/trashbagCLOSED.png'}
           alt="bag"
+          width="200"
         />
       </div>
+
       {flag ? (
         <div
           className="photo-album"
@@ -75,7 +77,6 @@ const Container = memo(({ trash, trashBin }) => {
             </div>
           ))}
         </div>
-        <div className="gameBinsDno" />
       </div>
     </div>
   );

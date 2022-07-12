@@ -16,7 +16,7 @@ const style = {
 export const Box = function Box(props) {
   const { name, itemType, visible, setVisible, setScore, score, className, image } = props;
   // console.log(name, itemType, visible, setVisible, setScore, score)
-  console.log('itemType', itemType);
+  // console.log('itemType', itemType);
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'box',
     item: { name, itemType },
@@ -30,7 +30,7 @@ export const Box = function Box(props) {
     }),
   }));
   const opacity = isDragging ? 0.4 : 1;
-  const nashClass = `medium polaroid img${className + 1}`;
+  const nashClass = `small polaroid img${className + 1}`;
   return (
     <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
       {name}
