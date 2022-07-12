@@ -24,8 +24,10 @@ export function Dustbin(props) {
         if (item.itemType === binName) {
           setScore(score + 1);
           dispatch(postProgressThunk(item));
-          dispatch(deleteTrashThunk(item.id));
-          // setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)));
+          setTrashSorted(((prev) => {
+            dispatch(deleteTrashThunk(item.id));
+            return prev.filter((el) => el.id !== item.id);
+          }));
         }
         return { name: binName };
       },

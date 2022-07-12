@@ -12,7 +12,7 @@ function GameNav() {
   useEffect(() => {
     dispatch(getProgressThunk());
   }, []);
-  console.log('progresssssssssssssssss', progress);
+  // console.log('progresssssssssssssssss', progress);
   const navigate = useNavigate();
   // MARIA -> повесила на кнокпи стейты чтобы открывать и закрывать модалки с инфой и правилами
   const [isModal, setModal] = React.useState(false);
@@ -20,107 +20,92 @@ function GameNav() {
   return (
     <div className="main">
       <div className="header">
-        <div className="navbar">
-          {/* TODO размер дива ниже должен быть равен ширине икнок справа */}
-          <div />
-          <div>
-            Прогресс
-            {' '}
-            {progress.score || 0}
-            /120
-          </div>
-          <div className="progressBar">
-            {(Math.floor(progress.score / 20) > 0)
-            && (
+        <div width="294px" hight="120">
+          {' '}
+        </div>
+        <div>
+          <p>{`Прогресс ${progress.score || 0}/120`}</p>
+        </div>
+      </div>
+      <div className="navbar">
+        {/* TODO размер дива ниже должен быть равен ширине икнок справа */}
+        <div width="294px" hight="120" />
+        <div className="progressBar">
+          {Math.floor(progress.score / 20) > 0 || (
             <img
               className="progressBarTrashCan1"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
-            )}
-            {(Math.floor(progress.score / 20) > 1)
-            && (
+          )}
+          {Math.floor(progress.score / 20) > 1 || (
             <img
               className="progressBarTrashCan2"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
-            )}
-            {(Math.floor(progress.score / 20) > 2)
-            && (
+          )}
+          {Math.floor(progress.score / 20) > 2 || (
             <img
               className="progressBarTrashCan3"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
-            )}
-            {(Math.floor(progress.score / 20) > 3)
-            && (
+          )}
+          {Math.floor(progress.score / 20) > 3 || (
             <img
               className="progressBarTrashCan4"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
-            )}
-            {(Math.floor(progress.score / 20) > 4)
-            && (
+          )}
+          {Math.floor(progress.score / 20) > 4 || (
             <img
               className="progressBarTrashCan5"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
-            )}
-            {(Math.floor(progress.score / 20) > 5)
-            && (
+          )}
+          {Math.floor(progress.score / 20) > 5 || (
             <img
               className="progressBarTrashCan6"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
-            )}
+          )}
+        </div>
+        <div className="icons">
+          <div className="rules">
+            <input
+              type="image"
+              className="rulesButton"
+              alt="rules"
+              src="/gameNavPic/rules.png"
+              onClick={() => setRulesModal(true)}
+            />
+            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
           </div>
-          <div className="icons">
-            <div className="rules">
-              <span
-                type="button"
-                onClick={() => setRulesModal(true)}
-              >
-                <img
-                  className="smallIcon"
-                  src="/gameNavPic/rules.png"
-                  alt="rules"
-                />
-              </span>
-              <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
-            </div>
-            <div className="info">
-              <span
-                type="button"
-                onClick={() => setModal(true)}
-              >
-                <img
-                  className="smallIcon"
-                  src="/gameNavPic/info.png"
-                  alt="info"
-                />
-              </span>
-              <Info isModal={isModal} setModal={setModal} />
-            </div>
-            <div className="exit">
-              <span
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  navigate('/');
-                }}
-              >
-                <img
-                  className="smallIcon"
-                  src="/gameNavPic/logout.png"
-                  alt="exit"
-                />
-              </span>
-            </div>
+          <div className="info">
+            <input
+              type="image"
+              className="infoButton"
+              alt="info"
+              src="/gameNavPic/info.png"
+              onClick={() => setModal(true)}
+            />
+            <Info isModal={isModal} setModal={setModal} />
+          </div>
+          <div className="logout">
+            <input
+              type="image"
+              className="logoutButton"
+              alt="exit"
+              src="/gameNavPic/logout.png"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/');
+              }}
+            />
           </div>
         </div>
       </div>
