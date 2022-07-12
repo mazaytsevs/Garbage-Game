@@ -14,12 +14,12 @@ const style = {
 };
 // eslint-disable-next-line import/prefer-default-export
 export const Box = function Box(props) {
-  const { name, itemType, visible, setVisible, setScore, score, className, image } = props;
+  const { name, itemType, id, visible, setVisible, score, className, image } = props;
   // console.log(name, itemType, visible, setVisible, setScore, score)
   // console.log('itemType', itemType);
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'box',
-    item: { name, itemType },
+    item: { name, itemType, id, score },
     // eslint-disable-next-line max-len
     end: (item, monitor) => { // срабатывает когда заканчиваем перетаскивать, можно добавить логику сюда
       const dropResult = monitor.getDropResult();

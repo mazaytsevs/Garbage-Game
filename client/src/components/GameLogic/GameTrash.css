@@ -198,8 +198,8 @@ div:focus {
 }
 
 .GameBins {
-  position: absolute;
-  width: 70%;
+  position: relative;
+  bottom: -280px; left: 40px;
 }
 
 .gameBinsDno {

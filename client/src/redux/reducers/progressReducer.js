@@ -1,4 +1,4 @@
-import { GET_PROGRESS } from '../types/types';
+import { GET_PROGRESS, POST_PROGRESS } from '../types/types';
 
 const initialState = {};
 
@@ -14,3 +14,5 @@ const progressReducer = (state = initialState, action) => {
 };
 
 export default progressReducer;
+
+// setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)))
