@@ -18,7 +18,7 @@ function Game() {
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
 
   // получаем мусор
-  const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
+  // const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
   // для обращения к бэку
   const dispatch = useDispatch();
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
@@ -54,11 +54,14 @@ function Game() {
   const randomTrashes = getTrashes(trashes);
   // console.log('RANDOOOOOOM', getTrashes(trashes));
 
-  const [flag, setFlag] = useState(false);
-  const showTrash = () => {
-    setFlag(!flag);
-    // setBagPic('/trashBins/dangerous.png');
-  };
+  // для мусора чтобы удалять
+  // const [trashSorted, setTrashSorted] = useState(randomTrashes);
+
+  // const [flag, setFlag] = useState(false);
+  // const showTrash = () => {
+  //   setFlag(!flag);
+  //   // setBagPic('/trashBins/dangerous.png');
+  // };
 
   const progress = useSelector((state) => state.progress);
   useEffect(() => {
@@ -75,13 +78,24 @@ function Game() {
   const [rulesModal, setRulesModal] = React.useState(true);
   return (
     <div>
-      {loading ? (
-        <Load />
-      ) : (
-        <div className={background}>
-          <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
-          <div>
-            <GameNav />
+
+      {loading ? (<Load />)
+        : (
+          <div className={background}>
+            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+            <div>
+              <GameNav />
+            </div>
+            <div>
+              {/* <GameRat /> */}
+              <Container
+                trash={randomTrashes}
+                trashBin={trashWithoutMan}
+              />
+            </div>
+            <div>
+              <GameBomzh />
+            </div>
           </div>
           <div>
             {/* <GameRat /> */}
