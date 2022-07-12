@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { generateTrashThunk } from '../../redux/actions/actions';
-import { getProgressThunk } from '../../redux/actions/progress.action';
-import GameBomzh from '../GameBomzh/GameBomzh';
-import Container from '../GameLogic/Container';
-import GameNav from '../GameNav/GameNav';
-import GameRat from '../GameRat/GameRat';
-import Load from '../loader/loader';
-import Rules from '../Rules/Rules';
-import './game.css';
+import { generateTrashThunk } from '../redux/actions/actions';
+import { getProgressThunk } from '../redux/actions/progress.action';
+import GameBomzh from '../components/GameBomzh/GameBomzh';
+import Container2 from './Container2';
+import GameNav from '../components/GameNav/GameNav';
+import GameRat from '../components/GameRat/GameRat';
+import Load from '../components/loader/loader';
+import Rules from '../components/Rules/Rules';
+import '../components/Game/game.css';
+import Timer from './Timer';
+import ModalHardMode from './ModalHardMode';
 
 function Game() {
+  // const [initialMinute, setInitialMinute] = useState(0);
+  // const [initialSeconds, setInitialSeconds] = useState(10);
+  // const [isOpen, setIsOpen] = useState(false);
   // получаем мусорные баки
   const trashBinsFromDB = useSelector(
     (state) => state.trashGenerate?.trashCans,
@@ -75,16 +80,20 @@ function Game() {
   const [rulesModal, setRulesModal] = React.useState(true);
   return (
     <div>
+
       {loading ? (<Load />)
         : (
           <div className={background}>
-            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+            {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
+            <Timer props={{ initialMinute, initialSeconds, setIsOpen }} /> */}
+
+            {/* <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} /> */}
             <div>
               <GameNav />
             </div>
             <div>
               {/* <GameRat /> */}
-              <Container trash={randomTrashes} trashBin={trashWithoutMan} />
+              <Container2 trash={randomTrashes} trashBin={trashWithoutMan} />
             </div>
             <div>
               <GameBomzh />
