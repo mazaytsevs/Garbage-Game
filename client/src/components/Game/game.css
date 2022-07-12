@@ -1,7 +1,23 @@
-.backGround {
+.lvl-1 {
   position: absolute;
-  width: 1920px;
-  height: 976px;
-  background: url('../../../public/backBround/image\ 30.png');
-  background-size: 1920px 850px;
+  width: 1442px;
+  height: 715px;
+  background: url('../../../public/backBround/level-1.png');
+  background-size: 100%;
+}
+
+.lvl-2 {
+  position: absolute;
+  width: 1442px;
+  height: 715px;
+  background: url('../../../public/backBround/level-2.png');
+  background-size: 100%;
+}
+
+.lvl-3 {
+  position: absolute;
+  width: 1442px;
+  height: 715px;
+  background: url('../../../public/backBround/level-3.png');
+  background-size: 100%;
 }

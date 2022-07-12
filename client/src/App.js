@@ -10,6 +10,8 @@ import Registration from './components/Forms/Reg/Registration';
 import Login from './components/Forms/Login/Login';
 import { checkAuth } from './redux/actions/user.action';
 import Logout from './components/Forms/Logout/Logout';
+import GameRat from './components/GameRat/GameRat';
+import Container from './components/GameLogic/Container';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,31 +23,11 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Navbar />} />
-        <Route path="/start" element={<PrivateRoute>Start</PrivateRoute>} />
-        {/* <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} /> */}
-        <Route
-          path="/rules"
-          element={(
-            <PrivateRoute>
-              <Rules />
-            </PrivateRoute>
-            )}
-        />
-        <Route
-          path="/info"
-          element={(
-            <PrivateRoute>
-              <Info />
-            </PrivateRoute>
-)}
-        />
-
-        <Route path="/auth/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
         <Route path="/auth/reg" element={<Registration />} />
         <Route path="/auth/login" element={<Login />} />
-        <Route path="/game" element={<Game />} />
-        {/* <Route path="/rules" element={<Rules />} />
-        <Route path="/info" element={<Info />} /> */}
+        <Route path="/auth/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
+        <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} />
+        <Route path="/gamerat" element={<GameRat />} />
       </Routes>
     </div>
   );

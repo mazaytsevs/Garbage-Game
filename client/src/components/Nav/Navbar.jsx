@@ -29,19 +29,11 @@ function Navbar() {
                           Выход
                         </Link>
                       </li>
-
                       <li className={styles.signOut}>
                         <NavLink
-                          to="/info"
+                          to="/game"
                         >
-                          Info
-                        </NavLink>
-                      </li>
-                      <li className={styles.signOut}>
-                        <NavLink
-                          to="/rules"
-                        >
-                          Rules
+                          Начать
                         </NavLink>
                       </li>
                     </>
