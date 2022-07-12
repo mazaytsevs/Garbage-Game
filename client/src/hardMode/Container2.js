@@ -1,8 +1,10 @@
 import React, { memo, useState } from 'react';
-import { Box } from './Box';
-import { Dustbin } from './Dustbin';
+import { Box } from '../components/GameLogic/Box';
+import { Dustbin } from '../components/GameLogic/Dustbin';
 // import { ItemTypes } from './ItemTypes';
-import './GameTrash.css';
+import '../components/GameLogic/GameTrash.css';
+import ModalHardMode from './ModalHardMode';
+import Timer from './Timer';
 
 const Container = memo(({ trash, trashBin }) => {
   const getVisibilityInitState = () => {
@@ -25,6 +27,10 @@ const Container = memo(({ trash, trashBin }) => {
     setFlag(!flag);
   };
 
+  const [initialMinute, setInitialMinute] = useState(3);
+  const [initialSeconds, setInitialSeconds] = useState(30);
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div>
       <p>{`ты набрал ${score} баллов`}</p>
@@ -42,6 +48,8 @@ const Container = memo(({ trash, trashBin }) => {
           className="photo-album"
           style={{ overflow: 'hidden', clear: 'both' }}
         >
+          <Timer props={{ initialMinute, initialSeconds, setIsOpen }} />
+          {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
           {trash?.map((el, index) => (
             <Box
               score={score}
