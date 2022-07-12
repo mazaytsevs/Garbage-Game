@@ -26,7 +26,7 @@ const Container = memo(({ trash, trashBin }) => {
   };
 
   return (
-    <div>
+    <div className="gameBoard">
       <p>{`ты набрал ${score} баллов`}</p>
 
       <div className="trashBag" onClick={showTrash}>
