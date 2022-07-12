@@ -7,6 +7,7 @@ import Container from '../GameLogic/Container';
 import GameNav from '../GameNav/GameNav';
 import GameRat from '../GameRat/GameRat';
 import Load from '../loader/loader';
+import Rules from '../Rules/Rules';
 import './game.css';
 
 function Game() {
@@ -64,19 +65,32 @@ function Game() {
     dispatch(getProgressThunk());
   }, []);
   const { background } = progress;
-
+  // для лоудера
+  const [loading, setLoading] = useState(true);
+  const componentDidMount = () => {
+    setTimeout(() => setLoading(false), 4000); // do your async call
+  };
+  componentDidMount();
+  // для модалки с правилами
+  const [rulesModal, setRulesModal] = React.useState(true);
   return (
-    <div className={background}>
-      <div>
-        <GameNav />
-      </div>
-      <div>
-        {/* <GameRat /> */}
-        <Container trash={randomTrashes} trashBin={trashWithoutMan} />
-      </div>
-      <div>
-        <GameBomzh />
-      </div>
+    <div>
+      {loading ? (<Load />)
+        : (
+          <div className={background}>
+            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+            <div>
+              <GameNav />
+            </div>
+            <div>
+              {/* <GameRat /> */}
+              <Container trash={randomTrashes} trashBin={trashWithoutMan} />
+            </div>
+            <div>
+              <GameBomzh />
+            </div>
+          </div>
+        )}
     </div>
   );
 }
