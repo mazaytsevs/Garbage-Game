@@ -52,7 +52,7 @@ function Game() {
   }
 
   const randomTrashes = getTrashes(trashes);
-  console.log('RANDOOOOOOM', getTrashes(trashes));
+  // console.log('RANDOOOOOOM', getTrashes(trashes));
 
   const [flag, setFlag] = useState(false);
   const showTrash = () => {
