@@ -20,7 +20,7 @@ const style = {
 // eslint-disable-next-line import/prefer-default-export
 export function Dustbin(props) {
   // eslint-disable-next-line object-curly-newline
-  const { backgroundImage, binName, score, setScore } = props;
+  const { backgroundImage, binName, score, setScore, trashSorted, setTrashSorted } = props;
   // console.log('binName', binName);
   const [{ canDrop, isOver }, drop] = useDrop(
     () => ({
@@ -29,8 +29,10 @@ export function Dustbin(props) {
       // drop сработает когда бросаем итем в корзину, тут добавь удаление итемки, передаю сюда пропсом функцию установки визибл для итема и вызови в ondrop
 
       drop: (item) => {
+        console.log('======================', item)
         if (item.itemType === binName) {
           setScore(score + 1);
+          setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)))
         }
         return { name: binName };
       },
