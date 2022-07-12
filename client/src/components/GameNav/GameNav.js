@@ -21,11 +21,10 @@ function GameNav() {
     <div className="main">
       <div className="header">
         <div>
-          <p className="score">{`Прогресс ${progress.score && 0}/120`}</p>
+          <p className="score">{`Прогресс ${progress.score || 0}/120`}</p>
         </div>
       </div>
       <div className="navbar">
-        {/* TODO размер дива ниже должен быть равен ширине икнок справа */}
         <div className="progressBar">
           {Math.floor(progress.score / 20) > 0 && (
             <img
@@ -34,7 +33,7 @@ function GameNav() {
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 1 && (
+          {Math.floor(progress.score / 20) > 1 || (
             <img
               className="progressBarTrashCan2"
               src="/gameNavPic/trashcan.png"
