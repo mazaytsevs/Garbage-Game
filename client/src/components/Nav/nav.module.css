@@ -106,7 +106,7 @@ li {
   position: absolute;
   bottom: 0;
   right: 80px;
-  z-index:10;
+  z-index:1;
 }
 .bomj{
 width: 550px;
