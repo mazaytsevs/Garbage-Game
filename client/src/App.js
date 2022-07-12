@@ -24,24 +24,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Navbar />} />
         <Route path="/start" element={<PrivateRoute>Start</PrivateRoute>} />
-        {/* <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} /> */}
-        {/* <Route
-          path="/rules"
-          element={(
-            <PrivateRoute>
-              <Rules />
-            </PrivateRoute>
-            )}
-        />
-        <Route
-          path="/info"
-          element={(
-            <PrivateRoute>
-              <Info />
-            </PrivateRoute>
-)}
-        /> */}
-
         <Route path="/auth/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
         <Route path="/auth/reg" element={<Registration />} />
         <Route path="/auth/login" element={<Login />} />
