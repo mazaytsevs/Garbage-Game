@@ -20,53 +20,49 @@ function GameNav() {
   return (
     <div className="main">
       <div className="header">
-        <div width="294px" hight="120">
-          {' '}
-        </div>
         <div>
-          <p>{`Прогресс ${progress.score || 0}/120`}</p>
+          <p className="score">{`Прогресс ${progress.score && 0}/120`}</p>
         </div>
       </div>
       <div className="navbar">
         {/* TODO размер дива ниже должен быть равен ширине икнок справа */}
-        <div width="294px" hight="120" />
         <div className="progressBar">
-          {Math.floor(progress.score / 20) > 0 || (
+          {Math.floor(progress.score / 20) > 0 && (
             <img
               className="progressBarTrashCan1"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 1 || (
+          {Math.floor(progress.score / 20) > 1 && (
             <img
               className="progressBarTrashCan2"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 2 || (
+          {Math.floor(progress.score / 20) > 2 && (
             <img
               className="progressBarTrashCan3"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 3 || (
+          {Math.floor(progress.score / 20) > 3 && (
             <img
               className="progressBarTrashCan4"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 4 || (
+          {Math.floor(progress.score / 20) > 4 && (
             <img
               className="progressBarTrashCan5"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 5 || (
+          {Math.floor(progress.score / 20) > 5 && (
             <img
               className="progressBarTrashCan6"
               src="/gameNavPic/trashcan.png"

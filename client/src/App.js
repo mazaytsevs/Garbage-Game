@@ -11,13 +11,11 @@ import Login from './components/Forms/Login/Login';
 import { checkAuth } from './redux/actions/user.action';
 import Logout from './components/Forms/Logout/Logout';
 import GameRat from './components/GameRat/GameRat';
-
 import Container from './components/GameLogic/Container';
 import Timer from './hardMode/Timer';
 import ModalHardMode from './hardMode/ModalHardMode';
 import Container2 from './hardMode/Container2';
 import Game2 from './hardMode/Game2';
-
 
 function App() {
   const dispatch = useDispatch();
@@ -37,12 +35,24 @@ function App() {
         <Route path="/" element={<Navbar />} />
         <Route path="/auth/reg" element={<Registration />} />
         <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
+        <Route
+          path="/auth/logout"
+          element={(
+            <PrivateRoute>
+              <Logout />
+            </PrivateRoute>
+          )}
+        />
         {/* <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} /> */}
         <Route path="/game" element={<Game />} />
         <Route path="/gamerat" element={<GameRat />} />
         <Route path="/hardmode" element={<Game2 />} />
-        <Route path="/timer" element={<Timer props={{ initialMinute, initialSeconds, setIsOpen }} />} />
+        <Route
+          path="/timer"
+          element={
+            <Timer props={{ initialMinute, initialSeconds, setIsOpen }} />
+          }
+        />
       </Routes>
     </div>
   );
