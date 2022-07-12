@@ -62,7 +62,7 @@ export function Dustbin(props) {
       }}
       data-testid="dustbin"
     >
-      <img width="100" height="200" cobject-fit="cover" src={backgroundImage} alt="" />
+      <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" />
       {isActive && 'Бросай'}
     </div>
   );

@@ -11,7 +11,6 @@ import Login from './components/Forms/Login/Login';
 import { checkAuth } from './redux/actions/user.action';
 import Logout from './components/Forms/Logout/Logout';
 import GameRat from './components/GameRat/GameRat';
-import Container from './components/GameLogic/Container';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,7 +25,8 @@ function App() {
         <Route path="/auth/reg" element={<Registration />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
-        <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} />
+        {/* <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} /> */}
+        <Route path="/game" element={<Game />} />
         <Route path="/gamerat" element={<GameRat />} />
       </Routes>
     </div>

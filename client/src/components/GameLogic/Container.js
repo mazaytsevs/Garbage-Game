@@ -35,7 +35,9 @@ const Container = memo(({ trash, trashBin }) => {
       <div className="trashBag" onClick={showTrash}>
         <img
           className="bag"
-          src={flag ? '/trashbag/trashbagOPEN.png' : '/trashbag/trashbagCLOSED.png'}
+          src={
+            flag ? '/trashbag/trashbagOPEN.png' : '/trashbag/trashbagCLOSED.png'
+          }
           alt="bag"
           width="200"
         />
@@ -62,7 +64,6 @@ const Container = memo(({ trash, trashBin }) => {
           ))}
         </div>
       ) : null}
-
       <div className="bins">
         <div className="GameBins" style={{ display: 'flex' }}>
           {trashBin?.map((el) => (
