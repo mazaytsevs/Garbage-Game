@@ -2,7 +2,7 @@
 /* eslint-disable semi */
 import React, { useSelector } from 'react';
 import { useDrop } from 'react-dnd';
-import { ItemTypes } from './ItemTypes';
+// import { ItemTypes } from './ItemTypes';
 
 const style = {
   height: '12rem',
@@ -21,7 +21,7 @@ const style = {
 export function Dustbin(props) {
   // eslint-disable-next-line object-curly-newline
   const { backgroundImage, binName, score, setScore } = props;
-  console.log('binName', binName);
+  // console.log('binName', binName);
   const [{ canDrop, isOver }, drop] = useDrop(
     () => ({
       accept: 'box',
