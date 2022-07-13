@@ -86,7 +86,8 @@ const Container = memo(({
       {/* {trashBin?.map((el) => (
 
             <div
-              className="photo-album"
+              className="gameBinsFromDB"
+              key={el.id}
               style={{ overflow: 'hidden', clear: 'both' }}
             >
               {trashSorted?.map((el, index) => (
@@ -128,17 +129,6 @@ const Container = memo(({
           ))}
         </div>
       </div>
-      {/* MZ -> начало -> рисую бомжа */}
-      <div id="bomzh">
-        <Dustbin
-          binName={bomzh.id}
-          itemType={bomzh.id}
-          trashSorted={trashSorted}
-          setTrashSorted={setTrashSorted}
-          key={bomzh.id}
-        />
-      </div>
-      {/* MZ -> конец -> рисую бомжа */}
     </div>
   );
 });
