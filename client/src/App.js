@@ -30,7 +30,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      {isOpen && <ModalHardMode isOpen={isOpen} />}
+      {/* {isOpen && <ModalHardMode isOpen={isOpen} />} */}
       {/* <ModalHardMode isOpen={isOpen} /> */}
       <Routes>
         <Route path="/" element={<Navbar />} />
