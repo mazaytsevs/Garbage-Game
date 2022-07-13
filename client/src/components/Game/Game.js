@@ -86,15 +86,7 @@ function Game() {
           <div>
             <GameNav />
           </div>
-          <div>
-            {/* <GameRat /> */}
-            <Container trash={randomTrashes} trashBin={trashWithoutMan} />
-          </div>
-          <div>
-            <GameBomzh />
-          </div>
-        </div>
-      )}
+        )}
     </div>
   );
 }
