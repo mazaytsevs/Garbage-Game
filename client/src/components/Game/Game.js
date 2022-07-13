@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getTrashes } from '../../helpers';
 import { generateTrashThunk } from '../../redux/actions/actions';
+import { changeFlagThunk } from '../../redux/actions/changeFlagAction';
 import { getProgressThunk } from '../../redux/actions/progress.action';
+import { generateTrashRandomThunk } from '../../redux/actions/randomTrashAction';
+
 import GameBomzh from '../GameBomzh/GameBomzh';
 import Container from '../GameLogic/Container';
 import GameNav from '../GameNav/GameNav';
@@ -12,11 +16,25 @@ import './game.css';
 
 function Game() {
   // получаем мусорные баки
+  const dispatch = useDispatch();
   const trashBinsFromDB = useSelector(
     (state) => state.trashGenerate?.trashCans,
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
 
+  const flag = useSelector(
+    (state) => state.flag,
+  );
+
+  useEffect(() => {
+    dispatch(changeFlagThunk());
+  }, []);
+
+  // получаем мусор
+  const trashes = useSelector((state) => state.trashGenerate?.trashes);
+  const trashRandom = useSelector((state) => state.trashRandom);
+  const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
+  
   // MZ -> начало -> получаю бомжа-контейнера
   // eslint-disable-next-line no-unsafe-optional-chaining
   const bomzh = trashBinsFromDB && trashBinsFromDB[trashBinsFromDB.length - 1];
@@ -25,39 +43,25 @@ function Game() {
   // получаем мусор
   // const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
   // для обращения к бэку
-  const dispatch = useDispatch();
-  const trashes = useSelector((state) => state.trashGenerate?.trashes);
+
   useEffect(() => {
-    // console.log('MUUUUSOOOOOOOOOR', trashes);
     dispatch(generateTrashThunk());
   }, []);
 
-  // функция которая вытаскивает ШЕСТЬ рандомных мусоров из неотгаданных
-  function getTrashes(arr) {
-    const trashesFromDB = trashes?.length;
-    let trashesNum = 0;
-    if (trashesFromDB > 10) {
-      trashesNum = 10;
-    } else {
-      trashesNum = trashesFromDB;
-    }
-    const justSomeArr = [];
-    const randomTrashes = [];
-    const indexArr = [];
-    for (let i = 0; i < trashesFromDB; i += 1) {
-      justSomeArr.push(i);
-    }
-    for (let y = 0; y < trashesNum; y += 1) {
-      indexArr.push(justSomeArr.splice(Math.random() * justSomeArr.length, 1));
-    }
-    for (let x = 0; x < indexArr.length; x += 1) {
-      randomTrashes.push(arr[indexArr[x]]);
-    }
-    return randomTrashes;
-  }
+  console.log('trashRandom', trashRandom);
+  console.log('trashes', trashes);
 
-  const randomTrashes = getTrashes(trashes);
+  useEffect(() => {
+    console.log('asdsadsdf');
+    if (trashRandom.length === 0 && trashes.length !== 0) {
+      dispatch(generateTrashRandomThunk((getTrashes(trashes))));
+    }
+  }, [trashes]);
+
   // console.log('RANDOOOOOOM', getTrashes(trashes));
+  const refreshTrash = () => {
+    dispatch(generateTrashRandomThunk((getTrashes(trashes))));
+  };
 
   // для мусора чтобы удалять
   // const [trashSorted, setTrashSorted] = useState(randomTrashes);
@@ -68,19 +72,26 @@ function Game() {
   //   // setBagPic('/trashBins/dangerous.png');
   // };
 
+  // console.log(randomTrashes);
   const progress = useSelector((state) => state.progress);
+
   useEffect(() => {
     dispatch(getProgressThunk());
   }, []);
+
   const { background } = progress;
+
   // для лоудера
   const [loading, setLoading] = useState(true);
   const componentDidMount = () => {
     setTimeout(() => setLoading(false), 4000); // do your async call
   };
+
   componentDidMount();
+
   // для модалки с правилами
   const [rulesModal, setRulesModal] = React.useState(true);
+
   return (
     <div>
 
@@ -92,10 +103,12 @@ function Game() {
               <GameNav />
             </div>
             <div>
+              {/* <GameRat /> */}
               <Container
-                trash={randomTrashes}
+                trash={trashRandom}
                 trashBin={trashWithoutMan}
-                 // MZ -> передаю бомжа-контейнера
+                refreshTrash={refreshTrash}
+                // MZ -> передаю бомжа-контейнера
                 bomzh={bomzh}
               />
             </div>
