@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Box } from '../components/GameLogic/Box';
 import { Dustbin2 } from './Dustbin2';
 // import { ItemTypes } from './ItemTypes';
-import '../components/GameLogic/GameTrash.css';
+import './GameTrash.css';
 import ModalHardMode from './ModalHardMode';
 import Timer from './Timer';
 
@@ -23,7 +23,7 @@ const Container = memo(({ trashBin }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <>
       {/* <p>{`ты набрал ${score} баллов`}</p> */}
 
       {/* <div className="trashBag" onClick={showTrash}> */}
@@ -34,14 +34,14 @@ const Container = memo(({ trashBin }) => {
           width="200"
         /> */}
       {/* </div> */}
-      <button type="button" onClick={showTrash}>ok</button>
+      <button type="button" style={{ zIndex: 1000 }} onClick={showTrash}>ok</button>
       {flag ? (
         <div
           className="photo-album"
           style={{ overflow: 'hidden', clear: 'both' }}
         >
           <Timer props={{ initialMinute, initialSeconds, setIsOpen }} />
-          {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
+          {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />} */}
         </div>
       ) : null}
 
@@ -64,7 +64,7 @@ const Container = memo(({ trashBin }) => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 });
 

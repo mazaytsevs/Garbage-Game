@@ -49,17 +49,19 @@ div img {
   display: block;
 }
 .photo-album {
-  position: relative;
-  width: 100%;
-  margin: 0;
+  /* width: 100%;
   max-width: 70em;
   height: 450px;
   margin-top: 4em;
-  margin-left: 6em;
   min-width: 800px;
-  max-width: 100vw;
+  max-width: 900px;
+  margin-left: 6em; */
+  margin-right: 0rem;
+  position: relative;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
+  font-size: 100px;
 }
 .photo-album .polaroid {
   position: absolute;
@@ -196,10 +198,10 @@ div img {
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 }
-div:hover,
+/* div:hover,
 div:focus {
   z-index: 50000;
-}
+} */
 
 /* стили для мусорных баков */
 .bins {
@@ -249,7 +251,7 @@ div:focus {
 .sprite-image {
   height: 155px; /*высота спрайта (высота одного кадра)*/
   width: 200px; /*ширина спрайта (ширина одного кадра)*/
-  background: url("../../../public/trashes/rat.png"); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+  /* background: url("../../../public/trashes/rat.png"); картинка со спрайтами с позицией в верхнем левом углу (0px 0px) */
   /* animation: play 0.8s steps(6) infinite, fly 10s ease; */
   background-size: cover;
   animation: fly 10s ease;
