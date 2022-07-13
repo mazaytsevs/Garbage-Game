@@ -85,6 +85,17 @@ const Container = memo(({
           ))}
         </div>
       </div>
+      {/* MZ -> начало -> рисую бомжа */}
+      <div id="bomzh">
+        <Dustbin
+          binName={bomzh.id}
+          itemType={bomzh.id}
+          trashSorted={trashSorted}
+          setTrashSorted={setTrashSorted}
+          key={bomzh.id}
+        />
+      </div>
+      {/* MZ -> конец -> рисую бомжа */}
     </div>
   );
 });
