@@ -54,7 +54,7 @@ div img {
   margin: 0;
   max-width: 70em;
   height: 450px;
-  margin-top: 4em;
+  margin-top: 3vh;
   margin-left: 6em;
   min-width: 800px;
   max-width: 900px;
@@ -74,12 +74,12 @@ div img {
   height: 75px;
 } */
 .photo-album .medium {
-  width: 200px;
+  width: 17vh;
   padding: 13px 13px 26px 13px;
   font-size: 0.8em;
 }
 .photo-album .medium img {
-  width: 150px;
+  width: 15vh;
   height: 100%;
 }
 /* .photo-album .large {
@@ -92,63 +92,49 @@ div img {
   height: 340px;
 } */
 .photo-album .img1 {
-  bottom: 10px;
-  right: 365px;
+  top: 25vh;
+  left: 15vh;
   -webkit-transform: rotate(10deg);
   -moz-transform: rotate(10deg);
   transform: rotate(10deg);
 }
-/* .photo-album .img2 {
-  top: 50px;
-  right: 20px;
-  -webkit-transform: rotate(-4deg);
-  -moz-transform: rotate(-4deg);
-  transform: rotate(-4deg);
-} */
 .photo-album .img2 {
-  left: 300px;
+  left: 30vh;
   top: 0;
   -webkit-transform: rotate(-5deg);
   -moz-transform: rotate(-5deg);
   transform: rotate(-5deg);
 }
 .photo-album .img3 {
-  top: 10px;
-  left: 400px;
+  top: 1vh;
+  left: 45vh;
   -webkit-transform: rotate(-20deg);
   -moz-transform: rotate(-20deg);
   transform: rotate(-20deg);
 }
-/* .photo-album .img5 {
-  bottom: 0;
-  right: 0;
-  -webkit-transform: rotate(1deg);
-  -moz-transform: rotate(1deg);
-  transform: rotate(1deg);
-} */
 .photo-album .img4 {
-  bottom: 10px;
-  right: 156px;
+  top: 18vh;
+  left: 45vh;
   -webkit-transform: rotate(6deg);
   -moz-transform: rotate(6deg);
   transform: rotate(6deg);
 }
 .photo-album .img5 {
-  bottom: 0;
-  left: 400px;
+  top: 20vh;
+  left: 30vh;
   -webkit-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
   transform: rotate(-10deg);
 }
 .photo-album .img6 {
-  bottom: 0px;
-  left: 580px;
+  top: 20vh;
+  left: 58vh;
   -webkit-transform: rotate(-8deg);
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 }
 .photo-album .img7 {
-  bottom: 0;
+  top: 20vh;
   left: 0;
   -webkit-transform: rotate(-8deg);
   -moz-transform: rotate(-8deg);
@@ -156,42 +142,21 @@ div img {
 }
 .photo-album .img8 {
   top: 0;
-  left: 10px;
+  left: 1vh;
   -webkit-transform: rotate(8deg);
   -moz-transform: rotate(8deg);
   transform: rotate(8deg);
 }
-/* .photo-album .img11 {
-  top: 0;
-  right: 0;
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  transform: rotate(-8deg);
-} */
 .photo-album .img9 {
   top: 0;
-  left: 600px;
+  left: 57vh;
   -webkit-transform: rotate(18deg);
   -moz-transform: rotate(18deg);
   transform: rotate(18deg);
 }
-/* .photo-album .img13 {
-  bottom: -20px;
-  right: 630px;
-  -webkit-transform: rotate(4deg);
-  -moz-transform: rotate(4deg);
-  transform: rotate(4deg);
-}
-.photo-album .img14 {
-  top: 90px;
-  left: 430px;
-  -webkit-transform: rotate(15deg);
-  -moz-transform: rotate(15deg);
-  transform: rotate(15deg);
-} */
 .photo-album .img10 {
-  left: 120px;
-  top: 20px;
+  left: 15vh;
+  top: 2vh;
   -webkit-transform: rotate(-8deg);
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
@@ -209,7 +174,7 @@ div:focus {
 
 .GameBins {
   position: fixed;
-  bottom: 80px; left: 40px;
+  bottom: 8vh; left: 4vh;
 }
 
 .gameBinsDno {
@@ -223,7 +188,7 @@ div:focus {
 
 .gameBinsFromDB {
   position: relative;
-  bottom: -70px;
+  bottom: -7vh;
   z-index: 1;
   display: flex;
   justify-content: space-around;
@@ -232,8 +197,8 @@ div:focus {
 .trashBag {
   display: flex;
   align-items: center;
-  margin-top: 6rem;
-  margin-left: 3rem;
+  margin-top: 6vh;
+  margin-left: 3vh;
 
 }
 

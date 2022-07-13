@@ -44,7 +44,6 @@ const Container = memo(({ trash, trashBin }) => {
             width="200"
           />
         </div>
-
         {flag ? (
           <div
             className="photo-album"
