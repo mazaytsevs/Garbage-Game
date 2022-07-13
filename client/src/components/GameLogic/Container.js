@@ -1,10 +1,19 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeFlagThunk } from '../../redux/actions/changeFlagAction';
 import { Box } from './Box';
 import { Dustbin } from './Dustbin';
 // import { ItemTypes } from './ItemTypes';
 import './GameTrash.css';
 
-const Container = memo(({ trash, trashBin }) => {
+const Container = memo(({ trash, trashBin, refreshTrash, randomTrashes, setRandomTrashes }) => {
+  const dispatch = useDispatch();
+  const flag = useSelector((state) => state.flag);
+
+  useEffect(() => {
+    dispatch(changeFlagThunk());
+  }, []);
+
   const getVisibilityInitState = () => {
     const res = {};
     // eslint-disable-next-line no-restricted-syntax
@@ -20,48 +29,52 @@ const Container = memo(({ trash, trashBin }) => {
   // const [score, setScore] = useState(0);
   const [visible, setVisible] = useState(visibilityInitState);
 
-  const [flag, setFlag] = useState(false);
-  const showTrash = () => {
-    setFlag(!flag);
-  };
+  // const [flag, setFlag] = useState(false);
+  // const showTrash = () => {
+  //   dispatch(changeFlagThunk(!flag));
+  //   console.log(flag);
+  // };
 
   // для удаления мусора
   const [trashSorted, setTrashSorted] = useState(trash);
 
   return (
     <div className="gameBoard">
-      <div className="trashBag" onClick={showTrash}>
+      <div className="trashBag" onClick={refreshTrash}>
         <img
           className="bag"
           src={
-            flag ? '/trashbag/trashbagOPEN.png' : '/trashbag/trashbagCLOSED.png'
+            // flag ?
+            // '/trashbag/trashbagOPEN.png'
+            //  :
+            '/trashbag/trashbagCLOSED.png'
           }
           alt="bag"
           width="200"
         />
       </div>
 
-      {flag ? (
-        <div
-          className="photo-album"
-          style={{ overflow: 'hidden', clear: 'both' }}
-        >
-          {trashSorted?.map((el, index) => (
-            <Box
-              score={el.score}
+      {/* {flag ? ( */}
+      <div
+        className="photo-album"
+        style={{ overflow: 'hidden', clear: 'both' }}
+      >
+        {trashSorted?.map((el, index) => (
+          <Box
+            score={el.score}
               // setScore={setScore}
-              setVisible={setVisible}
-              visible={visible[el.id]}
-              id={el.id}
-              key={el.id}
-              name={el.trash_name}
-              itemType={el.trash_can_id}
-              className={index}
-              image={el.trash_img_src}
-            />
-          ))}
-        </div>
-      ) : null}
+            setVisible={setVisible}
+            visible={visible[el.id]}
+            id={el.id}
+            key={el.id}
+            name={el.trash_name}
+            itemType={el.trash_can_id}
+            className={index}
+            image={el.trash_img_src}
+          />
+        ))}
+      </div>
+      {/* ) : null} */}
 
       <div className="bins">
         <div className="GameBins" style={{ display: 'flex' }}>
@@ -80,6 +93,8 @@ const Container = memo(({ trash, trashBin }) => {
                 trashSorted={trashSorted}
                 setTrashSorted={setTrashSorted}
                 key={el.id}
+                setRandomTrashes={setRandomTrashes}
+                randomTrashes={randomTrashes}
               />
             </div>
           ))}

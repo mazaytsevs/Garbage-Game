@@ -1,23 +1,27 @@
+/* eslint-disable max-len */
+/* eslint-disable import/prefer-default-export */
 import './Dustbin.css'; // стили перенесла сюда!!!
 
-import React, { useSelector } from 'react';
+import React, { useEffect, useSelector } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useDrop } from 'react-dnd';
 import { postProgressThunk } from '../../redux/actions/progress.action';
 import { deleteTrashThunk } from '../../redux/actions/actions';
+import { changeFlagThunk } from '../../redux/actions/changeFlagAction';
+import { deleteTrashRandomThunk } from '../../redux/actions/randomTrashAction';
 
 // комопонент корзины
-// eslint-disable-next-line import/prefer-default-export
 export function Dustbin(props) {
   const dispatch = useDispatch();
-  // eslint-disable-next-line object-curly-newline
-  const { backgroundImage, binName, score, trashSorted, setTrashSorted, setScore } = props;
+
+  const {
+    backgroundImage, binName, score, trashSorted, setTrashSorted, setScore,
+  } = props;
   // console.log('binName', binName);
   const [{ canDrop, isOver }, drop] = useDrop(
     () => ({
       accept: 'box',
-      // eslint-disable-next-line max-len
       // drop сработает когда бросаем итем в корзину, тут добавь удаление итемки, передаю сюда пропсом функцию установки визибл для итема и вызови в ondrop
 
       drop: (item) => {
@@ -25,6 +29,8 @@ export function Dustbin(props) {
           dispatch(postProgressThunk(item));
           setTrashSorted(((prev) => {
             dispatch(deleteTrashThunk(item.id));
+            // props.setRandomTrashes(props.randomTrashes.filter((el) => el.id !== item.id));
+            dispatch(deleteTrashRandomThunk(item.id));
             return prev.filter((el) => el.id !== item.id);
           }));
         }
@@ -47,9 +53,7 @@ export function Dustbin(props) {
     <div
       ref={drop}
       style={{
-        // ...style,
         boxShadow,
-        // backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'no-repeat',
       }}
       data-testid="dustbin"

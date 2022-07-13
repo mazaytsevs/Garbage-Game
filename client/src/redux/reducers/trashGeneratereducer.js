@@ -1,7 +1,9 @@
 /* eslint-disable no-case-declarations */
 import { DELETE_TRASH, GENERATE_TRASH } from '../types/types';
 
-const initialState = [];
+const initialState = {
+  trashes: [],
+};
 
 const trashGeneratereducer = (state = initialState, action) => {
   const { type, payload } = action;
