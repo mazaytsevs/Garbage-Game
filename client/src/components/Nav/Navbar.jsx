@@ -1,15 +1,21 @@
-import React, { useSelector } from 'react-redux';
+import React, { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './nav.module.css';
 import Modal from '../Forms/Modal/ModalReg';
 import ModalLog from '../Forms/Modal/ModalLog';
+import { getDeleteProgressThunk } from '../../redux/actions/progress.action';
 
 function Navbar() {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  // console.log(user);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLog, setIsOpenLog] = useState(false);
 
+  function deleteProgress(id) {
+    dispatch(getDeleteProgressThunk(id));
+  }
   return (
     <div className={styles.backAuth}>
       <div className={styles.back2Auth}>
@@ -26,8 +32,17 @@ function Navbar() {
                         <NavLink
                           to="/game"
                         >
-                          Начать
+                          Продолжить игру
                         </NavLink>
+                      </li>
+                      <li className={styles.signOut}>
+                        <div onClick={() => deleteProgress(user.id)}>
+                          <NavLink
+                            to="/game"
+                          >
+                            Новая игра
+                          </NavLink>
+                        </div>
                       </li>
                       <li className={styles.signOut}>
                         <NavLink

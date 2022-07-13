@@ -57,4 +57,11 @@ router.post('/answer', checkSession, async (req, res) => {
   }
 }); // записывает в БД правильные ответы (id - это из таблицы TrashCan)
 
+router.delete('/:id', checkSession, async (req, res) => {
+  const { id } = req.params;
+
+  await Progress.destroy({ where: { user_id: id } });
+  res.sendStatus(200);
+}); // удаление из прогресса в БД для начала новой игры
+
 module.exports = router;
