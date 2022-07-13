@@ -41,8 +41,8 @@ const Container = memo(({
   // для удаления мусора
 
   return (
-    <div className="garbageForSort">
-      <div className="gameBoard">
+    <div className="gameBoard">
+      <div className="garbageForSort">
 
         <div className="trashBag" onClick={refreshTrash}>
           <img
