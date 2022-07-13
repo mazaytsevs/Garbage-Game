@@ -1,4 +1,5 @@
 .room {
+  z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,18 +18,18 @@
 .belt {
   position: absolute;
   margin: auto;
-  width: 100%;
-  height: 10px;
-  background-color: white;
+  width: 5000px;
+  height: 1px;
+  background-color: rgb(158, 57, 57);
   //visibility: hidden;
 }
 
 .sushiplate span {
   position: absolute;
   height: 0;
-  width: 60px;
-  top: -18px;
-  animation: move 20s linear infinite;
+  width: 180px;
+  top: -40px;
+  animation: move 172s linear infinite;
 }
 
 // .sushiplate span:after {
@@ -158,6 +159,37 @@
 }
 .sushiplate span:nth-child(40) {
   animation-delay: -136s;
+}
+
+.sushiplate span:nth-child(41) {
+  animation-delay: -140s;
+}
+.sushiplate span:nth-child(42) {
+  animation-delay: -144s;
+}
+.sushiplate span:nth-child(43) {
+  animation-delay: -148s;
+}
+.sushiplate span:nth-child(44) {
+  animation-delay: -152s;
+}
+.sushiplate span:nth-child(45) {
+  animation-delay: -156s;
+}
+.sushiplate span:nth-child(46) {
+  animation-delay: -160s;
+}
+.sushiplate span:nth-child(47) {
+  animation-delay: -164s;
+}
+.sushiplate span:nth-child(48) {
+  animation-delay: -168s;
+}
+.sushiplate span:nth-child(49) {
+  animation-delay: -172s;
+}
+.sushiplate span:nth-child(50) {
+  animation-delay: -176s;
 }
 
 @keyframes move {
