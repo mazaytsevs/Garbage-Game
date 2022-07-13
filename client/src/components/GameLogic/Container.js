@@ -1,10 +1,17 @@
 import React, { memo, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Box } from './Box';
 import { Dustbin } from './Dustbin';
-// import { ItemTypes } from './ItemTypes';
+import { getHomelessThunk } from '../../redux/actions/homeless.action';
 import './GameTrash.css';
 
-const Container = memo(({ trash, trashBin }) => {
+const Container = memo(({
+  trash, trashBin, refreshTrash, bomzh,
+}) => {
+  const [flag, setFlag] = useState(false);
+
+  const dispatch = useDispatch();
+
   const getVisibilityInitState = () => {
     const res = {};
     // eslint-disable-next-line no-restricted-syntax
@@ -16,21 +23,25 @@ const Container = memo(({ trash, trashBin }) => {
   }; // начальное состояние видимости, по дефолту тру, передавай это в компонент бокс, и если у соответствующего итема будет false то присваивай стиль display: none
 
   const visibilityInitState = getVisibilityInitState();
-  const [visible, setVisible] = useState(visibilityInitState);
+  // const [visible, setVisible] = useState(visibilityInitState);
   const [trashSorted, setTrashSorted] = useState(trash);
 
-  const [flag, setFlag] = useState(false);
-  const showTrash = () => {
-    setFlag(!flag);
-    setTrashSorted(trash);
-  };
-
   // для удаления мусора
+  console.log(flag);
 
   return (
     <div className="gameBoard">
       <div className="garbageForSort">
-        <div className="trashBag" onClick={showTrash}>
+
+        <div
+          className="trashBag"
+          onClick={function () {
+            setFlag(true);
+            refreshTrash();
+            setTimeout(() => setFlag(false), 4000);
+            dispatch(getHomelessThunk());
+          }}
+        >
           <img
             className="bag"
             src={
@@ -41,52 +52,55 @@ const Container = memo(({ trash, trashBin }) => {
             alt="bag"
             width="200"
           />
-
-          {flag ? (
-            <div
-              className="photo-album"
-              style={{ overflow: 'hidden', clear: 'both' }}
-            >
-              {trashSorted?.map((el, index) => (
-                <Box
-                  score={el.score}
-                // setScore={setScore}
-                  setVisible={setVisible}
-                  visible={visible[el.id]}
-                  id={el.id}
-                  key={el.id}
-                  name={el.trash_name}
-                  itemType={el.trash_can_id}
-                  className={index}
-                  image={el.trash_img_src}
-                />
-              ))}
-            </div>
-          ) : null}
         </div>
-        <div className="bins">
-          <div className="GameBins" style={{ display: 'flex' }}>
-            {trashBin?.map((el) => (
-              <div
-                className="gameBinsFromDB"
-                key={el.id}
-                style={{ overflow: 'hidden', clear: 'both' }}
-              >
-                <Dustbin
-                // score={score}
-                // setScore={setScore}
-                  binName={el.id}
-                  backgroundImage={el.trash_can_img_src}
-                  itemType={el.id}
-                  trashSorted={trashSorted}
-                  setTrashSorted={setTrashSorted}
-                  key={el.id}
-                />
-              </div>
-            ))}
-          </div>
+        <div
+          className="photo-album"
+          style={{ overflow: 'hidden', clear: 'both' }}
+        >
+          {trash?.map((el, index) => (
+            <Box
+              score={el.score}
+              id={el.id}
+              key={el.id}
+              name={el.trash_name}
+              itemType={el.trash_can_id}
+              className={index}
+              image={el.trash_img_src}
+            />
+          ))}
         </div>
       </div>
+      <div className="bins">
+        <div className="GameBins" style={{ display: 'flex' }}>
+          {trashBin?.map((el) => (
+            <div
+              className="gameBinsFromDB"
+              key={el.id}
+              style={{ overflow: 'hidden', clear: 'both' }}
+            >
+              <Dustbin
+                binName={el.id}
+                backgroundImage={el.trash_can_img_src}
+                itemType={el.id}
+                trashSorted={trashSorted}
+                setTrashSorted={setTrashSorted}
+                key={el.id}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* MZ -> начало -> рисую бомжа */}
+      <div id="bomzh">
+        <Dustbin
+          binName={bomzh.id}
+          itemType={bomzh.id}
+          trashSorted={trashSorted}
+          setTrashSorted={setTrashSorted}
+          key={bomzh.id}
+        />
+      </div>
+      {/* MZ -> конец -> рисую бомжа */}
     </div>
   );
 });
