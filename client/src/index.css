@@ -15,6 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
+  cursor: url('../public/glove/png-transparent-finger-glove-design-hand-superior-safety-glove.png'), auto;
 }
   .modal-active {
     overflow: hidden;
