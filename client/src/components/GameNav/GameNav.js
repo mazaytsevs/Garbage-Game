@@ -33,7 +33,7 @@ function GameNav() {
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 1 || (
+          {Math.floor(progress.score / 20) > 1 && (
             <img
               className="progressBarTrashCan2"
               src="/gameNavPic/trashcan.png"

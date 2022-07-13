@@ -1,4 +1,5 @@
 import React, { memo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Box } from '../components/GameLogic/Box';
 import { Dustbin2 } from './Dustbin2';
 // import { ItemTypes } from './ItemTypes';
@@ -6,25 +7,15 @@ import '../components/GameLogic/GameTrash.css';
 import ModalHardMode from './ModalHardMode';
 import Timer from './Timer';
 
-const Container = memo(({ trash, trashBin }) => {
-  const getVisibilityInitState = () => {
-    const res = {};
-    // eslint-disable-next-line no-restricted-syntax
-    for (const item of trash) {
-      res[item.id] = true;
-    }
-    return res;
-    // eslint-disable-next-line max-len
-  }; // начальное состояние видимости, по дефолту тру, передавай это в компонент бокс, и если у соответствующего итема будет false то присваивай стиль display: none
-
-  const visibilityInitState = getVisibilityInitState();
-  // const [visible, setVisible] = useState(visibilityInitState && '');
-  // const [score, setScore] = useState(0);
-  const [visible, setVisible] = useState(visibilityInitState);
-
-  const [flag, setFlag] = useState(false);
+const Container = memo(({ trashBin }) => {
+  const dispatch = useDispatch();
+  const flag = useSelector((s) => s.flag);
   const showTrash = () => {
-    setFlag(!flag);
+    if (flag) {
+      dispatch({ type: 'FLAG_CLOSE' });
+    } else {
+      dispatch({ type: 'FLAG_OPEN' });
+    }
   };
 
   const [initialMinute, setInitialMinute] = useState(3);
@@ -35,14 +26,15 @@ const Container = memo(({ trash, trashBin }) => {
     <div>
       {/* <p>{`ты набрал ${score} баллов`}</p> */}
 
-      <div className="trashBag" onClick={showTrash}>
-        <img
+      {/* <div className="trashBag" onClick={showTrash}> */}
+      {/* <img
           className="bag"
           src={flag ? '/trashbag/trashbagOPEN.png' : '/trashbag/trashbagCLOSED.png'}
           alt="bag"
           width="200"
-        />
-      </div>
+        /> */}
+      {/* </div> */}
+      <button type="button" onClick={showTrash}>ok</button>
       {flag ? (
         <div
           className="photo-album"
@@ -50,20 +42,6 @@ const Container = memo(({ trash, trashBin }) => {
         >
           <Timer props={{ initialMinute, initialSeconds, setIsOpen }} />
           {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
-          {trash?.map((el, index) => (
-            <Box
-              score={el.score}
-              // setScore={setScore}
-              setVisible={setVisible}
-              visible={visible[el.id]}
-              id={el.id}
-              key={el.name}
-              name={el.trash_name}
-              itemType={el.trash_can_id}
-              className={index}
-              image={el.trash_img_src}
-            />
-          ))}
         </div>
       ) : null}
 

@@ -102,6 +102,7 @@ function Game() {
             <div>
               <GameBomzh />
             </div>
+
           </div>
         )}
     </div>
