@@ -86,7 +86,8 @@ function Game() {
           <div>
             <GameNav />
           </div>
-        )}
+        </div>
+      )}
     </div>
   );
 }
