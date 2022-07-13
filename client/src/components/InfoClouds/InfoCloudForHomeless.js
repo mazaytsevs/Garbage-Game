@@ -12,8 +12,6 @@ function InfoCloudForHomeless() {
     setTimeout(() => setFlag(false), 4000);
   }, [addedTrash]);
 
-  console.log('addedTrash', addedTrash);
-
   return (
     <div>
       {addedTrash.name && flag
