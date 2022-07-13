@@ -23,7 +23,7 @@ const Container = memo(({
   }; // начальное состояние видимости, по дефолту тру, передавай это в компонент бокс, и если у соответствующего итема будет false то присваивай стиль display: none
 
   const visibilityInitState = getVisibilityInitState();
-
+  // const [visible, setVisible] = useState(visibilityInitState);
   const [trashSorted, setTrashSorted] = useState(trash);
 
   // для удаления мусора
@@ -45,10 +45,10 @@ const Container = memo(({
           <img
             className="bag"
             src={
-            flag
-              ? '/trashbag/trashbagOPEN.png'
-              : '/trashbag/trashbagCLOSED.png'
-          }
+              flag
+                ? '/trashbag/trashbagOPEN.png'
+                : '/trashbag/trashbagCLOSED.png'
+            }
             alt="bag"
             width="200"
           />
