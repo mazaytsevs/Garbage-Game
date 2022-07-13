@@ -4,6 +4,12 @@ import { generateTrashThunk } from '../redux/actions/actions';
 import GameBomzh from '../components/GameBomzh/GameBomzh';
 import Container2 from './Container2';
 import GameNav from '../components/GameNav/GameNav';
+import { getProgressThunk } from '../redux/actions/progress.action';
+import GameNav2 from './GameNav2';
+import GameBomzh2 from './GameBomzh2';
+import Container2 from './Container2';
+// import GameNav from '../components/GameNav/GameNav';
+import GameRat from '../components/GameRat/GameRat';
 import Load from '../components/loader/loader';
 import Rules from '../components/Rules/Rules';
 import '../components/Game/game.css';
@@ -63,12 +69,12 @@ function Game() {
     // setBagPic('/trashBins/dangerous.png');
   };
 
-  const timeProgress = useSelector((state) => state.timeProgress);
+  const timeProgress = useSelector((state) => state.timeprogress);
   useEffect(() => {
     dispatch(getTimeProgressThunk());
     console.log('------>', timeProgress);
   }, []);
-  // const { background } = timeProgress;
+  const { background } = timeProgress;
   // для лоудера
   const [loading, setLoading] = useState(true);
   const componentDidMount = () => {
@@ -82,20 +88,20 @@ function Game() {
 
       {loading ? (<Load />)
         : (
-          <div>
+          <div className={background}>
             {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
             <Timer props={{ initialMinute, initialSeconds, setIsOpen }} /> */}
 
             <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
             <div>
-              <GameNav />
+              <GameNav2 />
             </div>
             <div>
               {/* <GameRat /> */}
               <Container2 trash={randomTrashes} trashBin={trashWithoutMan} />
             </div>
             <div>
-              <GameBomzh />
+              <GameBomzh2 />
             </div>
             <Conveyor />
           </div>

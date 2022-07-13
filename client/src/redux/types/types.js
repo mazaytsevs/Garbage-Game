@@ -12,3 +12,5 @@ export const GET_INFO = 'GET_INFO';
 export const GENERATE_TRASH = 'GENERATE_TRASH';
 export const DELETE_TRASH = 'DELETE_TRASH';
 export const GET_TIME_PROGRESS = 'GET_TIME_PROGRESS';
+
+export const GET_TIME_HOMELESS = 'GET_TIME_HOMELESS';

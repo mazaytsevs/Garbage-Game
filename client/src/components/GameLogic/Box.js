@@ -1,6 +1,7 @@
 /* eslint-disable object-curly-newline */
 import React from 'react';
 import { useDrag } from 'react-dnd';
+import GameRat from '../GameRat/GameRat';
 import './GameTrash.css';
 
 const style = {
@@ -30,11 +31,22 @@ export const Box = function Box(props) {
     }),
   }));
   const opacity = isDragging ? 0.4 : 1;
-  const nashClass = `small polaroid img${className + 1}`;
+  const nashClass = `medium polaroid img${className + 1}`;
   return (
-    <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
-      {name}
-      <img cobject-fit="cover" src={image} alt="" />
+    <div>
+      {/* это проверка на крысу */}
+      {id === 58
+        ? (
+          <div ref={drag} style={{ ...style, opacity }} className="sprite-container">
+            <div className="sprite-image" />
+          </div>
+        )
+        : (
+          <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
+            {name}
+            <img cobject-fit="cover" src={image} alt="" />
+          </div>
+        )}
     </div>
   );
 };
