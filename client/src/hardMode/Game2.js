@@ -7,7 +7,6 @@ import GameNav from '../components/GameNav/GameNav';
 import { getProgressThunk } from '../redux/actions/progress.action';
 import GameNav2 from './GameNav2';
 import GameBomzh2 from './GameBomzh2';
-import Container2 from './Container2';
 // import GameNav from '../components/GameNav/GameNav';
 import GameRat from '../components/GameRat/GameRat';
 import Load from '../components/loader/loader';
