@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateTrashThunk } from '../redux/actions/actions';
-import { getProgressThunk } from '../redux/actions/progress.action';
 import GameBomzh from '../components/GameBomzh/GameBomzh';
 import Container2 from './Container2';
 import GameNav from '../components/GameNav/GameNav';
-import GameRat from '../components/GameRat/GameRat';
 import Load from '../components/loader/loader';
 import Rules from '../components/Rules/Rules';
 import '../components/Game/game.css';
-import Timer from './Timer';
-import ModalHardMode from './ModalHardMode';
 import { getTimeProgressThunk } from '../redux/actions/timeProgress.action';
+import Conveyor from './conveyor/Conveyor';
 
 function Game() {
   // const [initialMinute, setInitialMinute] = useState(0);
@@ -89,7 +86,7 @@ function Game() {
             {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
             <Timer props={{ initialMinute, initialSeconds, setIsOpen }} /> */}
 
-            {/* <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} /> */}
+            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
             <div>
               <GameNav />
             </div>
@@ -100,6 +97,7 @@ function Game() {
             <div>
               <GameBomzh />
             </div>
+            <Conveyor />
           </div>
         )}
     </div>
