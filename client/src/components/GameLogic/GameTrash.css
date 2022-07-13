@@ -122,6 +122,7 @@ div img {
 .photo-album .img5 {
   top: 20vh;
   left: 30vh;
+  max-height: 4vh; 
   -webkit-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
   transform: rotate(-10deg);
