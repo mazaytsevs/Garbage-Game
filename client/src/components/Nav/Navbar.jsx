@@ -23,18 +23,25 @@ function Navbar() {
                   {user ? (
                     <>
                       <li className={styles.signOut}>
-                        <Link
-                          to="/auth/logout"
-                        >
-                          Выход
-                        </Link>
-                      </li>
-                      <li className={styles.signOut}>
                         <NavLink
                           to="/game"
                         >
                           Начать
                         </NavLink>
+                      </li>
+                      <li className={styles.signOut}>
+                        <NavLink
+                          to="/hardmode"
+                        >
+                          Сложный уровень
+                        </NavLink>
+                      </li>
+                      <li className={styles.signOut}>
+                        <Link
+                          to="/auth/logout"
+                        >
+                          Выход
+                        </Link>
                       </li>
                     </>
                   ) : (
