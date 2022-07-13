@@ -1,4 +1,4 @@
-import { GET_PROGRESS } from '../types/types';
+import { GET_PROGRESS, DELETE_PROGRESS } from '../types/types';
 
 const initialState = {};
 
@@ -7,6 +7,8 @@ const progressReducer = (state = initialState, action) => {
 
   switch (type) {
     case GET_PROGRESS:
+      return payload;
+    case DELETE_PROGRESS:
       return payload;
     default:
       return state;

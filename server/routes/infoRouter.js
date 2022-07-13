@@ -25,7 +25,6 @@ router.get('/', async (req, res) => {
 
     // ДЛЯ ФРОНТА ВСТАВЛЯЕМ ЭТО
     // res.render('info', { info });
-
   } catch (err) {
     console.log('Не получилось отобразить информацию', err);
   }
