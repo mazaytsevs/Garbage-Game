@@ -4,7 +4,7 @@ import { Dustbin } from './Dustbin';
 // import { ItemTypes } from './ItemTypes';
 import './GameTrash.css';
 
-const Container = memo(({ trash, trashBin, bomzh }) => {
+const Container = memo(({ trash, trashBin }) => {
   const getVisibilityInitState = () => {
     const res = {};
     // eslint-disable-next-line no-restricted-syntax
@@ -69,62 +69,25 @@ const Container = memo(({ trash, trashBin, bomzh }) => {
       <div className="bins">
         <div className="GameBins" style={{ display: 'flex' }}>
           {trashBin?.map((el) => (
-
             <div
-              className="photo-album"
+              className="gameBinsFromDB"
+              key={el.id}
               style={{ overflow: 'hidden', clear: 'both' }}
             >
-              {trashSorted?.map((el, index) => (
-                <Box
-                  score={el.score}
-                // setScore={setScore}
-                  setVisible={setVisible}
-                  visible={visible[el.id]}
-                  id={el.id}
-                  key={el.id}
-                  name={el.trash_name}
-                  itemType={el.trash_can_id}
-                  className={index}
-                  image={el.trash_img_src}
-                />
-              ))}
-            </div>
-          ) : null}
-        </div>
-        <div className="bins">
-          <div className="GameBins" style={{ display: 'flex' }}>
-            {trashBin?.map((el) => (
-              <div
-                className="gameBinsFromDB"
-                key={el.id}
-                style={{ overflow: 'hidden', clear: 'both' }}
-              >
-                <Dustbin
+              <Dustbin
                 // score={score}
                 // setScore={setScore}
-                  binName={el.id}
-                  backgroundImage={el.trash_can_img_src}
-                  itemType={el.id}
-                  trashSorted={trashSorted}
-                  setTrashSorted={setTrashSorted}
-                  key={el.id}
-                />
-              </div>
-            ))}
-          </div>
+                binName={el.id}
+                backgroundImage={el.trash_can_img_src}
+                itemType={el.id}
+                trashSorted={trashSorted}
+                setTrashSorted={setTrashSorted}
+                key={el.id}
+              />
+            </div>
+          ))}
         </div>
       </div>
-      {/* MZ -> начало -> рисую бомжа */}
-      <div id="bomzh">
-        <Dustbin
-          binName={bomzh.id}
-          itemType={bomzh.id}
-          trashSorted={trashSorted}
-          setTrashSorted={setTrashSorted}
-          key={bomzh.id}
-        />
-      </div>
-      {/* MZ -> конец -> рисую бомжа */}
     </div>
   );
 });
