@@ -8,6 +8,8 @@ import homelessReducer from './homelessReducer';
 import timeProgressReducer from './timeProgressReducer';
 import changeFlagReducer from './changeFlagReducer';
 import trashRandomReducer from './trashRandomReducer';
+import timehomelessReducer from './timehomelessReducer';
+import { flagReducer } from './flagReducer';
 
 const rootReducer = combineReducers({
   info: infoReducer,
@@ -19,6 +21,8 @@ const rootReducer = combineReducers({
   timeprogress: timeProgressReducer,
   flag: changeFlagReducer,
   trashRandom: trashRandomReducer,
+  timehomeless: timehomelessReducer,
+  flag: flagReducer,
 });
 
 export default rootReducer;

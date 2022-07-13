@@ -1,23 +1,26 @@
 .lvl-1 {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url('../../../public/backBround/level-1.png');
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .lvl-2 {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url('../../../public/backBround/level-2.png');
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .lvl-3 {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url('../../../public/backBround/level-3.png');
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

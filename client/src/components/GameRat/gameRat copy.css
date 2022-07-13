@@ -1,0 +1,225 @@
+
+.sprite-container {
+  height: 50vh; /*100% высоты экрана*/
+  display: flex;
+  align-items: center; /*чтобы картинка была по центру*/
+}
+
+.sprite-image {
+  height: 105px; /*высота спрайта (высота одного кадра)*/
+  width: 100px; /*ширина спрайта (ширина одного кадра)*/
+  background: url(https://d-nik.pro/images/stories/santa.jpg) 0px 0px; /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+  /*анимация называется play, скорость анимации 0.8s, нужно сделать 6 шагов (6 кадров), анимация происходит непрерывно (зациклено) - infinite*/
+  /* animation: play 0.8s steps(6) infinite;  */
+  /*ещё одна анимация, длительностью 15s, линейный, зацикленый*/
+  /* animation-delay: 2s; */
+  position: absolute; 
+  left: 100;
+}
+
+
+/* fly1 7s ease ; */
+@keyframes fly1 {
+  0% {
+    -webkit-transform: translate(130px, 45px);
+    transform: translate(130px, 45px);
+  }
+  50%{
+    -webkit-transform: translate(1170px, 227px) scaleX(-1);
+    transform: translate(1170px, 227px) scaleX(-1);
+  }
+  100% {
+    -webkit-transform: translate(130px, 45px);
+    transform: translate(130px, 45px);
+  }
+}
+
+  @keyframes play {
+    100% {
+        background-position: -600px; /*ширина картинки со спрайтами*/
+    }
+  }
+/* .fly-obj {
+  animation: fly 30s ease infinite;
+  position: absolute;
+  padding: 15px;
+  pointer-events: all;
+  cursor: pointer;
+}
+.rat {
+  width: 55px;
+  height: 55px;
+} */
+
+@keyframes fly {
+  0% {
+    -webkit-transform: translate(130px, 45px);
+    -webkit-transform: scale(-1, 1);
+    transform: translate(130px, 45px);
+    transform: scale(-1, 1);
+  }
+  10% {
+    -webkit-transform: translate(1040px, 227px);
+    transform: translate(1040px, 227px);
+  }
+  20% {
+    -webkit-transform: translate(0, 91px);
+    transform: translate(0, 91px);
+  }
+  30% {
+    -webkit-transform: translate(520px, 409px);
+    transform: translate(520px, 409px);
+  }
+  40% {
+    -webkit-transform: translate(390px, 0);
+    transform: translate(390px, 0);
+  }
+  50% {
+    -webkit-transform: translate(1040px, 227px);
+    transform: translate(1040px, 227px);
+  }
+  60% {
+    -webkit-transform: translate(390px, 318px);
+    transform: translate(390px, 318px);
+  }
+  70% {
+    -webkit-transform: translate(520px, 273px);
+    transform: translate(520px, 273px);
+  }
+  80% {
+    -webkit-transform: translate(0, 318px);
+    transform: translate(0, 318px);
+  }
+  90% {
+    -webkit-transform: translate(1170px, 227px);
+    transform: translate(1170px, 227px);
+  }
+  100% {
+    -webkit-transform: translate(130px, 45px);
+    transform: translate(130px, 45px);
+  }
+}
+
+/* код где картинка переходит в картинку  */
+/* 
+@keyframes step {
+  100% {
+      left: 2%; 
+      top: 5%;
+      /* left: 5%; 
+      top: 15%;
+      right: 30%;
+      down: 20%;
+      left: 100%; */
+      /*передвижение влево до самого конца*/
+  /* } */
+/* } */ 
+
+/* @keyframes fly {
+  0% {
+    -webkit-transform: translate(130px, 45px);
+    transform: translate(130px, 45px);
+  }
+  10% {
+    -webkit-transform: translate(1040px, 227px);
+    transform: translate(1040px, 227px);
+  }
+  20% {
+    -webkit-transform: translate(0, 91px);
+    transform: translate(0, 91px);
+  }
+  30% {
+    -webkit-transform: translate(520px, 409px);
+    transform: translate(520px, 409px);
+  }
+  40% {
+    -webkit-transform: translate(390px, 0);
+    transform: translate(390px, 0);
+  }
+  50% {
+    -webkit-transform: translate(1040px, 227px);
+    transform: translate(1040px, 227px);
+  }
+  60% {
+    -webkit-transform: translate(390px, 318px);
+    transform: translate(390px, 318px);
+  }
+  70% {
+    -webkit-transform: translate(520px, 273px);
+    transform: translate(520px, 273px);
+  }
+  80% {
+    -webkit-transform: translate(0, 318px);
+    transform: translate(0, 318px);
+  }
+  90% {
+    -webkit-transform: translate(1170px, 227px);
+    transform: translate(1170px, 227px);
+  }
+  100% {
+    -webkit-transform: translate(130px, 45px);
+    transform: translate(130px, 45px);
+  }
+} */
+
+  /* 9% {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  } */
+  /* 10% {
+    -webkit-transform: translate(1040px, 227px);
+    transform: translate(1040px, 227px);
+  }
+  20% {
+    -webkit-transform: translate(0, 91px);
+    transform: translate(0, 91px);
+  }
+  30% {
+    -webkit-transform: translate(520px, 409px);
+    transform: translate(520px, 409px);
+  }
+  40% {
+    -webkit-transform: translate(390px, 0);
+    transform: translate(390px, 0);
+  }
+  50% {
+    -webkit-transform: translate(1040px, 227px);
+    transform: translate(1040px, 227px);
+  }
+  60% {
+    -webkit-transform: translate(390px, 318px);
+    transform: translate(390px, 318px);
+  }
+  70% {
+    -webkit-transform: translate(520px, 273px);
+    transform: translate(520px, 273px);
+  }
+  80% {
+    -webkit-transform: translate(0, 318px);
+    transform: translate(0, 318px);
+  }
+  90% {
+    -webkit-transform: translate(1170px, 227px);
+    transform: translate(1170px, 227px);
+  } */
+
+/* @keyframes rev {
+  0%{
+
+  }
+  100%{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+} */
+/* 
+@keyframes fly02 {
+  0%{
+    -webkit-transform: translate(130px, 45px);
+    transform: translate(130px, 45px);
+  }
+  100%{
+    -webkit-transform: translate(0, 91px);
+    transform: translate(0, 91px);
+  }
+} */

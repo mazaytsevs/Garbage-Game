@@ -12,6 +12,7 @@ export const getTimeProgressThunk = () => async (dispatch) => {
     score: result.score,
     background: (result.score === null || result.score < 20) ? 'lvl-1' : (result.score < 40) ? 'lvl-2' : 'lvl-3',
   };
+  // console.log('heeeeeeeeeeeeeeeeeeey', progress);
   dispatch(getTimeProgress(progress));
 };
 
@@ -20,7 +21,7 @@ export const postTimeProgressThunk = (body) => async (dispatch) => {
     trash_id: body.id,
     score: body.score,
   };
-  console.log(answer);
+  // console.log(answer);
   const response = await fetch(
     '/timeprogress/answer',
     {
