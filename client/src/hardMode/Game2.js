@@ -7,7 +7,7 @@ import GameNav from '../components/GameNav/GameNav';
 import { getProgressThunk } from '../redux/actions/progress.action';
 import GameNav2 from './GameNav2';
 import GameBomzh2 from './GameBomzh2';
-import Container2 from './Container2';
+// import Container2 from './Container2';
 // import GameNav from '../components/GameNav/GameNav';
 import GameRat from '../components/GameRat/GameRat';
 import Load from '../components/loader/loader';
@@ -37,31 +37,6 @@ function Game() {
   }, []);
 
   // функция которая вытаскивает ШЕСТЬ рандомных мусоров из неотгаданных
-  function getTrashes(arr) {
-    const trashesFromDB = trashes?.length;
-    let trashesNum = 0;
-    if (trashesFromDB > 10) {
-      trashesNum = 10;
-    } else {
-      trashesNum = trashesFromDB;
-    }
-    const justSomeArr = [];
-    const randomTrashes = [];
-    const indexArr = [];
-    for (let i = 0; i < trashesFromDB; i += 1) {
-      justSomeArr.push(i);
-    }
-    for (let y = 0; y < trashesNum; y += 1) {
-      indexArr.push(justSomeArr.splice(Math.random() * justSomeArr.length, 1));
-    }
-    for (let x = 0; x < indexArr.length; x += 1) {
-      randomTrashes.push(arr[indexArr[x]]);
-    }
-    return randomTrashes;
-  }
-
-  const randomTrashes = getTrashes(trashes);
-  console.log('RANDOOOOOOM', getTrashes(trashes));
 
   const [flag, setFlag] = useState(false);
   const showTrash = () => {
@@ -92,13 +67,13 @@ function Game() {
             {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
             <Timer props={{ initialMinute, initialSeconds, setIsOpen }} /> */}
 
-            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+            {/* <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} /> */}
             <div>
               <GameNav2 />
             </div>
             <div>
               {/* <GameRat /> */}
-              <Container2 trash={randomTrashes} trashBin={trashWithoutMan} />
+              <Container2 trashBin={trashWithoutMan} />
             </div>
             <div>
               <GameBomzh2 />
