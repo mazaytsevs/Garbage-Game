@@ -9,7 +9,7 @@ export const getProgressThunk = () => async (dispatch) => {
     id: result.id,
     name: result.name,
     score: result.score,
-    background: (result.score === null || result.score < 20) ? 'lvl-1' : (result.score < 40) ? 'lvl-2' : 'lvl-3',
+    background: (result.score === null || result.score < 40) ? 'lvl-1' : (result.score < 80) ? 'lvl-2' : 'lvl-3',
   };
   dispatch(getProgress(progress));
 };
@@ -36,7 +36,7 @@ export const postProgressThunk = (body) => async (dispatch) => {
       id: result.id,
       name: result.name,
       score: result.score,
-      background: (result.score === null || result.score < 20) ? 'lvl-1' : (result.score < 40) ? 'lvl-2' : 'lvl-3',
+      background: (result.score === null || result.score < 40) ? 'lvl-1' : (result.score < 80) ? 'lvl-2' : 'lvl-3',
     };
     dispatch(getProgress(progress));
   }
