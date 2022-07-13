@@ -43,7 +43,7 @@ export const Box = function Box(props) {
         )
         : (
           <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
-            {name}
+            {/* {name} */}
             <img cobject-fit="cover" src={image} alt="" />
           </div>
         )}
