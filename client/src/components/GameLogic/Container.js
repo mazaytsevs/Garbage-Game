@@ -6,7 +6,9 @@ import { Dustbin } from './Dustbin';
 // import { ItemTypes } from './ItemTypes';
 import './GameTrash.css';
 
-const Container = memo(({ trash, trashBin, refreshTrash, randomTrashes, setRandomTrashes }) => {
+const Container = memo(({
+  trash, trashBin, refreshTrash, randomTrashes, setRandomTrashes,
+}) => {
   const dispatch = useDispatch();
   const flag = useSelector((state) => state.flag);
 
@@ -59,7 +61,7 @@ const Container = memo(({ trash, trashBin, refreshTrash, randomTrashes, setRando
         className="photo-album"
         style={{ overflow: 'hidden', clear: 'both' }}
       >
-        {trashSorted?.map((el, index) => (
+        {trash?.map((el, index) => (
           <Box
             score={el.score}
               // setScore={setScore}
@@ -91,7 +93,7 @@ const Container = memo(({ trash, trashBin, refreshTrash, randomTrashes, setRando
                 backgroundImage={el.trash_can_img_src}
                 itemType={el.id}
                 trashSorted={trashSorted}
-                setTrashSorted={setTrashSorted}
+                // setTrashSorted={setTrashSorted}
                 key={el.id}
                 setRandomTrashes={setRandomTrashes}
                 randomTrashes={randomTrashes}

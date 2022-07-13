@@ -10,11 +10,7 @@ const trashRandomReducer = (state = initialState, action) => {
     case CREATE_TRASH_RANDOM:
       return payload;
     case DELETE_TRASH_RANDOM:
-      const newState = {
-        ...state,
-        trashes: state.trashes.filter((trash) => trash.id !== payload),
-      };
-      return newState;
+      return state.filter((trash) => trash.id !== payload);
     default:
       return state;
   }

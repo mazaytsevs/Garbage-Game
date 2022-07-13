@@ -32,28 +32,23 @@ function Game() {
 
   // получаем мусор
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
-  const randomTrashes = useSelector((state) => state.randomTrashes);
+  const trashRandom = useSelector((state) => state.trashRandom);
   const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
   // для обращения к бэку
-  // const [randomTrashes, setRandomTrashes] = useState([]);
 
   useEffect(() => {
-    // console.log('MUUUUSOOOOOOOOOR', trashes);
     dispatch(generateTrashThunk());
   }, []);
 
+  console.log('trashRandom', trashRandom);
   console.log('trashes', trashes);
-  // useEffect(() => {
-  //   if (randomTrashes.length === 0) {
-  //     setRandomTrashes(getTrashes(trashes));
-  //   }
-  // }, [randomTrashes]);
 
   useEffect(() => {
-    if (randomTrashes.length === 0) {
-      dispatch(generateTrashRandomThunk(trashes));
+    console.log('asdsadsdf');
+    if (trashRandom.length === 0 && trashes.length !== 0) {
+      dispatch(generateTrashRandomThunk((getTrashes(trashes))));
     }
-  }, [randomTrashes]);
+  }, [trashes]);
 
   // console.log('RANDOOOOOOM', getTrashes(trashes));
   const refreshTrash = () => {
@@ -92,11 +87,10 @@ function Game() {
             <div>
               {/* <GameRat /> */}
               <Container
-                trash={randomTrashes}
+                trash={trashRandom}
                 trashBin={trashWithoutMan}
                 refreshTrash={refreshTrash}
-                randomTrashes={randomTrashes}
-                setRandomTrashes={setRandomTrashes}
+                // setRandomTrashes={setRandomTrashes}
               />
             </div>
             <div>
