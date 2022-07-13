@@ -34,7 +34,7 @@ function Game() {
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
   const trashRandom = useSelector((state) => state.trashRandom);
   const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
-  
+
   // MZ -> начало -> получаю бомжа-контейнера
   // eslint-disable-next-line no-unsafe-optional-chaining
   const bomzh = trashBinsFromDB && trashBinsFromDB[trashBinsFromDB.length - 1];
@@ -52,7 +52,6 @@ function Game() {
   console.log('trashes', trashes);
 
   useEffect(() => {
-    console.log('asdsadsdf');
     if (trashRandom.length === 0 && trashes.length !== 0) {
       dispatch(generateTrashRandomThunk((getTrashes(trashes))));
     }
