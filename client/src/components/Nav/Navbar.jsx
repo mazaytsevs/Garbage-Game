@@ -6,6 +6,7 @@ import Modal from '../Forms/Modal/ModalReg';
 import ModalLog from '../Forms/Modal/ModalLog';
 import { getDeleteProgressThunk } from '../../redux/actions/progress.action';
 import { getDeleteTimeProgressThunk } from '../../redux/actions/timeProgress.action';
+import { deleteAddedTrashThunk } from '../../redux/actions/newAddedTrashAction';
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function Navbar() {
 
   function deleteProgress(id) {
     dispatch(getDeleteProgressThunk(id));
+    dispatch(deleteAddedTrashThunk());
   }
 
   function deleteTimeProgress(id) {

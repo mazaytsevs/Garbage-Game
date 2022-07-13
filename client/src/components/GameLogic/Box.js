@@ -15,12 +15,12 @@ const style = {
 };
 // eslint-disable-next-line import/prefer-default-export
 export const Box = function Box(props) {
-  const { name, itemType, id, visible, setVisible, score, className, image } = props;
+  const { name, itemType, id, visible, setVisible, score, className, image, bonus } = props;
   // console.log(name, itemType, visible, setVisible, setScore, score)
   // console.log('itemType', itemType);
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'box',
-    item: { name, itemType, id, score },
+    item: { name, itemType, id, score, image, bonus },
     // eslint-disable-next-line max-len
     end: (item, monitor) => { // срабатывает когда заканчиваем перетаскивать, можно добавить логику сюда
       const dropResult = monitor.getDropResult();
@@ -43,7 +43,7 @@ export const Box = function Box(props) {
         )
         : (
           <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
-            {name}
+            {/* {name} */}
             <img cobject-fit="cover" src={image} alt="" />
           </div>
         )}

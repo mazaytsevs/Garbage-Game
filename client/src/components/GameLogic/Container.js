@@ -4,6 +4,8 @@ import { Box } from './Box';
 import { Dustbin } from './Dustbin';
 import { getHomelessThunk } from '../../redux/actions/homeless.action';
 import './GameTrash.css';
+import InfoCloudForHomeless from '../InfoClouds/InfoCloudForHomeless';
+import InfoCloudForLocation from '../InfoClouds/InfoCloudForLocation';
 
 const Container = memo(({
   trash, trashBin, refreshTrash, bomzh,
@@ -32,13 +34,15 @@ const Container = memo(({
   return (
     <div className="gameBoard">
       <div className="garbageForSort">
-
+        {/* мысля */}
+        <InfoCloudForHomeless />
+        <InfoCloudForLocation />
         <div
           className="trashBag"
           onClick={function () {
             setFlag(true);
             refreshTrash();
-            setTimeout(() => setFlag(false), 4000);
+            setTimeout(() => setFlag(false), 1000);
             dispatch(getHomelessThunk());
           }}
         >
@@ -60,6 +64,7 @@ const Container = memo(({
           {trash?.map((el, index) => (
             <Box
               score={el.score}
+              bonus={el.bonus}
               id={el.id}
               key={el.id}
               name={el.trash_name}
