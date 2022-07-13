@@ -1,12 +1,16 @@
 import React, { memo, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Box } from './Box';
 import { Dustbin } from './Dustbin';
+import { getHomelessThunk } from '../../redux/actions/homeless.action';
 import './GameTrash.css';
 
 const Container = memo(({
   trash, trashBin, refreshTrash, bomzh,
 }) => {
   const [flag, setFlag] = useState(false);
+
+  const dispatch = useDispatch();
 
   const getVisibilityInitState = () => {
     const res = {};
@@ -35,6 +39,7 @@ const Container = memo(({
             setFlag(true);
             refreshTrash();
             setTimeout(() => setFlag(false), 4000);
+            dispatch(getHomelessThunk());
           }}
         >
           <img
