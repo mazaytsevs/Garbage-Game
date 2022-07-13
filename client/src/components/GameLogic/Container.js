@@ -4,7 +4,7 @@ import { Dustbin } from './Dustbin';
 // import { ItemTypes } from './ItemTypes';
 import './GameTrash.css';
 
-const Container = memo(({ trash, trashBin }) => {
+const Container = memo(({ trash, trashBin, bomzh }) => {
   const getVisibilityInitState = () => {
     const res = {};
     // eslint-disable-next-line no-restricted-syntax
@@ -114,6 +114,17 @@ const Container = memo(({ trash, trashBin }) => {
           </div>
         </div>
       </div>
+      {/* MZ -> начало -> рисую бомжа */}
+      <div id="bomzh">
+        <Dustbin
+          binName={bomzh.id}
+          itemType={bomzh.id}
+          trashSorted={trashSorted}
+          setTrashSorted={setTrashSorted}
+          key={bomzh.id}
+        />
+      </div>
+      {/* MZ -> конец -> рисую бомжа */}
     </div>
   );
 });

@@ -17,6 +17,11 @@ function Game() {
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
 
+  // MZ -> начало -> получаю бомжа-контейнера
+  // eslint-disable-next-line no-unsafe-optional-chaining
+  const bomzh = trashBinsFromDB && trashBinsFromDB[trashBinsFromDB.length - 1];
+  // MZ -> конец -> получаю бомжа-контейнера
+
   // получаем мусор
   // const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
   // для обращения к бэку
@@ -78,13 +83,26 @@ function Game() {
   const [rulesModal, setRulesModal] = React.useState(true);
   return (
     <div>
-      {loading ? (
-        <Load />
-      ) : (
-        <div className={background}>
-          <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
-          <div>
-            <GameNav />
+
+      {loading ? (<Load />)
+        : (
+          <div className={background}>
+            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+            <div>
+              <GameNav />
+            </div>
+            <div>
+              <Container
+                trash={randomTrashes}
+                trashBin={trashWithoutMan}
+                 // MZ -> передаю бомжа-контейнера
+                bomzh={bomzh}
+              />
+            </div>
+            <div>
+              <GameBomzh />
+            </div>
+
           </div>
         )}
     </div>

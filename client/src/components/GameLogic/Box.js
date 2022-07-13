@@ -37,8 +37,8 @@ export const Box = function Box(props) {
       {/* это проверка на крысу */}
       {id === 58
         ? (
-          <div ref={drag} style={{ ...style, opacity }} className="sprite-container">
-            <div className="sprite-image" />
+          <div ref={drag} style={{ ...style, opacity }} id="sprite-container">
+            <div id="sprite-image" />
           </div>
         )
         : (

@@ -203,24 +203,33 @@ div:focus {
 }
 
 /* для крысы начало */
-.sprite-container {
-  height: 50vh; /*100% высоты экрана*/
+#sprite-container {
+  /* height: 20vh;  */
+  /*100% высоты экрана*/
+  /* left: -50%;
   display: flex;
-  align-items: center; /*чтобы картинка была по центру*/
-  margin-left: 20rem;
-  z-index: 99;
+  align-items: center;  */
+  /*чтобы картинка была по центру*/
+  /* margin-left: 20rem; */
+  /* z-index: 999; */
+  position:fixed;
+  /* top: 15vh; 
+  left: 30vh; */
+  z-index: 1500;
+  top: 85vh; 
+  left: 10vh;
 }
 
-.sprite-image {
-  height: 155px; /*высота спрайта (высота одного кадра)*/
-  width: 200px; /*ширина спрайта (ширина одного кадра)*/
-  background: url("../../../public/trashes/rat.png"); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+#sprite-image {
+  height: 105px; /*высота спрайта (высота одного кадра)*/
+  width: 100px; /*ширина спрайта (ширина одного кадра)*/
+  background: url("../../../public/rat/ratRuns.png"); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
   /* animation: play 0.8s steps(6) infinite, fly 10s ease; */
   background-size: cover;
-  animation: fly 10s ease;
+  animation: play 0.8s steps(6) infinite, run 8s ease infinite;
   animation-delay: 2s;
   position: absolute; 
-  z-index: 99;
+  z-index: 1500;
 }
 
 @keyframes play {
@@ -229,7 +238,7 @@ div:focus {
   }
 }
 
-@keyframes fly {
+@keyframes chaotic {
   0% {
     -webkit-transform: translate(30px, 45px);
     transform: translate(30px, 45px);
@@ -263,4 +272,38 @@ div:focus {
     transform: translate(1px, 1px);
   }
 }
+
+@keyframes run {
+  0% {
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+  }
+  50%{
+    -webkit-transform:  translate(150vh, -1%);
+    transform: translate(150vh, -1%) ;
+  }
+  75%{
+    -webkit-transform:  translate(150vh, -1%) scaleX(-1);
+    transform: translate(150vh, -1%) scaleX(-1);
+  }
+  100%{
+    -webkit-transform:  translate(0%, -1%) scaleX(-1);
+    transform: translate(0%, -1%) scaleX(-1);
+  }
+  
+}
 /* конец крысы */
+
+
+/* начало бомжа-контейнера */
+#bomzh img{
+  border-style: double;
+  border-color: aqua;
+  right: 80px;
+  bottom: 70px;
+  width: 250px;
+  height: 450px;
+  position: absolute;
+  z-index: 99;
+}
+/* конец бомжа-контейнера */
