@@ -5,6 +5,7 @@ import styles from './nav.module.css';
 import Modal from '../Forms/Modal/ModalReg';
 import ModalLog from '../Forms/Modal/ModalLog';
 import { getDeleteProgressThunk } from '../../redux/actions/progress.action';
+import { deleteAddedTrashThunk } from '../../redux/actions/newAddedTrashAction';
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function Navbar() {
 
   function deleteProgress(id) {
     dispatch(getDeleteProgressThunk(id));
+    dispatch(deleteAddedTrashThunk());
   }
   return (
     <div className={styles.backAuth}>

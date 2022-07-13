@@ -9,6 +9,7 @@ import { postProgressThunk } from '../../redux/actions/progress.action';
 import { deleteTrashThunk } from '../../redux/actions/actions';
 import { deleteTrashRandomThunk } from '../../redux/actions/randomTrashAction';
 import { getHomelessThunk } from '../../redux/actions/homeless.action';
+import { addedTrashThunk } from '../../redux/actions/newAddedTrashAction';
 
 // комопонент корзины
 export function Dustbin(props) {
@@ -28,6 +29,7 @@ export function Dustbin(props) {
           dispatch(postProgressThunk(item));
           dispatch(deleteTrashThunk(item.id));
           dispatch(deleteTrashRandomThunk(item.id));
+          dispatch(addedTrashThunk(item));
           dispatch(getHomelessThunk());
         }
         return { name: binName };

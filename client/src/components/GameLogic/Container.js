@@ -62,6 +62,7 @@ const Container = memo(({
           {trash?.map((el, index) => (
             <Box
               score={el.score}
+              bonus={el.bonus}
               id={el.id}
               key={el.id}
               name={el.trash_name}
