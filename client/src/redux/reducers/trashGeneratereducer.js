@@ -1,5 +1,7 @@
 /* eslint-disable no-case-declarations */
-import { CLEAR_OLD_PROGRESS, DELETE_TRASH, GENERATE_TRASH } from '../types/types';
+import {
+  CLEAR_OLD_PROGRESS, DELETE_TRASH, GENERATE_TRASH, CLEAR_OLD_TIME_PROGRESS,
+} from '../types/types';
 
 const initialState = {
   trashes: [],
@@ -24,6 +26,8 @@ const trashGeneratereducer = (state = initialState, action) => {
       return newState;
     case CLEAR_OLD_PROGRESS:
       return payload;
+      // case CLEAR_OLD_TIME_PROGRESS:
+      //   return payload;
 
     default:
       return state;

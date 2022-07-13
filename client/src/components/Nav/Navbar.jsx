@@ -5,6 +5,7 @@ import styles from './nav.module.css';
 import Modal from '../Forms/Modal/ModalReg';
 import ModalLog from '../Forms/Modal/ModalLog';
 import { getDeleteProgressThunk } from '../../redux/actions/progress.action';
+import { getDeleteTimeProgressThunk } from '../../redux/actions/timeProgress.action';
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -15,6 +16,10 @@ function Navbar() {
 
   function deleteProgress(id) {
     dispatch(getDeleteProgressThunk(id));
+  }
+
+  function deleteTimeProgress(id) {
+    dispatch(getDeleteTimeProgressThunk(id));
   }
   return (
     <div className={styles.backAuth}>
@@ -45,11 +50,13 @@ function Navbar() {
                         </div>
                       </li>
                       <li className={styles.signOut}>
-                        <NavLink
-                          to="/hardmode"
-                        >
-                          Сложный уровень
-                        </NavLink>
+                        <div onClick={() => deleteTimeProgress(user.id)}>
+                          <NavLink
+                            to="/hardmode"
+                          >
+                            Сложный уровень
+                          </NavLink>
+                        </div>
                       </li>
                       <li className={styles.signOut}>
                         <Link
