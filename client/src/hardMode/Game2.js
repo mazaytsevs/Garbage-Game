@@ -14,6 +14,7 @@ import Rules from '../components/Rules/Rules';
 import '../components/Game/game.css';
 import { getTimeProgressThunk } from '../redux/actions/timeProgress.action';
 import Conveyor from './conveyor/Conveyor';
+import { generateTimeTrashThunk } from '../redux/actions/trashTimeAction';
 
 function Game() {
   // const [initialMinute, setInitialMinute] = useState(0);
@@ -21,7 +22,7 @@ function Game() {
   // const [isOpen, setIsOpen] = useState(false);
   // получаем мусорные баки
   const trashBinsFromDB = useSelector(
-    (state) => state.trashGenerate?.trashCans,
+    (state) => state.trashTime?.trashCans,
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
 
@@ -29,11 +30,19 @@ function Game() {
   const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
   // для обращения к бэку
   const dispatch = useDispatch();
-  const trashes = useSelector((state) => state.trashGenerate?.trashes);
+  const trashes = useSelector((state) => state.trashTime?.trashes);
   useEffect(() => {
-    // console.log('MUUUUSOOOOOOOOOR', trashes);
-    dispatch(generateTrashThunk());
+    dispatch(generateTimeTrashThunk());
   }, []);
+
+  // const lala = useSelector(
+  //   (state) => state.trashTime,
+  // );
+
+  // useEffect(() => {
+  //   dispatch(generateTimeTrashThunk());
+  // }, []);
+  // console.log('MUUUUSOOOOOOOOOR', lala);
 
   // функция которая вытаскивает ШЕСТЬ рандомных мусоров из неотгаданных
 
