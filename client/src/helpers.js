@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 export function getTrashes(arr) {
-  console.log(arr);
+  // console.log(arr);
   const trashesFromDB = arr.length;
   let trashesNum = 0;
   if (trashesFromDB > 10) {

@@ -5,6 +5,7 @@ import { generateTrashThunk } from '../../redux/actions/actions';
 import { changeFlagThunk } from '../../redux/actions/changeFlagAction';
 import { getProgressThunk } from '../../redux/actions/progress.action';
 import { generateTrashRandomThunk } from '../../redux/actions/randomTrashAction';
+import EndGame from '../EndGame/EndGame';
 
 import GameBomzh from '../GameBomzh/GameBomzh';
 import Container from '../GameLogic/Container';
@@ -22,14 +23,6 @@ function Game() {
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
 
-  const flag = useSelector(
-    (state) => state.flag,
-  );
-
-  useEffect(() => {
-    dispatch(changeFlagThunk());
-  }, []);
-
   // получаем мусор
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
   const trashRandom = useSelector((state) => state.trashRandom);
@@ -39,39 +32,18 @@ function Game() {
   // eslint-disable-next-line no-unsafe-optional-chaining
   const bomzh = trashBinsFromDB && trashBinsFromDB[trashBinsFromDB.length - 1];
   // MZ -> конец -> получаю бомжа-контейнера
-
-  // получаем мусор
-  // const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
-  // для обращения к бэку
-
   useEffect(() => {
     dispatch(generateTrashThunk());
   }, []);
-
-  console.log('trashRandom', trashRandom);
-  console.log('trashes', trashes);
-
   useEffect(() => {
     if (trashRandom.length === 0 && trashes.length !== 0) {
       dispatch(generateTrashRandomThunk((getTrashes(trashes))));
     }
   }, [trashes]);
 
-  // console.log('RANDOOOOOOM', getTrashes(trashes));
   const refreshTrash = () => {
     dispatch(generateTrashRandomThunk((getTrashes(trashes))));
   };
-
-  // для мусора чтобы удалять
-  // const [trashSorted, setTrashSorted] = useState(randomTrashes);
-
-  // const [flag, setFlag] = useState(false);
-  // const showTrash = () => {
-  //   setFlag(!flag);
-  //   // setBagPic('/trashBins/dangerous.png');
-  // };
-
-  // console.log(randomTrashes);
   const progress = useSelector((state) => state.progress);
 
   useEffect(() => {
@@ -86,23 +58,33 @@ function Game() {
     setTimeout(() => setLoading(false), 4000); // do your async call
   };
 
-  componentDidMount();
+  // useEffect(() => {
+  //   <EndGame />;
+  // }, progress.score > 12);
 
+  componentDidMount();
+  console.log('progress', progress.score);
   // для модалки с правилами
   const [rulesModal, setRulesModal] = React.useState(true);
-
   return (
     <div>
-
+      {/* MZ ->
+      проверка на конец игры, если прогресс 100 то запускается функция с другим компонентом */}
+      {/* {progress.score >= 12
+        ? <EndGame /> : null} */}
+      {/* <EndGame score={progress.score} /> */}
       {loading ? (<Load />)
         : (
           <div className={background}>
-            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+            {/*  MZ -> модалка с правилами теперь только при прогрессе 0 */}
+            {progress.score == null
+              ? <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+              : null}
+            {/* MZ -> конец проверок */}
             <div>
               <GameNav />
             </div>
             <div>
-              {/* <GameRat /> */}
               <Container
                 trash={trashRandom}
                 trashBin={trashWithoutMan}

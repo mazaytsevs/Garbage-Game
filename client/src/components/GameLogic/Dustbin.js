@@ -24,13 +24,10 @@ export function Dustbin(props) {
       // передаю сюда пропсом функцию установки визибл для итема и вызови в ondrop
 
       drop: (item) => {
-        console.log('item', item);
-        console.log('binName', binName);
         if (item.itemType === binName) {
           dispatch(postProgressThunk(item));
           dispatch(deleteTrashThunk(item.id));
           dispatch(deleteTrashRandomThunk(item.id));
-
           dispatch(getHomelessThunk());
         }
         return { name: binName };
@@ -56,14 +53,7 @@ export function Dustbin(props) {
       }}
       data-testid="dustbin"
     >
-
-      {/* <img width="100" height="200" cobject-fit="cover" src={backgroundImage} alt="" /> */}
-
-      {/* {backgroundImage ?
       <img width="200" height="250" object-fit="cover" src={backgroundImage} alt="" />
-        : null } */}
-      <img width="200" height="250" object-fit="cover" src={backgroundImage} alt="" />
-
       {isActive && 'Бросай'}
     </div>
   );

@@ -1,20 +1,12 @@
-import React, { memo, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { changeFlagThunk } from '../../redux/actions/changeFlagAction';
+import React, { memo, useState } from 'react';
 import { Box } from './Box';
 import { Dustbin } from './Dustbin';
-// import { ItemTypes } from './ItemTypes';
 import './GameTrash.css';
 
 const Container = memo(({
-  trash, trashBin, refreshTrash, randomTrashes, setRandomTrashes, bomzh,
+  trash, trashBin, refreshTrash, bomzh,
 }) => {
-  const dispatch = useDispatch();
-  // const flag = useSelector((state) => state.flag);
-
-  // useEffect(() => {
-  //   dispatch(changeFlagThunk());
-  // }, []);
+  const [flag, setFlag] = useState(false);
 
   const getVisibilityInitState = () => {
     const res = {};
@@ -27,37 +19,35 @@ const Container = memo(({
   }; // начальное состояние видимости, по дефолту тру, передавай это в компонент бокс, и если у соответствующего итема будет false то присваивай стиль display: none
 
   const visibilityInitState = getVisibilityInitState();
-  // const [visible, setVisible] = useState(visibilityInitState && '');
-  // const [score, setScore] = useState(0);
-  const [visible, setVisible] = useState(visibilityInitState);
+
   const [trashSorted, setTrashSorted] = useState(trash);
 
-  const [flag, setFlag] = useState(false);
-  // const showTrash = () => {
-  //   dispatch(changeFlagThunk(!flag));
-  //   console.log(flag);
-  // };
-
   // для удаления мусора
+  // console.log(flag);
 
   return (
-    <div className="garbageForSort">
-      <div className="gameBoard">
+    <div className="gameBoard">
+      <div className="garbageForSort">
 
-        <div className="trashBag" onClick={refreshTrash}>
+        <div
+          className="trashBag"
+          onClick={function () {
+            setFlag(true);
+            refreshTrash();
+            setTimeout(() => setFlag(false), 4000);
+          }}
+        >
           <img
             className="bag"
             src={
-            // flag ?
-            // '/trashbag/trashbagOPEN.png'
-            //  :
-            '/trashbag/trashbagCLOSED.png'
+            flag
+              ? '/trashbag/trashbagOPEN.png'
+              : '/trashbag/trashbagCLOSED.png'
           }
             alt="bag"
             width="200"
           />
         </div>
-
         <div
           className="photo-album"
           style={{ overflow: 'hidden', clear: 'both' }}
@@ -65,9 +55,6 @@ const Container = memo(({
           {trash?.map((el, index) => (
             <Box
               score={el.score}
-              // setScore={setScore}
-              setVisible={setVisible}
-              visible={visible[el.id]}
               id={el.id}
               key={el.id}
               name={el.trash_name}
@@ -77,9 +64,7 @@ const Container = memo(({
             />
           ))}
         </div>
-        {/* ) : null} */}
       </div>
-
       <div className="bins">
         <div className="GameBins" style={{ display: 'flex' }}>
           {trashBin?.map((el) => (
@@ -100,6 +85,17 @@ const Container = memo(({
           ))}
         </div>
       </div>
+      {/* MZ -> начало -> рисую бомжа */}
+      <div id="bomzh">
+        <Dustbin
+          binName={bomzh.id}
+          itemType={bomzh.id}
+          trashSorted={trashSorted}
+          setTrashSorted={setTrashSorted}
+          key={bomzh.id}
+        />
+      </div>
+      {/* MZ -> конец -> рисую бомжа */}
     </div>
   );
 });
