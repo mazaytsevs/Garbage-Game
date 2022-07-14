@@ -233,7 +233,7 @@ div:focus {
   animation: play 0.8s steps(6) infinite, run 8s ease infinite;
   animation-delay: 2s;
   position: absolute; 
-  z-index: 1500;
+  z-index: 2000;
 }
 
 @keyframes play {
