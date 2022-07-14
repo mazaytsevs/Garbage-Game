@@ -11,10 +11,10 @@ import { getHomelessThunk } from '../../redux/actions/homeless.action';
 import { addedTrashThunk } from '../../redux/actions/newAddedTrashAction';
 
 const style = {
-  height: '12rem',
-  width: '12rem',
-  marginRight: '1.5rem',
-  marginBottom: '1.5rem',
+  height: '25vh',
+  width: '10vw',
+  // marginRight: '1.5rem',
+  // marginBottom: '1.5rem',
   color: 'white',
   padding: '1rem',
   textAlign: 'center',
@@ -49,6 +49,7 @@ export function Dustbin(props) {
   })); // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
 
   const isActive = canDrop && isOver;
+  const win = isOver;
   let mozЕransform;
   let webkitTransform;
   let oTransform;
@@ -64,7 +65,7 @@ export function Dustbin(props) {
     // boxShadow = '0px 0px 36px 36px';
   }
   return (
-    <div ref={drop} className="active" data-testid="dustbin">
+    <div ref={drop} data-testid="dustbin">
       <img
         style={{
           ...style,
