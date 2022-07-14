@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Modal.module.css';
 
 function Modal({
-  isVisible = false, closeBtn, title, content, footer, onClose,
+  isVisible = false, closeBtn, title, content, footer, onClose, someFunc,
 }) {
   const keydownHandler = ({ key }) => {
     switch (key) {
@@ -35,7 +35,7 @@ function Modal({
             {footer}
           </div>
           )}
-          <span className={styles.modal_gotovo} onClick={onClose}>
+          <span className={styles.modal_gotovo} onClick={someFunc || onClose}>
             <img width="100" alt="gotovo" src="/modalPics/gotovo.png" />
           </span>
         </div>

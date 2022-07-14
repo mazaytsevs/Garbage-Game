@@ -234,6 +234,7 @@ div:focus {
   z-index: 1500;
   top: 85vh;
   left: 10vh;
+  z-index: 2000;
 }
 
 #sprite-image {
@@ -244,8 +245,8 @@ div:focus {
   background-size: cover;
   animation: play 0.8s steps(6) infinite, run 8s ease infinite;
   animation-delay: 2s;
-  position: absolute;
-  z-index: 1500;
+  position: absolute; 
+  z-index: 2000;
 }
 
 @keyframes play {
