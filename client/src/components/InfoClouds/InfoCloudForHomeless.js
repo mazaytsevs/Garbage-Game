@@ -17,10 +17,12 @@ function InfoCloudForHomeless() {
       {addedTrash.name && flag
       && (
       <div className="thought">
-        <p>Вы открыли новый бонусный предмет:</p>
-        <p>{addedTrash.name}</p>
-        <img src={addedTrash.image} alt="бонусный предмет" width="50" />
-
+        <p>
+          Вы открыли новый бонусный предмет:
+          {' '}
+          {addedTrash.name}
+        </p>
+        <img className="bonus-img" src={addedTrash.image} alt="бонусный предмет" />
       </div>
       )}
     </div>
