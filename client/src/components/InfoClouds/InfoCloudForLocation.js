@@ -23,15 +23,18 @@ function InfoCloudForLocation() {
   }, [progress]);
   console.log(+progress.score >= 40);
 
+  const location = (+progress.score >= 40) ? 'Канализационный люк' : 'Рублёвские мусорки';
+
   return (
     <div>
       {flag
       && (
       <div className="thought">
-        <p>Вы открыли новую локацию!</p>
-        {progress.score >= 40
-          ? <p>Канализационный люк</p> : progress.score >= 80
-        && <p>Рублёвские мусорки</p>}
+        <p>
+          Вы открыли новую локацию:
+          {' '}
+          <b>{location}</b>
+        </p>
       </div>
       )}
     </div>
