@@ -1,8 +1,6 @@
-'use strict';
-
 module.exports = {
-  async up (queryInterface, Sequelize) {
-     await queryInterface.bulkInsert('Trashes', [
+  async up(queryInterface, Sequelize) {
+    await queryInterface.bulkInsert('Trashes', [
       {
         trash_can_id: 1,
         trash_name: 'стеклянная банка',
@@ -11,7 +9,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 1,
@@ -21,7 +19,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 1,
@@ -31,7 +29,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -41,7 +39,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -51,7 +49,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -61,7 +59,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -71,7 +69,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -81,7 +79,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -91,7 +89,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -101,7 +99,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -111,7 +109,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -121,7 +119,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -131,7 +129,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -141,7 +139,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 2,
@@ -151,7 +149,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 3,
@@ -161,7 +159,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 3,
@@ -171,7 +169,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 3,
@@ -181,7 +179,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 3,
@@ -191,7 +189,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 3,
@@ -201,7 +199,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 4,
@@ -211,7 +209,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 4,
@@ -221,7 +219,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 4,
@@ -231,7 +229,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 4,
@@ -241,7 +239,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 4,
@@ -251,7 +249,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 4,
@@ -261,7 +259,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 4,
@@ -271,7 +269,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 4,
@@ -281,7 +279,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 5,
@@ -291,7 +289,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 5,
@@ -301,7 +299,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 5,
@@ -311,7 +309,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 5,
@@ -321,7 +319,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 5,
@@ -331,7 +329,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 5,
@@ -341,7 +339,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 5,
@@ -351,7 +349,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -361,7 +359,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -371,7 +369,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -381,7 +379,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -391,7 +389,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -401,7 +399,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -411,7 +409,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -421,7 +419,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -431,7 +429,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -441,7 +439,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -451,7 +449,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -461,7 +459,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -471,7 +469,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -481,7 +479,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -491,7 +489,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -501,7 +499,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -511,7 +509,7 @@ module.exports = {
         score: 3,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 6,
@@ -521,7 +519,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 7,
@@ -531,7 +529,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 7,
@@ -541,7 +539,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 7,
@@ -551,7 +549,7 @@ module.exports = {
         score: 1,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 7,
@@ -561,7 +559,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 7,
@@ -571,7 +569,7 @@ module.exports = {
         score: 2,
         bonus: false,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 8,
@@ -579,9 +577,9 @@ module.exports = {
         trash_img_src: '/trashes/rat.png',
         info: 'blablabla',
         score: 5,
-        bonus: false,
+        bonus: true,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 8,
@@ -589,9 +587,9 @@ module.exports = {
         trash_img_src: '/trashes/clothers.png',
         info: 'blablabla',
         score: 4,
-        bonus: false,
+        bonus: true,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
         trash_can_id: 8,
@@ -599,14 +597,14 @@ module.exports = {
         trash_img_src: '/trashes/phone.png',
         info: 'blablabla',
         score: 4,
-        bonus: false,
+        bonus: true,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
     ], {});
   },
 
-  async down (queryInterface, Sequelize) {
-     await queryInterface.bulkDelete('Trashes', null, {});
-  }
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('Trashes', null, {});
+  },
 };

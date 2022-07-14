@@ -1,0 +1,35 @@
+.passportPic{
+  display: flex;
+  justify-content: center;
+}
+
+.passportFlyContainer {
+  position:fixed;
+  z-index: 1500;
+  top: 15vh; 
+  left: 15vh;
+}
+
+.passportFlyImg {
+  height: 105px; /*высота спрайта (высота одного кадра)*/
+  width: 70px; /*ширина спрайта (ширина одного кадра)*/
+  background: url("../../../public/endgame/passport.png"); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+  background-size: cover;
+  animation: rotate 8s ease infinite fly 8s ease infinite;
+  animation-delay: 500s;
+  position: absolute; 
+  z-index: 1500;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes fly {
+  100% {
+    -webkit-transform: translate(0, 70%);
+    transform: translate(0, 70%);
+  }
+}

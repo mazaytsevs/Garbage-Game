@@ -1,19 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getInfoThunk } from '../../redux/actions/actions';
 import Modal from '../Modal/Modal';
-import './rules.css';
+import { getProgressThunk } from '../../redux/actions/progress.action';
 
-function Rules({ rulesModal, setRulesModal }) {
-  const trashCans = useSelector(
-    (state) => state.trashGenerate?.trashCans,
-  );
-  // console.log('ololololololololololololollo', trashCans);
+import './easyfinal.css';
+
+function EasyFinal() {
+  const dispatch = useDispatch();
+  const progress = useSelector((state) => state.progress);
+
+  useEffect(() => {
+    dispatch(getProgressThunk());
+  }, []);
+
+  const [flag, setFlag] = useState(false);
+
+  useEffect(() => {
+    if (+progress.score === 120) {
+      setFlag(true);
+    }
+  }, [progress]);
+
   return (
     <div className="rulesContainer">
       <Modal
-        isVisible={rulesModal}
-        title={<>Правила игры</>}
+        isVisible={flag}
+        title={<>WIN</>}
         content={(
           <div className="rulesText">
             Привет!
@@ -35,25 +47,18 @@ function Rules({ rulesModal, setRulesModal }) {
               Тебе нужно нажать на мешок, из которого выпадет всякий мусор.
               Этот мусор нужно рассортировать по контейнерам внизу экрана.
             </p>
-            {trashCans?.map((el) => (
-              <div className="cansForRules" key={el.id}>
-                <img width="339" height="385" src={el.trash_can_img_src} alt={el.trash_can_name} />
-                <span>{el.trash_can_info}</span>
-              </div>
-
-            ))}
             <p>
               Если возникают сложности, нажми на кнопку инфо в правом верхнем углу.
               Удачи!
             </p>
           </div>
             )}
-        // footer={<button type="button" onClick={() => setRulesModal(false)}> OK </button>}
-        onClose={() => setRulesModal(false)}
+        onClose={() => setFlag(false)}
       />
+      )
     </div>
 
   );
 }
 
-export default Rules;
+export default EasyFinal;

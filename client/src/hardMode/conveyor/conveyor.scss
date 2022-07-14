@@ -1,18 +1,19 @@
 .room {
-  z-index: -1;
+  // z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   margin: auto;
-  width: 100vw;
-  height: 100vh;
+  // width: 100vw;
+  // height: 100vh;
   top: 0px;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: transparent;
   overflow: hidden;
+  height: 200px;
 }
 
 .belt {
@@ -29,7 +30,7 @@
   height: 0;
   width: 180px;
   top: -40px;
-  animation: move 172s linear infinite;
+  animation: move 176s linear infinite;
 }
 
 // .sushiplate span:after {
@@ -110,87 +111,87 @@
   animation-delay: -88s;
 }
 .sushiplate span:nth-child(24) {
-  animation-delay: -72s;
-}
-.sushiplate span:nth-child(25) {
-  animation-delay: 76s;
-}
-.sushiplate span:nth-child(26) {
-  animation-delay: -80s;
-}
-.sushiplate span:nth-child(27) {
-  animation-delay: -84s;
-}
-.sushiplate span:nth-child(28) {
-  animation-delay: -88s;
-}
-.sushiplate span:nth-child(29) {
   animation-delay: -92s;
 }
-.sushiplate span:nth-child(30) {
-  animation-delay: -96s;
+.sushiplate span:nth-child(25) {
+  animation-delay: 96s;
 }
-.sushiplate span:nth-child(31) {
+.sushiplate span:nth-child(26) {
   animation-delay: -100s;
 }
-.sushiplate span:nth-child(32) {
+.sushiplate span:nth-child(27) {
   animation-delay: -104s;
 }
-.sushiplate span:nth-child(33) {
+.sushiplate span:nth-child(28) {
   animation-delay: -108s;
 }
-.sushiplate span:nth-child(34) {
+.sushiplate span:nth-child(29) {
   animation-delay: -112s;
 }
-.sushiplate span:nth-child(35) {
+.sushiplate span:nth-child(30) {
   animation-delay: -116s;
 }
-.sushiplate span:nth-child(36) {
+.sushiplate span:nth-child(31) {
   animation-delay: -120s;
 }
-.sushiplate span:nth-child(37) {
+.sushiplate span:nth-child(32) {
   animation-delay: -124s;
 }
-.sushiplate span:nth-child(38) {
+.sushiplate span:nth-child(33) {
   animation-delay: -128s;
 }
-.sushiplate span:nth-child(39) {
+.sushiplate span:nth-child(34) {
   animation-delay: -132s;
 }
-.sushiplate span:nth-child(40) {
+.sushiplate span:nth-child(35) {
   animation-delay: -136s;
+}
+.sushiplate span:nth-child(36) {
+  animation-delay: -140s;
+}
+.sushiplate span:nth-child(37) {
+  animation-delay: -144s;
+}
+.sushiplate span:nth-child(38) {
+  animation-delay: -148s;
+}
+.sushiplate span:nth-child(39) {
+  animation-delay: -152s;
+}
+.sushiplate span:nth-child(40) {
+  animation-delay: -156s;
 }
 
 .sushiplate span:nth-child(41) {
-  animation-delay: -140s;
-}
-.sushiplate span:nth-child(42) {
-  animation-delay: -144s;
-}
-.sushiplate span:nth-child(43) {
-  animation-delay: -148s;
-}
-.sushiplate span:nth-child(44) {
-  animation-delay: -152s;
-}
-.sushiplate span:nth-child(45) {
-  animation-delay: -156s;
-}
-.sushiplate span:nth-child(46) {
   animation-delay: -160s;
 }
-.sushiplate span:nth-child(47) {
+.sushiplate span:nth-child(42) {
   animation-delay: -164s;
 }
-.sushiplate span:nth-child(48) {
+.sushiplate span:nth-child(43) {
   animation-delay: -168s;
 }
-.sushiplate span:nth-child(49) {
+.sushiplate span:nth-child(44) {
   animation-delay: -172s;
 }
-.sushiplate span:nth-child(50) {
+.sushiplate span:nth-child(45) {
   animation-delay: -176s;
 }
+// .sushiplate span:nth-child(46) {
+//   animation-delay: -160s;
+// }
+// .sushiplate span:nth-child(47) {
+//   animation-delay: -164s;
+// }
+// .sushiplate span:nth-child(48) {
+//   animation-delay: -168s;
+// }
+// .sushiplate span:nth-child(49) {
+//   animation-delay: -172s;
+// }
+// .sushiplate span:nth-child(50) {
+//   animation-delay: -176s;
+// }
 
 @keyframes move {
   from {
