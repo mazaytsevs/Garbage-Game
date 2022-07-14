@@ -175,10 +175,10 @@ div img {
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 }
-div:hover,
+/* div:hover,
 div:focus {
   z-index: 50000;
-}
+} */
 
 /* стили для мусорных баков */
 .bins {
