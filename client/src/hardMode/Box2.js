@@ -2,7 +2,7 @@
 import React from 'react';
 import { useDrag } from 'react-dnd';
 import GameRat from '../components/GameRat/GameRat';
-import styles from './GameTrash2.css';
+import './GameTrash2.css';
 
 const style = {
   // border: '1px dashed gray',
@@ -11,7 +11,7 @@ const style = {
   // marginRight: '1.5rem',
   // marginBottom: '1.5rem',
   // cursor: 'move',
-  float: 'left',
+  // float: 'left',
 };
 // eslint-disable-next-line import/prefer-default-export
 export const Box = function Box(props) {
@@ -22,7 +22,8 @@ export const Box = function Box(props) {
     type: 'box',
     item: { name, itemType, id, score },
     // eslint-disable-next-line max-len
-    end: (item, monitor) => { // срабатывает когда заканчиваем перетаскивать, можно добавить логику сюда
+    end: (item, monitor) => {
+      // срабатывает когда заканчиваем перетаскивать, можно добавить логику сюда
       const dropResult = monitor.getDropResult();
     },
     collect: (monitor) => ({
@@ -33,20 +34,16 @@ export const Box = function Box(props) {
   const opacity = isDragging ? 0.4 : 1;
   const nashClass = `medium polaroid img${className + 1}`;
   return (
-    <div className={styles.divForCursor2}>
-      {/* это проверка на крысу */}
-      {id === 58
-        ? (
-          <div ref={drag} style={{ ...style, opacity }} className="sprite-container">
-            <div className="sprite-image" />
-          </div>
-        )
-        : (
-          <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
-            {name}
-            <img style={{ width: '65px', height: '100px' }} cobject-fit="cover" src={image} alt="" />
-          </div>
-        )}
+    <div className="divForCursor2">
+      <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
+        {name}
+        <img
+          style={{ width: '65px', height: '100px' }}
+          cobject-fit="cover"
+          src={image}
+          alt=""
+        />
+      </div>
     </div>
   );
 };

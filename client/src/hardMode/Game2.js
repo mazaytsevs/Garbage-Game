@@ -76,9 +76,9 @@ function Game() {
               {/* <GameRat /> */}
               <Container2 trashBin={trashWithoutMan} bomzh={bomzh} />
             </div>
-            <div>
+            {/* <div>
               <GameBomzh2 />
-            </div>
+            </div> */}
             <Conveyor />
           </div>
         )}
