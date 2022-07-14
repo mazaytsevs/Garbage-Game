@@ -132,6 +132,13 @@ div img {
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 }
+<<<<<<< HEAD
+/* div:hover,
+div:focus {
+  z-index: 50000;
+} */
+=======
+>>>>>>> origin/dev
 
 .bins {
   width: 1500px;

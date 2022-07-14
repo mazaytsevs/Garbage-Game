@@ -5,7 +5,7 @@ import { Box } from '../Box2';
 import { Dustbin2 } from '../Dustbin2';
 
 export default function Conveyor() {
-  const trashes = useSelector((s) => s.trashGenerate.trashes);
+  const trashes = useSelector((s) => s.trashTime.trashes);
   const flag = useSelector((s) => s.flag);
 
   const trashBinsFromDB = useSelector(

@@ -43,8 +43,25 @@ router.get('/', async (req, res) => { // ! ДЕЛАТЬ ЗАПРОС НА ЭТУ
   }
 });
 
-// router.post('/newTrash', async (req, res) => {
-//   console.log('NEW TRASH', req.body);
-// });
+router.get('/time', async (req, res) => { // ! ДЕЛАТЬ ЗАПРОС НА ЭТУ РУЧКУ 1 РАЗ ПЕРЕД СТАРТОМ УРОВНЯ!!!
+  try {
+    const trashCans = await TrashCan.findAll({
+      attributes: ['id', 'trash_can_name', 'trash_can_info', 'trash_can_img_src'],
+    }); // отдельно мусорки все
+
+    const trashes = await Trash.findAll({
+      attributes: ['id', 'trash_can_id', 'trash_name', 'trash_img_src', 'info', 'score', 'bonus'],
+      where: { id: { [Op.notIn]: [58, 59, 60] } },
+    }); // отдельно мусор весь
+    const data = {
+      trashCans, // все мусорки из БД
+      trashes, // мусор, который еще НЕ отгадали
+      played: null, // id отгаданного мусора
+    };
+    res.json(data);
+  } catch (err) {
+    console.log('Не удалось загрузить игровые элементы', err);
+  }
+});
 
 module.exports = router;
