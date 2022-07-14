@@ -311,7 +311,8 @@ div:focus {
 /* конец крысы */
 
 /* начало бомжа-контейнера */
-#bomzh img {
+.man{
+
   border-style: double;
   border-color: aqua;
   right: 80px;
