@@ -32,22 +32,22 @@ export function Dustbin(props) {
     // drop сработает когда бросаем итем в корзину, тут добавь удаление итемки,
     // передаю сюда пропсом функцию установки визибл для итема и вызови в ondrop
 
-      drop: (item) => {
-        if (item.itemType === binName) {
-          dispatch(postProgressThunk(item));
-          dispatch(deleteTrashThunk(item.id));
-          dispatch(deleteTrashRandomThunk(item.id));
-          dispatch(addedTrashThunk(item));
-          dispatch(getHomelessThunk());
-        }
-        return { name: binName };
-      },
-      collect: (monitor) => ({
-        isOver: monitor.isOver(),
-        canDrop: monitor.canDrop(),
-      }),
+    drop: (item) => {
+      if (item.itemType === binName) {
+        dispatch(postProgressThunk(item));
+        dispatch(deleteTrashThunk(item.id));
+        dispatch(deleteTrashRandomThunk(item.id));
+        dispatch(addedTrashThunk(item));
+        dispatch(getHomelessThunk());
+      }
+      return { name: binName };
+    },
+    collect: (monitor) => ({
+      isOver: monitor.isOver(),
+      canDrop: monitor.canDrop(),
     }),
-  })); // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
+  }));
+  // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
 
   const isActive = canDrop && isOver;
   let mozЕransform;

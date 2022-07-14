@@ -20,8 +20,8 @@ import Conveyor from './hardMode/conveyor/Conveyor';
 
 function App() {
   const dispatch = useDispatch();
-  const [initialMinute, setInitialMinute] = useState(0);
-  const [initialSeconds, setInitialSeconds] = useState(10);
+  const [initialMinute, setInitialMinute] = useState(1);
+  const [initialSeconds, setInitialSeconds] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
