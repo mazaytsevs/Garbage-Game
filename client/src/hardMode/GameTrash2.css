@@ -1,9 +1,9 @@
 /* .gameBoard {
   display: inline-flex;
 } */
-.garbageForSort {
+/* .garbageForSort1 {
   display: inline-flex;
-}
+} */
 
 /* стили для мусора */
 /* body {
@@ -12,7 +12,10 @@
   font-family:"Lucida handwriting", "Snell Roundhand", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 16px;
 } */
-div.polaroid {
+.divForCursor2{
+  cursor: url('../../public/glove/pointer.png'), pointer;
+}
+div.polaroid2 {
   display: block;
   text-decoration: none;
   /* color: #333; */
@@ -48,7 +51,7 @@ div img {
   border: none;
   display: block;
 }
-.photo-album {
+.photo-album2 {
   /* width: 100%;
   max-width: 70em;
   height: 450px;
@@ -63,7 +66,7 @@ div img {
   justify-content: center;
   /* font-size: 100px; */
 }
-.photo-album .polaroid {
+.photo-album2 .polaroid {
   position: absolute;
 }
 /* .photo-album .small {
