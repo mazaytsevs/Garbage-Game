@@ -5,6 +5,8 @@
   background: url('../../../public/backBround/level-1.png');
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .lvl-2 {
@@ -14,6 +16,8 @@
   background: url('../../../public/backBround/level-2.png');
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .lvl-3 {
@@ -23,4 +27,6 @@
   background: url('../../../public/backBround/level-3.png');
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
+  overflow-y: hidden;
 }
