@@ -22,7 +22,8 @@ function Game() {
     (state) => state.trashGenerate?.trashCans,
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
-
+  // const audio = new Audio('/music/gameMusic.m4a');
+  // audio.play();
   // получаем мусор
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
   const trashRandom = useSelector((state) => state.trashRandom);
@@ -40,7 +41,6 @@ function Game() {
       dispatch(generateTrashRandomThunk((getTrashes(trashes))));
     }
   }, [trashes]);
-
   const refreshTrash = () => {
     dispatch(generateTrashRandomThunk((getTrashes(trashes))));
   };
@@ -77,7 +77,7 @@ function Game() {
         : (
           <div className={background}>
             {/*  MZ -> модалка с правилами теперь только при прогрессе 0 */}
-            {progress.score == null
+            {progress.score < 90
               ? <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
               : null}
             {/* MZ -> конец проверок */}

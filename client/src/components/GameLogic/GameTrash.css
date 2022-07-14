@@ -2,8 +2,15 @@
   display: inline-flex;
 } */
 .garbageForSort {
-  display: inline-flex;
+  display: flex;
+  justify-content: flex-start;
+  width: 85vw;
+  margin: 0 auto;
 }
+.divForCursor{
+  cursor: url('../../../public/glove/pointer.png'), pointer;
+}
+
 
 /* стили для мусора */
 /* body {
@@ -43,6 +50,7 @@ div.polaroid:active {
   margin: 0 0 15px;
   width: 100%;
   height: 100%;
+
 }
 div img {
   border: none;
@@ -50,6 +58,10 @@ div img {
 }
 .photo-album {
   position: relative;
+  border-radius: 30px;
+  background-color: rgba(254, 254, 254, 0.5);
+  /* background: url('../../../public/backBround/trashBG.png'); */
+  /* background-size: auto; */
   width: 100%;
   margin: 0;
   max-width: 70em;
@@ -79,8 +91,10 @@ div img {
   font-size: 0.8em;
 }
 .photo-album .medium img {
-  width: 15vh;
+  /* width: 15vh; */
   height: 100%;
+  max-height: 37vh;
+  /* max-width: 10vh;  */
 }
 /* .photo-album .large {
   width: 300px;
@@ -92,7 +106,7 @@ div img {
   height: 340px;
 } */
 .photo-album .img1 {
-  top: 25vh;
+  top: 16vh;
   left: 15vh;
   -webkit-transform: rotate(10deg);
   -moz-transform: rotate(10deg);
@@ -120,14 +134,14 @@ div img {
   transform: rotate(6deg);
 }
 .photo-album .img5 {
-  top: 20vh;
+  top: 11vh;
   left: 30vh;
   -webkit-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
   transform: rotate(-10deg);
 }
 .photo-album .img6 {
-  top: 20vh;
+  top: 27vh;
   left: 58vh;
   -webkit-transform: rotate(-8deg);
   -moz-transform: rotate(-8deg);
@@ -174,9 +188,8 @@ div:focus {
 
 .GameBins {
   position: fixed;
-  bottom: 80px;
-  left: 40px;
-  /* bottom: 8vh; left: 4vh; */
+  bottom: 8vh;
+  left: 4vh;
 }
 
 .gameBinsDno {
@@ -199,11 +212,8 @@ div:focus {
 .trashBag {
   display: flex;
   align-items: center;
-  margin-top: 6rem;
-  margin-left: 3rem;
-  /* margin-top: 6vh;
-  margin-left: 3vh; */
-
+  margin-top: 6vh;
+  margin-left: 3vh;
 }
 
 /* для крысы начало */
@@ -216,18 +226,19 @@ div:focus {
   /*чтобы картинка была по центру*/
   /* margin-left: 20rem; */
   /* z-index: 999; */
-  position:fixed;
+  position: fixed;
   /* top: 15vh; 
   left: 30vh; */
   z-index: 1500;
-  top: 85vh; 
+  top: 85vh;
   left: 10vh;
+  z-index: 2000;
 }
 
 #sprite-image {
   height: 105px; /*высота спрайта (высота одного кадра)*/
   width: 100px; /*ширина спрайта (ширина одного кадра)*/
-  background: url("../../../public/rat/ratRuns.png"); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+  background: url('../../../public/rat/ratRuns.png'); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
   /* animation: play 0.8s steps(6) infinite, fly 10s ease; */
   background-size: cover;
   animation: play 0.8s steps(6) infinite, run 8s ease infinite;
@@ -282,25 +293,23 @@ div:focus {
     -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%);
   }
-  50%{
-    -webkit-transform:  translate(150vh, -1%);
-    transform: translate(150vh, -1%) ;
+  50% {
+    -webkit-transform: translate(150vh, -1%);
+    transform: translate(150vh, -1%);
   }
-  75%{
-    -webkit-transform:  translate(150vh, -1%) scaleX(-1);
+  75% {
+    -webkit-transform: translate(150vh, -1%) scaleX(-1);
     transform: translate(150vh, -1%) scaleX(-1);
   }
-  100%{
-    -webkit-transform:  translate(0%, -1%) scaleX(-1);
+  100% {
+    -webkit-transform: translate(0%, -1%) scaleX(-1);
     transform: translate(0%, -1%) scaleX(-1);
   }
-  
 }
 /* конец крысы */
 
-
 /* начало бомжа-контейнера */
-#bomzh img{
+#bomzh img {
   border-style: double;
   border-color: aqua;
   right: 80px;
