@@ -55,7 +55,6 @@ function EasyFinal() {
             )}
         onClose={() => setFlag(false)}
       />
-      )
     </div>
 
   );

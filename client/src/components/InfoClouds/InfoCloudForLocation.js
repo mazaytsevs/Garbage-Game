@@ -11,19 +11,17 @@ function InfoCloudForLocation() {
   );
 
   useEffect(() => {
-    if (+progress.score <= 54) {
-      setTimeout(() => setFlag(false), 10);
-      if (+progress.score >= 50) {
-        setTimeout(() => setFlag(true), 10);
-      }
+    if (+progress.score >= 40 && +progress.score <= 44) {
+      setTimeout(() => setFlag(true), 10);
+      setTimeout(() => setFlag(false), 4000);
       // setLocalProgress(+progress.score);
     } else if (+progress.score >= 80 && +progress.score <= 84) {
       setTimeout(() => setFlag(true), 10);
       setTimeout(() => setFlag(false), 4000);
       // setLocalProgress(+progress.score);
     }
-  }, []);
-  console.log(progress.score);
+  }, [progress]);
+  console.log(+progress.score >= 40);
 
   return (
     <div>
