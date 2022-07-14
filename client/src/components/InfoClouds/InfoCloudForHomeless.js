@@ -20,7 +20,7 @@ function InfoCloudForHomeless() {
         <p>
           Вы открыли новый бонусный предмет:
           {' '}
-          {addedTrash.name}
+          <b>{addedTrash.name}</b>
         </p>
         <img className="bonus-img" src={addedTrash.image} alt="бонусный предмет" />
       </div>
