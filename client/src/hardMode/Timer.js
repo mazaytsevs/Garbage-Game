@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Modal.module.css';
 
+console.log(styles);
+
 function Timer({ props }) {
   const { initialMinute = 0, initialSeconds = 0, setIsOpen } = props;
   const [minutes, setMinutes] = useState(initialMinute);
