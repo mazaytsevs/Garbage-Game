@@ -1,243 +1,28 @@
-/* .gameBoard {
-  display: inline-flex;
-} */
-/* .garbageForSort1 {
-  display: inline-flex;
-} */
-
-/* стили для мусора */
-/* body {
-  background-color: #E9E9E9;
-  color: #333;
-  font-family:"Lucida handwriting", "Snell Roundhand", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-} */
-/* .divForCursor2{
-  cursor: url('../../public/glove/pointer.png'), pointer;
-} */
-div.polaroid2 {
-  display: block;
-  text-decoration: none;
-  /* color: #333; */
-  padding: 10px 10px 20px 10px;
-  width: 150px;
-  /* border: 1px solid #BFBFBF;
-  background-color: white; */
-  z-index: 2;
-  font-size: 0.7em;
-  /* -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
-  -webkit-transition: -webkit-transform 0.5s ease-in;
-}
-/* div.polaroid:hover,
-div.polaroid:focus,
-div.polaroid:active {
-  z-index: 999;
-  border-color: #6a6a6a;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  transform: rotate(0deg);
-} */
-/* .polaroid img {
-  margin: 0 0 15px;
-  width: 100%;
-  height: 100%;
-}
-div img {
-  border: none;
-  display: block;
-} */
-.photo-album2 {
-  /* width: 100%;
-  max-width: 70em;
-  height: 450px;
-  margin-top: 4em;
-  min-width: 800px;
-  max-width: 900px;
-  margin-left: 6em; */
-  margin-right: 0rem;
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  /* font-size: 100px; */
-}
-.photo-album2 .polaroid {
-  position: absolute;
-}
-/* .photo-album .small {
-  width: 75px;
-  padding: 6px 6px 12px 6px;
-  font-size: 0.6em;
-}
-.photo-album .small img {
-  width: 75px;
-  height: 75px;
-} */
-/* .photo-album .medium {
-  width: 200px;
-  padding: 13px 13px 26px 13px;
-  font-size: 0.8em;
-}
-.photo-album .medium img {
-  width: 150px;
-  height: 100%;
-} */
-/* .photo-album .large {
-  width: 300px;
-  padding: 20px 20px 30px 20px;
-  font-size: 1em;
-}
-.photo-album .large img {
-  width: 300px;
-  height: 340px;
-} */
-/* .photo-album .img1 {
-  bottom: 10px;
-  right: 365px;
-  -webkit-transform: rotate(10deg);
-  -moz-transform: rotate(10deg);
-  transform: rotate(10deg);
-} */
-/* .photo-album .img2 {
-  top: 50px;
-  right: 20px;
-  -webkit-transform: rotate(-4deg);
-  -moz-transform: rotate(-4deg);
-  transform: rotate(-4deg);
-} */
-/* .photo-album .img2 {
-  left: 300px;
-  top: 0;
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  transform: rotate(-5deg);
-} */
-/* .photo-album .img3 {
-  top: 10px;
-  left: 400px;
-  -webkit-transform: rotate(-20deg);
-  -moz-transform: rotate(-20deg);
-  transform: rotate(-20deg);
-} */
-/* .photo-album .img5 {
-  bottom: 0;
-  right: 0;
-  -webkit-transform: rotate(1deg);
-  -moz-transform: rotate(1deg);
-  transform: rotate(1deg);
-} */
-/* .photo-album .img4 {
-  bottom: 10px;
-  right: 156px;
-  -webkit-transform: rotate(6deg);
-  -moz-transform: rotate(6deg);
-  transform: rotate(6deg);
-} */
-/* .photo-album .img5 {
-  bottom: 0;
-  left: 400px;
-  -webkit-transform: rotate(-10deg);
-  -moz-transform: rotate(-10deg);
-  transform: rotate(-10deg);
-}
-.photo-album .img6 {
-  bottom: 0px;
-  left: 580px;
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  transform: rotate(-8deg);
-}
-.photo-album .img7 {
-  bottom: 0;
-  left: 0;
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  transform: rotate(-8deg);
-}
-.photo-album .img8 {
-  top: 0;
-  left: 10px;
-  -webkit-transform: rotate(8deg);
-  -moz-transform: rotate(8deg);
-  transform: rotate(8deg);
-} */
-/* .photo-album .img11 {
-  top: 0;
-  right: 0;
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  transform: rotate(-8deg);
-} */
-/* .photo-album .img9 {
-  top: 0;
-  left: 600px;
-  -webkit-transform: rotate(18deg);
-  -moz-transform: rotate(18deg);
-  transform: rotate(18deg);
-} */
-/* .photo-album .img13 {
-  bottom: -20px;
-  right: 630px;
-  -webkit-transform: rotate(4deg);
-  -moz-transform: rotate(4deg);
-  transform: rotate(4deg);
-}
-.photo-album .img14 {
-  top: 90px;
-  left: 430px;
-  -webkit-transform: rotate(15deg);
-  -moz-transform: rotate(15deg);
-  transform: rotate(15deg);
-} */
-/* .photo-album .img10 {
-  left: 120px;
-  top: 20px;
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  transform: rotate(-8deg);
-} */
-/* div:hover,
-div:focus {
-  z-index: 50000;
-} */
-
-/* стили для мусорных баков */
-/* .bins {
-  width: 1500px;
-  height: 345px;
-}
-
 .GameBins {
   position: fixed;
   bottom: 80px;
   left: 40px;
 }
 
-.gameBinsDno {
-  max-height: 118px;
-  height: 118px;
-  border-radius: 700px/60px;
-  background: #ec8f8f;
-  opacity: 0.3;
-  bottom: 0;
+.divForCursor2{
+  cursor: url('../../public/glove/pointer.png'), pointer;
 }
-
-.gameBinsFromDB {
+div.polaroid2 {
+  display: block;
+  text-decoration: none;
+  padding: 10px 10px 20px 10px;
+  width: 150px;
+  z-index: 2;
+  font-size: 0.7em;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+}
+.photo-album2 {
+  margin-right: 0rem;
   position: relative;
-  bottom: -90px;
-  z-index: 1;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
-
-.trashBag {
-  display: flex;
-  align-items: center;
-  margin-top: 6rem;
-  margin-left: 3rem;
-} */
+.photo-album2 .polaroid {
+  position: absolute;
+}

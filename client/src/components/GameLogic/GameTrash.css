@@ -1,38 +1,21 @@
-/* .gameBoard {
-  display: inline-flex;
-} */
+
 .garbageForSort {
   display: flex;
   justify-content: flex-start;
-  /* width: 100vw;
-  height: 45vh; */
   margin: 0 auto;
 }
 .divForCursor{
   cursor: url('../../../public/glove/pointer.png'), pointer;
 }
 
-
 /* стили для мусора */
-/* body {
-  background-color: #E9E9E9;
-  color: #333;
-  font-family:"Lucida handwriting", "Snell Roundhand", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-} */
 div.polaroid {
   display: block;
   text-decoration: none;
-  /* color: #333; */
   padding: 10px 10px 20px 10px;
   width: 150px;
-  /* border: 1px solid #BFBFBF;
-  background-color: white; */
   z-index: 2;
   font-size: 0.7em;
-  /* -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
   -webkit-transition: -webkit-transform 0.5s ease-in;
 }
 div.polaroid:hover,
@@ -40,9 +23,6 @@ div.polaroid:focus,
 div.polaroid:active {
   z-index: 999;
   border-color: #6a6a6a;
-  /* -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -61,8 +41,6 @@ div img {
   position: relative;
   border-radius: 30px;
   background-color: rgba(254, 254, 254, 0.5);
-  /* background: url('../../../public/backBround/trashBG.png'); */
-  /* background-size: auto; */
   width: 100%;
   margin: 0;
   height: 54vh;
@@ -75,15 +53,6 @@ div img {
 .photo-album .polaroid {
   position: absolute;
 }
-/* .photo-album .small {
-  width: 75px;
-  padding: 6px 6px 12px 6px;
-  font-size: 0.6em;
-}
-.photo-album .small img {
-  width: 75px;
-  height: 75px;
-} */
 .photo-album .medium {
   width: 17vh;
   padding: 13px 13px 26px 13px;
@@ -91,19 +60,8 @@ div img {
 }
 .photo-album .medium img {
   width: 20vh;
-  /* height: 25vh; */
-  /* max-height: 30vh;
-  max-width: 10vh;  */
 }
-/* .photo-album .large {
-  width: 300px;
-  padding: 20px 20px 30px 20px;
-  font-size: 1em;
-}
-.photo-album .large img {
-  width: 300px;
-  height: 340px;
-} */
+
 .photo-album .img1 {
   top: 30vh;
   left: 15vh;
@@ -174,12 +132,7 @@ div img {
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 }
-div:hover,
-div:focus {
-  z-index: 50000;
-}
 
-/* стили для мусорных баков */
 .bins {
   width: 1500px;
   height: 345px;
@@ -211,29 +164,13 @@ div:focus {
 .trashBag {
   display: flex;
   align-items: center;
-  /* margin-top: 6rem;
-  margin-left: 3rem; */
   margin-top: 6vh;
   margin-left: 3vh;
 }
 
-/* .bag {
-
-} */
-
 /* для крысы начало */
 #sprite-container {
-  /* height: 20vh;  */
-  /*100% высоты экрана*/
-  /* left: -50%;
-  display: flex;
-  align-items: center;  */
-  /*чтобы картинка была по центру*/
-  /* margin-left: 20rem; */
-  /* z-index: 999; */
   position: fixed;
-  /* top: 15vh; 
-  left: 30vh; */
   z-index: 1500;
   top: 85vh;
   left: 10vh;

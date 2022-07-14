@@ -1,5 +1,3 @@
-import '../components/GameLogic/Dustbin.css'; // стили перенесла сюда!!!
-
 import React, { useSelector } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -10,6 +8,18 @@ import { deleteTrashThunk } from '../redux/actions/actions';
 // комопонент корзины
 // eslint-disable-next-line import/prefer-default-export
 export function Dustbin2(props) {
+  const style = {
+    height: '25vh',
+    width: '12vw',
+    // marginRight: '1.5rem',
+    // marginBottom: '1.5rem',
+    color: 'white',
+    padding: '2rem',
+    textAlign: 'center',
+    fontSize: '1rem',
+    lineHeight: 'normal',
+    float: 'left',
+  };
   const dispatch = useDispatch();
   // eslint-disable-next-line object-curly-newline
   const { backgroundImage, binName, score, trashSorted, setTrashSorted, setScore } = props;
@@ -38,18 +48,30 @@ export function Dustbin2(props) {
   ); // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
 
   const isActive = canDrop && isOver;
-  let boxShadow;
-  if (isActive) {
-    boxShadow = '10px 5px 5px red';
-  }
+  const win = isOver;
+  let mozЕransform;
+  let webkitTransform;
+  let oTransform;
+  let msTransform;
+  let transform;
 
+  if (isActive) {
+    mozЕransform = 'scale(1.2)';
+    webkitTransform = 'scale(1.2)';
+    oTransform = 'scale(1.2)';
+    msTransform = 'scale(1.2)';
+    transform = 'scale(1.2)';
+  }
   return (
     <div
       ref={drop}
       style={{
-        // ...style,
-        boxShadow,
-        // backgroundImage: `url(${backgroundImage})`,
+        ...style,
+        mozЕransform,
+        webkitTransform,
+        oTransform,
+        msTransform,
+        transform,
         backgroundRepeat: 'no-repeat',
       }}
       data-testid="dustbin"
