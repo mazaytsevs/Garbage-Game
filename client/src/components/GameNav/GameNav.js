@@ -31,21 +31,21 @@ function GameNav() {
       </div>
       <div className="navbar">
         <div className="progressBar">
-          {Math.floor(progress.score / 20) > 0 && (
+          {Math.floor(progress.score / 20) > 0 || (
             <img
               className="progressBarTrashCan1"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 1 && (
+          {Math.floor(progress.score / 20) > 1 || (
             <img
               className="progressBarTrashCan2"
               src="/gameNavPic/trashcan.png"
               alt="progressBar"
             />
           )}
-          {Math.floor(progress.score / 20) > 2 && (
+          {Math.floor(progress.score / 20) > 2 || (
             <img
               className="progressBarTrashCan3"
               src="/gameNavPic/trashcan.png"
