@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Box } from '../components/GameLogic/Box';
 import { Dustbin2 } from './Dustbin2';
 // import { ItemTypes } from './ItemTypes';
-import './GameTrash.css';
+import './GameTrash2.css';
 import ModalHardMode from './ModalHardMode';
 import Timer from './Timer';
 
-const Container = memo(({ trashBin }) => {
+const Container = memo(({ trashBin, bomzh }) => {
   const dispatch = useDispatch();
   const flag = useSelector((s) => s.flag);
   const showTrash = () => {
@@ -21,7 +21,7 @@ const Container = memo(({ trashBin }) => {
   const [initialMinute, setInitialMinute] = useState(3);
   const [initialSeconds, setInitialSeconds] = useState(30);
   const [isOpen, setIsOpen] = useState(false);
-
+  // const [trashSorted, setTrashSorted] = useState(trash);
   return (
     <>
       {/* <p>{`ты набрал ${score} баллов`}</p> */}
@@ -37,7 +37,7 @@ const Container = memo(({ trashBin }) => {
       <button type="button" style={{ zIndex: 1000 }} onClick={showTrash}>ok</button>
       {flag ? (
         <div
-          className="photo-album"
+          className="photo-album2"
           style={{ overflow: 'hidden', clear: 'both' }}
         >
           <Timer props={{ initialMinute, initialSeconds, setIsOpen }} />
@@ -62,6 +62,15 @@ const Container = memo(({ trashBin }) => {
               />
             </div>
           ))}
+        </div>
+        <div id="bomzh">
+          <Dustbin2
+            binName={bomzh.id}
+            itemType={bomzh.id}
+            // trashSorted={trashSorted}
+            // setTrashSorted={setTrashSorted}
+            key={bomzh.id}
+          />
         </div>
       </div>
     </>

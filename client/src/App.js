@@ -20,7 +20,6 @@ import Conveyor from './hardMode/conveyor/Conveyor';
 
 function App() {
   const dispatch = useDispatch();
-
   const [initialMinute, setInitialMinute] = useState(0);
   const [initialSeconds, setInitialSeconds] = useState(10);
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +29,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      {isOpen && <ModalHardMode isOpen={isOpen} />}
+      {/* {isOpen && <ModalHardMode isOpen={isOpen} />} */}
       {/* <ModalHardMode isOpen={isOpen} /> */}
       <Routes>
         <Route path="/" element={<Navbar />} />

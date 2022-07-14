@@ -57,6 +57,8 @@ function Game() {
   componentDidMount();
   // для модалки с правилами
   const [rulesModal, setRulesModal] = React.useState(true);
+  const bomzh = trashBinsFromDB && trashBinsFromDB[trashBinsFromDB.length - 1];
+
   return (
     <div>
 
@@ -72,7 +74,7 @@ function Game() {
             </div>
             <div>
               {/* <GameRat /> */}
-              <Container2 trashBin={trashWithoutMan} />
+              <Container2 trashBin={trashWithoutMan} bomzh={bomzh} />
             </div>
             <div>
               <GameBomzh2 />

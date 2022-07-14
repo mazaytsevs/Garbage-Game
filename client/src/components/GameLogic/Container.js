@@ -29,7 +29,7 @@ const Container = memo(({
   const [trashSorted, setTrashSorted] = useState(trash);
 
   // для удаления мусора
-  console.log(flag);
+  // console.log(flag);
 
   return (
     <div className="gameBoard">

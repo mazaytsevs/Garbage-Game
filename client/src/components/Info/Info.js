@@ -9,11 +9,8 @@ import Modal from '../Modal/Modal';
 import Load from '../loader/loader';
 
 function Info({ isModal, setModal }) {
-  // const [isModal, setModal] = React.useState(false);
-
   return (
     <div className={classes.infoContainer}>
-      {/* <button type="button" onClick={() => setModal(true)}>УЗНАТЬ ИНФО</button> */}
       <Modal
         isVisible={isModal}
         title={<h1>Инфо о переработке</h1>}
@@ -30,28 +27,11 @@ function Info({ isModal, setModal }) {
             <img width="950" alt="page9" src="/infoPics/9.jpg" />
           </div>
       )}
-        footer={(
-          <Link
-            to="/mp"
-          >
-            TRY ME
-          </Link>
-)}
+        // footer={()}
         onClose={() => setModal(false)}
       />
 
     </div>
-    // <div className="infoContainer">
-    //   {info.map((el) => (
-    //     <InfoTrashCard
-    //       key={el?.id}
-    //       name={el?.trash_can_name}
-    //       img={el?.trash_can_img_src}
-    //       info={el?.trash_can_info}
-    //       trashes={el?.trashes}
-    //     />
-    //   ))}
-    // </div>
   );
 }
 
