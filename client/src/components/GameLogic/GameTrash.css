@@ -199,10 +199,10 @@ div:focus {
 .trashBag {
   display: flex;
   align-items: center;
-  margin-top: 6rem;
-  margin-left: 3rem;
-  /* margin-top: 6vh;
-  margin-left: 3vh; */
+  /* margin-top: 6rem;
+  margin-left: 3rem; */
+  margin-top: 6vh;
+  margin-left: 3vh;
 
 }
 
