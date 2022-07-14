@@ -5,6 +5,7 @@ import { generateTrashThunk } from '../../redux/actions/actions';
 import { changeFlagThunk } from '../../redux/actions/changeFlagAction';
 import { getProgressThunk } from '../../redux/actions/progress.action';
 import { generateTrashRandomThunk } from '../../redux/actions/randomTrashAction';
+import EndGame from '../EndGame/EndGame';
 
 import GameBomzh from '../GameBomzh/GameBomzh';
 import Container from '../GameLogic/Container';
@@ -57,18 +58,29 @@ function Game() {
     setTimeout(() => setLoading(false), 4000); // do your async call
   };
 
-  componentDidMount();
+  // useEffect(() => {
+  //   <EndGame />;
+  // }, progress.score > 12);
 
+  componentDidMount();
+  console.log('progress', progress.score);
   // для модалки с правилами
   const [rulesModal, setRulesModal] = React.useState(true);
-
   return (
     <div>
-
+      {/* MZ ->
+      проверка на конец игры, если прогресс 100 то запускается функция с другим компонентом */}
+      {/* {progress.score >= 12
+        ? <EndGame /> : null} */}
+      {/* <EndGame score={progress.score} /> */}
       {loading ? (<Load />)
         : (
           <div className={background}>
-            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+            {/*  MZ -> модалка с правилами теперь только при прогрессе 0 */}
+            {progress.score == null
+              ? <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+              : null}
+            {/* MZ -> конец проверок */}
             <div>
               <GameNav />
             </div>
