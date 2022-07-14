@@ -1,12 +1,18 @@
 import React, { memo, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Box } from './Box';
 import { Dustbin } from './Dustbin';
+import { getHomelessThunk } from '../../redux/actions/homeless.action';
 import './GameTrash.css';
+import InfoCloudForHomeless from '../InfoClouds/InfoCloudForHomeless';
+import InfoCloudForLocation from '../InfoClouds/InfoCloudForLocation';
 
 const Container = memo(({
   trash, trashBin, refreshTrash, bomzh,
 }) => {
   const [flag, setFlag] = useState(false);
+
+  const dispatch = useDispatch();
 
   const getVisibilityInitState = () => {
     const res = {};
@@ -19,7 +25,7 @@ const Container = memo(({
   }; // начальное состояние видимости, по дефолту тру, передавай это в компонент бокс, и если у соответствующего итема будет false то присваивай стиль display: none
 
   const visibilityInitState = getVisibilityInitState();
-
+  // const [visible, setVisible] = useState(visibilityInitState);
   const [trashSorted, setTrashSorted] = useState(trash);
 
   // для удаления мусора
@@ -28,22 +34,25 @@ const Container = memo(({
   return (
     <div className="gameBoard">
       <div className="garbageForSort">
-
+        {/* мысля */}
+        <InfoCloudForHomeless />
+        <InfoCloudForLocation />
         <div
           className="trashBag"
           onClick={function () {
             setFlag(true);
             refreshTrash();
-            setTimeout(() => setFlag(false), 4000);
+            setTimeout(() => setFlag(false), 1000);
+            dispatch(getHomelessThunk());
           }}
         >
           <img
             className="bag"
             src={
-            flag
-              ? '/trashbag/trashbagOPEN.png'
-              : '/trashbag/trashbagCLOSED.png'
-          }
+              flag
+                ? '/trashbag/trashbagOPEN.png'
+                : '/trashbag/trashbagCLOSED.png'
+            }
             alt="bag"
             width="200"
           />
@@ -55,6 +64,7 @@ const Container = memo(({
           {trash?.map((el, index) => (
             <Box
               score={el.score}
+              bonus={el.bonus}
               id={el.id}
               key={el.id}
               name={el.trash_name}

@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 import React from 'react';
 import { useDrag } from 'react-dnd';
-import GameRat from '../GameRat/GameRat';
+import GameRat from '../components/GameRat/GameRat';
 import './GameTrash.css';
 
 const style = {
@@ -15,12 +15,12 @@ const style = {
 };
 // eslint-disable-next-line import/prefer-default-export
 export const Box = function Box(props) {
-  const { name, itemType, id, visible, setVisible, score, className, image, bonus } = props;
+  const { name, itemType, id, visible, setVisible, score, className, image } = props;
   // console.log(name, itemType, visible, setVisible, setScore, score)
   // console.log('itemType', itemType);
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'box',
-    item: { name, itemType, id, score, image, bonus },
+    item: { name, itemType, id, score },
     // eslint-disable-next-line max-len
     end: (item, monitor) => { // срабатывает когда заканчиваем перетаскивать, можно добавить логику сюда
       const dropResult = monitor.getDropResult();
@@ -37,14 +37,14 @@ export const Box = function Box(props) {
       {/* это проверка на крысу */}
       {id === 58
         ? (
-          <div ref={drag} style={{ ...style, opacity }} id="sprite-container">
-            <div id="sprite-image" />
+          <div ref={drag} style={{ ...style, opacity }} className="sprite-container">
+            <div className="sprite-image" />
           </div>
         )
         : (
           <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
-            {/* {name} */}
-            <img cobject-fit="cover" src={image} alt="" />
+            {name}
+            <img style={{ width: '65px', height: '100px' }} cobject-fit="cover" src={image} alt="" />
           </div>
         )}
     </div>

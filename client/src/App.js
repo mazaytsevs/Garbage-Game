@@ -45,11 +45,11 @@ function App() {
           )}
         />
         {/* <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} /> */}
-        <Route path="/game" element={<Game />} />
-        <Route path="/gamerat" element={<GameRat />} />
-        <Route path="/timer" element={<Timer props={{ initialMinute, initialSeconds, setIsOpen }} />} />
-        <Route path="/lol" element={<Conveyor />} />
-        <Route path="/hardmode" element={<Game2 />} />
+        <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} />
+        <Route path="/gamerat" element={<PrivateRoute><GameRat /></PrivateRoute>} />
+        <Route path="/timer" element={<PrivateRoute><Timer props={{ initialMinute, initialSeconds, setIsOpen }} /></PrivateRoute>} />
+        <Route path="/lol" element={<PrivateRoute><Conveyor /></PrivateRoute>} />
+        <Route path="/hardmode" element={<PrivateRoute><Game2 /></PrivateRoute>} />
 
       </Routes>
     </div>

@@ -43,4 +43,8 @@ router.get('/', async (req, res) => { // ! ДЕЛАТЬ ЗАПРОС НА ЭТУ
   }
 });
 
+// router.post('/newTrash', async (req, res) => {
+//   console.log('NEW TRASH', req.body);
+// });
+
 module.exports = router;

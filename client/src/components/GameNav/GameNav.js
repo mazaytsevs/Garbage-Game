@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getProgressThunk } from '../../redux/actions/progress.action';
+import EasyFinal from '../EasyFinal/EasyFinal';
 import Info from '../Info/Info';
 import Rules from '../Rules/Rules';
 import './gameNav.css';
@@ -12,17 +13,21 @@ function GameNav() {
   useEffect(() => {
     dispatch(getProgressThunk());
   }, []);
+
   // console.log('progresssssssssssssssss', progress.score);
+
   const navigate = useNavigate();
   // MARIA -> повесила на кнокпи стейты чтобы открывать и закрывать модалки с инфой и правилами
   const [isModal, setModal] = React.useState(false);
   const [rulesModal, setRulesModal] = React.useState(false);
+
   return (
     <div className="main">
       <div className="header">
         <div>
           <p className="score">{`Прогресс ${progress.score || 0}/120`}</p>
         </div>
+        <EasyFinal />
       </div>
       <div className="navbar">
         <div className="progressBar">
