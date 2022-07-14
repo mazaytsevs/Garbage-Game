@@ -97,6 +97,7 @@
   }
   .forReady{
     display: flex;
+    cursor: url('../../../../public/glove/pointer.png'), pointer;
     
   }
 

@@ -24,7 +24,7 @@ export default function Conveyor() {
                 score={el.score}
                 id={el.id}
                 key={el.id}
-                name={el.trash_name}
+                // name={el.trash_name}
                 itemType={el.trash_can_id}
                 image={el.trash_img_src}
               />

@@ -1,3 +1,12 @@
+#navbarNav {
+  cursor: url('../../../public/glove/pointer.png'), pointer;
+}
+input {
+  cursor: url('../../../public/glove/pointer.png'), pointer;
+}
+span{
+  cursor: url('../../../public/glove/pointer.png'), pointer;
+}
 .backAuth {
   
  width: 100%;
@@ -66,8 +75,6 @@ li {
   background-clip: text;
 
   text-shadow: 0px 15px 4px rgba(0, 0, 0, 0.25);
-  cursor: url('../../../public/glove/pointer.png'), pointer;
-
 
 }
 .primary1{
@@ -90,7 +97,6 @@ li {
   background-clip: text;
 
   text-shadow: 0px 15px 4px rgba(0, 0, 0, 0.25);
-  
 }
 .arrow{
   height: 70px;

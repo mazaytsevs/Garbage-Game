@@ -17,9 +17,13 @@ body {
   height: 100vh;
   cursor: url('../public/glove/original.png'), auto;
 }
-  .modal-active {
+
+button{
+  cursor: url('../public/glove/pointer.png'), pointer;
+}
+.modal-active {
     overflow: hidden;
-  }
+}
 
 
 code {
