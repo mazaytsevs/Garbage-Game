@@ -22,7 +22,7 @@
 }
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .progressBar {
@@ -49,12 +49,14 @@
 input {
   width: 67px;
   height: 67px;
+  cursor: url('../../../public/glove/pointer.png'), pointer;
 }
 .progressBar img {
   width: 50px;
   height: 70px;
   margin-left: 80px;
   margin-right: 80px;
+  margin-top: 8px;
 }
 
 /* .progressBar:first-child {

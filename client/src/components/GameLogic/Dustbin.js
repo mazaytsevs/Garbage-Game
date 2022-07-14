@@ -1,5 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-import './Dustbin.css'; // стили перенесла сюда!!!
 
 import React, { useEffect, useSelector } from 'react';
 import { useDispatch } from 'react-redux';
@@ -11,18 +10,27 @@ import { deleteTrashRandomThunk } from '../../redux/actions/randomTrashAction';
 import { getHomelessThunk } from '../../redux/actions/homeless.action';
 import { addedTrashThunk } from '../../redux/actions/newAddedTrashAction';
 
+const style = {
+  height: '12rem',
+  width: '12rem',
+  marginRight: '1.5rem',
+  marginBottom: '1.5rem',
+  color: 'white',
+  padding: '1rem',
+  textAlign: 'center',
+  fontSize: '1rem',
+  lineHeight: 'normal',
+  float: 'left',
+};
 // комопонент корзины
 export function Dustbin(props) {
   const dispatch = useDispatch();
 
-  const {
-    backgroundImage, binName,
-  } = props;
-  const [{ canDrop, isOver }, drop] = useDrop(
-    () => ({
-      accept: 'box',
-      // drop сработает когда бросаем итем в корзину, тут добавь удаление итемки,
-      // передаю сюда пропсом функцию установки визибл для итема и вызови в ondrop
+  const { backgroundImage, binName } = props;
+  const [{ canDrop, isOver }, drop] = useDrop(() => ({
+    accept: 'box',
+    // drop сработает когда бросаем итем в корзину, тут добавь удаление итемки,
+    // передаю сюда пропсом функцию установки визибл для итема и вызови в ondrop
 
       drop: (item) => {
         if (item.itemType === binName) {
@@ -39,24 +47,39 @@ export function Dustbin(props) {
         canDrop: monitor.canDrop(),
       }),
     }),
-  ); // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
+  })); // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
 
   const isActive = canDrop && isOver;
-  let boxShadow;
+  let mozЕransform;
+  let webkitTransform;
+  let oTransform;
+  let msTransform;
+  let transform;
+
   if (isActive) {
-    boxShadow = '10px 5px 5px red';
+    mozЕransform = 'scale(1.2)';
+    webkitTransform = 'scale(1.2)';
+    oTransform = 'scale(1.2)';
+    msTransform = 'scale(1.2)';
+    transform = 'scale(1.2)';
+    // boxShadow = '0px 0px 36px 36px';
   }
   return (
-    <div
-      ref={drop}
-      style={{
-        boxShadow,
-        backgroundRepeat: 'no-repeat',
-      }}
-      data-testid="dustbin"
-    >
-      <img width="200" height="250" object-fit="cover" src={backgroundImage} alt="" />
-      {isActive && 'Бросай'}
+    <div ref={drop} className="active" data-testid="dustbin">
+      <img
+        style={{
+          ...style,
+          mozЕransform,
+          webkitTransform,
+          oTransform,
+          msTransform,
+          transform,
+          backgroundRepeat: 'no-repeat',
+        }}
+        src={backgroundImage}
+        alt=""
+      />
+      {/* {isActive && 'Бросай'} */}
     </div>
   );
 }
