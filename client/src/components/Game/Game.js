@@ -21,15 +21,8 @@ function Game() {
     (state) => state.trashGenerate?.trashCans,
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
-
-  const flag = useSelector(
-    (state) => state.flag,
-  );
-
-  useEffect(() => {
-    dispatch(changeFlagThunk());
-  }, []);
-
+  // const audio = new Audio('/music/gameMusic.m4a');
+  // audio.play();
   // получаем мусор
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
   const trashRandom = useSelector((state) => state.trashRandom);
@@ -39,39 +32,17 @@ function Game() {
   // eslint-disable-next-line no-unsafe-optional-chaining
   const bomzh = trashBinsFromDB && trashBinsFromDB[trashBinsFromDB.length - 1];
   // MZ -> конец -> получаю бомжа-контейнера
-
-  // получаем мусор
-  // const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
-  // для обращения к бэку
-
   useEffect(() => {
     dispatch(generateTrashThunk());
   }, []);
-
-  console.log('trashRandom', trashRandom);
-  console.log('trashes', trashes);
-
   useEffect(() => {
     if (trashRandom.length === 0 && trashes.length !== 0) {
       dispatch(generateTrashRandomThunk((getTrashes(trashes))));
     }
   }, [trashes]);
-
-  // console.log('RANDOOOOOOM', getTrashes(trashes));
   const refreshTrash = () => {
     dispatch(generateTrashRandomThunk((getTrashes(trashes))));
   };
-
-  // для мусора чтобы удалять
-  // const [trashSorted, setTrashSorted] = useState(randomTrashes);
-
-  // const [flag, setFlag] = useState(false);
-  // const showTrash = () => {
-  //   setFlag(!flag);
-  //   // setBagPic('/trashBins/dangerous.png');
-  // };
-
-  // console.log(randomTrashes);
   const progress = useSelector((state) => state.progress);
 
   useEffect(() => {
@@ -102,7 +73,6 @@ function Game() {
               <GameNav />
             </div>
             <div>
-              {/* <GameRat /> */}
               <Container
                 trash={trashRandom}
                 trashBin={trashWithoutMan}

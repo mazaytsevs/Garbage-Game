@@ -14,5 +14,3 @@ const changeFlagReducer = (state = initialState, action) => {
 };
 
 export default changeFlagReducer;
-
-// setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)))

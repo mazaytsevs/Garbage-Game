@@ -10,7 +10,7 @@ const style = {
   // padding: '0.5rem 1rem',
   // marginRight: '1.5rem',
   // marginBottom: '1.5rem',
-  cursor: 'move',
+  // cursor: 'move',
   float: 'left',
 };
 // eslint-disable-next-line import/prefer-default-export
@@ -33,7 +33,7 @@ export const Box = function Box(props) {
   const opacity = isDragging ? 0.4 : 1;
   const nashClass = `medium polaroid img${className + 1}`;
   return (
-    <div>
+    <div className="divForCursor">
       {/* это проверка на крысу */}
       {id === 58
         ? (
