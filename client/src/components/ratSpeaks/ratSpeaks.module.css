@@ -1,4 +1,4 @@
-.ratSpeaks{
+/* .ratSpeaks{
   height: 150px;
   width: 200px;
   position: absolute;
@@ -16,7 +16,7 @@
   z-index: 1000;
   top: -19vh;
   
-}
+} */
 
 .ratSpeaksContainer{
   height: 80px;
