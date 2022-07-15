@@ -1,0 +1,40 @@
+/* .ratSpeaks{
+  height: 150px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  font-size: 30px;
+  font-weight: bolder;
+  background: linear-gradient(177.38deg, #FBFFD2 -79.61%, #F8003B 97.81%);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-family: 'Amatic SC', cursive;
+  z-index: 1000;
+  top: -19vh;
+  
+} */
+
+.ratSpeaksContainer{
+  height: 80px;
+  width: 100px;
+  position: absolute;
+  top: 50vh;
+  left: 170vh;
+  z-index: 1000;
+}
+
+.ratSpeaks::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

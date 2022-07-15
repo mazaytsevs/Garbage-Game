@@ -10,7 +10,8 @@ const style = {
   // padding: '0.5rem 1rem',
   // marginRight: '1.5rem',
   // marginBottom: '1.5rem',
-  // float: 'left',
+  // cursor: 'move',
+  float: 'left',
 };
 // eslint-disable-next-line import/prefer-default-export
 export const Box = function Box(props) {

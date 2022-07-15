@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { useDrop } from 'react-dnd';
 import { postTimeProgressThunk } from '../redux/actions/timeProgress.action';
-import { deleteTrashThunk } from '../redux/actions/actions';
+import { deleteTimeTrashThunk } from '../redux/actions/trashTimeAction';
 
 // комопонент корзины
 // eslint-disable-next-line import/prefer-default-export
@@ -35,7 +35,7 @@ export function Dustbin2(props) {
           // setScore(score + 1);
           console.log('item', item);
           dispatch(postTimeProgressThunk(item));
-          dispatch(deleteTrashThunk(item.id));
+          dispatch(deleteTimeTrashThunk(item.id));
           // setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)));
         }
         return { name: binName };
@@ -62,6 +62,7 @@ export function Dustbin2(props) {
     msTransform = 'scale(1.2)';
     transform = 'scale(1.2)';
   }
+
   return (
     <div
       ref={drop}
@@ -76,7 +77,19 @@ export function Dustbin2(props) {
       }}
       data-testid="dustbin"
     >
-      <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" />
+      {/* <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" /> */}
+      <img
+        width="200"
+        height="250"
+        cobject-fit="cover"
+        src={backgroundImage}
+        alt=""
+        style={{
+          ...style,
+          // backgroundImage: `url(${backgroundImage})`,
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
       {isActive && 'Бросай'}
     </div>
   );

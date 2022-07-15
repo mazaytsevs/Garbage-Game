@@ -22,8 +22,8 @@ import EndScreen from './components/EndGame/EndScreen';
 
 function App() {
   const dispatch = useDispatch();
-  const [initialMinute, setInitialMinute] = useState(0);
-  const [initialSeconds, setInitialSeconds] = useState(10);
+  const [initialMinute, setInitialMinute] = useState(1);
+  const [initialSeconds, setInitialSeconds] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const audio = new Audio('/music/gameMusic.m4a');
 

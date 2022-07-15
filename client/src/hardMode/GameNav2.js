@@ -22,7 +22,7 @@ function GameNav2() {
     <div className="main">
       <div className="header">
         <div>
-          <p className="score">{`Прогресс ${timeProgress.score || 0}/120`}</p>
+          <p className="score">{`Баллы ${timeProgress.score || 0}`}</p>
         </div>
       </div>
       <div className="navbar">

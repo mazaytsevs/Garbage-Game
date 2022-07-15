@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Sequelize = require('sequelize');
+const { Op } = require('sequelize');
 const { User, Trash, TimeProgress } = require('../db/models');
 const { checkSession } = require('../middlewares/middleware');
 
@@ -60,5 +61,22 @@ router.delete('/:id', checkSession, async (req, res) => {
   await TimeProgress.destroy({ where: { user_id: id } });
   res.sendStatus(200);
 }); // удаление из прогресса в БД для начала новой игры
+
+router.get('/table', checkSession, async (req, res) => {
+  try {
+    const progress = await User.findAll({
+      include: [{ model: TimeProgress, where: { score: { [Op.not]: null } }, attributes: [] }],
+      attributes:
+        ['id', 'name', [Sequelize.fn('SUM', Sequelize.col('TimeProgresses.score')), 'score']],
+      group: ['User.id'],
+      // order: [Sequelize.fn('max', Sequelize.col('User.score'))],
+    });
+    // progress.score.sort((a, b) => a - b);
+    console.log('aaaaaaaaaaaaaaaaa', progress);
+    res.json(progress);
+  } catch (err) {
+    console.log('Не удалось загрузить прогресс', err);
+  }
+});
 
 module.exports = router;

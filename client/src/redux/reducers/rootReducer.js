@@ -13,6 +13,8 @@ import addedTrashReducer from './newAddedTrashReducer';
 import endGameReducer from './endGameReducer';
 
 import { flagReducer } from './flagReducer';
+import tableTimeProgressReducer from './tableTimeProgressReducer';
+import trashTimeReducer from './trashTimeReducer';
 
 const rootReducer = combineReducers({
   info: infoReducer,
@@ -27,7 +29,9 @@ const rootReducer = combineReducers({
   timehomeless: timehomelessReducer,
   flag: flagReducer,
   addedTrash: addedTrashReducer,
+  tableProgress: tableTimeProgressReducer,
   endGame: endGameReducer,
+  trashTime: trashTimeReducer,
 });
 
 export default rootReducer;
