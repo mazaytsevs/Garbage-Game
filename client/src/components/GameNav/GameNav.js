@@ -14,6 +14,8 @@ function GameNav() {
     dispatch(getProgressThunk());
   }, []);
 
+  // console.log('progresssssssssssssssss', progress.score);
+
   const navigate = useNavigate();
   // MARIA -> повесила на кнокпи стейты чтобы открывать и закрывать модалки с инфой и правилами
   const [isModal, setModal] = React.useState(false);

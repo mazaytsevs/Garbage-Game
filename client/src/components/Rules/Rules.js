@@ -5,21 +5,12 @@ import Modal from '../Modal/Modal';
 import './rules.css';
 
 function Rules({ rulesModal, setRulesModal }) {
-  // для обращения к бэку
-  // const dispatch = useDispatch();
-  // const info = useSelector((state) => state.info);
-  // useEffect(() => {
-  //   dispatch(getInfoThunk());
-  // }, []);
-  // const [rulesModal, setRulesModal] = React.useState(false);
-
   const trashCans = useSelector(
     (state) => state.trashGenerate?.trashCans,
   );
   // console.log('ololololololololololololollo', trashCans);
   return (
     <div className="rulesContainer">
-      {/* <button type="button" onClick={() => setRulesModal(true)}>УЗНАТЬ ПРАВИЛА</button> */}
       <Modal
         isVisible={rulesModal}
         title={<>Правила игры</>}

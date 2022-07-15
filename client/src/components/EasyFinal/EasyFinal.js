@@ -49,7 +49,7 @@ function EasyFinal() {
             <p>
               Кстати, если ты уверен в своих силах, то можешь попробовать сыграть
               в эту игру в соревновательном режиме. Удачи!
-              <img src="/man/man-look-58-59-60.png" alt="asad" />
+              <img width="100" src="/man/man-look-58-59-60.png" alt="asad" />
             </p>
           </div>
             )}

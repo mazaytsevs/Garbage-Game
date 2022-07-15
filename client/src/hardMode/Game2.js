@@ -16,6 +16,7 @@ import { getTimeProgressThunk } from '../redux/actions/timeProgress.action';
 import Conveyor from './conveyor/Conveyor';
 import Timer from './Timer';
 import HardFinal from '../components/HardFinal/HardFinal';
+import { generateTimeTrashThunk } from '../redux/actions/trashTimeAction';
 
 function Game() {
   // const [initialMinute, setInitialMinute] = useState(0);
@@ -23,7 +24,7 @@ function Game() {
   const [isOpen, setIsOpen] = useState(false);
   // получаем мусорные баки
   const trashBinsFromDB = useSelector(
-    (state) => state.trashGenerate?.trashCans,
+    (state) => state.trashTime?.trashCans,
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
 
@@ -31,11 +32,19 @@ function Game() {
   const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
   // для обращения к бэку
   const dispatch = useDispatch();
-  const trashes = useSelector((state) => state.trashGenerate?.trashes);
+  const trashes = useSelector((state) => state.trashTime?.trashes);
   useEffect(() => {
-    // console.log('MUUUUSOOOOOOOOOR', trashes);
-    dispatch(generateTrashThunk());
+    dispatch(generateTimeTrashThunk());
   }, []);
+
+  // const lala = useSelector(
+  //   (state) => state.trashTime,
+  // );
+
+  // useEffect(() => {
+  //   dispatch(generateTimeTrashThunk());
+  // }, []);
+  // console.log('MUUUUSOOOOOOOOOR', lala);
 
   // функция которая вытаскивает ШЕСТЬ рандомных мусоров из неотгаданных
 
@@ -59,6 +68,8 @@ function Game() {
   componentDidMount();
   // для модалки с правилами
   const [rulesModal, setRulesModal] = React.useState(true);
+  const bomzh = trashBinsFromDB && trashBinsFromDB[trashBinsFromDB.length - 1];
+
   return (
     <div>
 
@@ -74,11 +85,11 @@ function Game() {
             </div>
             <div>
               {/* <GameRat /> */}
-              <Container2 trashBin={trashWithoutMan} />
+              <Container2 trashBin={trashWithoutMan} bomzh={bomzh} />
             </div>
-            <div>
+            {/* <div>
               <GameBomzh2 />
-            </div>
+            </div> */}
             <Conveyor />
           </div>
         )}

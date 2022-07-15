@@ -70,7 +70,7 @@ function Navbar() {
                     </>
                   ) : (
                     <>
-                      <li>
+                      <li className={styles.primary1}>
                         <span className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
                           Регистрация
                         </span>
@@ -82,7 +82,7 @@ function Navbar() {
                         {isOpen && <Modal setIsOpen={setIsOpen} />}
 
                       </li>
-                      <li>
+                      <li className={styles.primary2}>
                         <span className={styles.primaryBtn} onClick={() => setIsOpenLog(true)}>
                           Вход
                         </span>

@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Box } from '../components/GameLogic/Box';
 import { Dustbin2 } from './Dustbin2';
 // import { ItemTypes } from './ItemTypes';
-import './GameTrash.css';
+import './GameTrash2.css';
+import './conveyor/conveyor.scss';
 import ModalHardMode from './ModalHardMode';
 import Timer from './Timer';
 
-const Container = memo(({ trashBin }) => {
+const Container = memo(({ trashBin, bomzh }) => {
   const dispatch = useDispatch();
   const flag = useSelector((s) => s.flag);
   const showTrash = () => {
@@ -21,7 +22,7 @@ const Container = memo(({ trashBin }) => {
   const [initialMinute, setInitialMinute] = useState(0);
   const [initialSeconds, setInitialSeconds] = useState(23);
   const [isOpen, setIsOpen] = useState(false);
-
+  // const [trashSorted, setTrashSorted] = useState(trash);
   return (
     <>
       {/* <p>{`ты набрал ${score} баллов`}</p> */}
@@ -34,10 +35,10 @@ const Container = memo(({ trashBin }) => {
           width="200"
         /> */}
       {/* </div> */}
-      <button type="button" style={{ zIndex: 1000 }} onClick={showTrash}>ok</button>
+
       {flag ? (
         <div
-          className="photo-album"
+          className="photo-album2"
           style={{ overflow: 'hidden', clear: 'both' }}
         >
           <Timer props={{
@@ -46,7 +47,13 @@ const Container = memo(({ trashBin }) => {
           />
           {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />} */}
         </div>
-      ) : null}
+      ) : (
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button type="button" className="primaryBtnStart" onClick={showTrash}>
+            НАЧАТЬ
+          </button>
+        </div>
+      )}
 
       <div className="bins">
         <div className="GameBins" style={{ display: 'flex' }}>
@@ -66,6 +73,15 @@ const Container = memo(({ trashBin }) => {
             </div>
           ))}
         </div>
+        {/* <div id="bomzh">
+          <Dustbin2
+            binName={bomzh.id}
+            itemType={bomzh.id}
+            // trashSorted={trashSorted}
+            // setTrashSorted={setTrashSorted}
+            key={bomzh.id}
+          />
+        </div> */}
       </div>
     </>
   );

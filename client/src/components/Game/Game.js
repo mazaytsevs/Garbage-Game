@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTrashes } from '../../helpers';
-import { generateTrashThunk } from '../../redux/actions/actions';
+import { generateTrashThunk, getEndGame, getEndGameThunk } from '../../redux/actions/actions';
 import { changeFlagThunk } from '../../redux/actions/changeFlagAction';
 import { getProgressThunk } from '../../redux/actions/progress.action';
 import { generateTrashRandomThunk } from '../../redux/actions/randomTrashAction';
+import EndGame from '../EndGame/EndGame';
 
 import GameBomzh from '../GameBomzh/GameBomzh';
 import Container from '../GameLogic/Container';
@@ -21,7 +22,8 @@ function Game() {
     (state) => state.trashGenerate?.trashCans,
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
-
+  // const audio = new Audio('/music/gameMusic.m4a');
+  // audio.play();
   // получаем мусор
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
   const trashRandom = useSelector((state) => state.trashRandom);
@@ -39,7 +41,6 @@ function Game() {
       dispatch(generateTrashRandomThunk((getTrashes(trashes))));
     }
   }, [trashes]);
-
   const refreshTrash = () => {
     dispatch(generateTrashRandomThunk((getTrashes(trashes))));
   };
@@ -58,17 +59,31 @@ function Game() {
   };
 
   componentDidMount();
-
+  console.log('progress', progress.score);
   // для модалки с правилами
   const [rulesModal, setRulesModal] = React.useState(true);
 
+  // для проверки на конец игры
+  useEffect(() => {
+    dispatch(getEndGameThunk(progress.score));
+  }, [progress]);
+  const checkEndGame = useSelector((state) => state.endGame);
+
   return (
     <div>
-
+      {/* MZ ->
+      проверка на конец игры, если прогресс 100 то запускается функция с другим компонентом */}
+      {checkEndGame
+        ? <EndGame /> : null}
+      {/* <EndGame score={progress.score} /> */}
       {loading ? (<Load />)
         : (
           <div className={background}>
-            <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+            {/*  MZ -> модалка с правилами теперь только при прогрессе 0 */}
+            {progress.score == null
+              ? <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
+              : null}
+            {/* MZ -> конец проверок */}
             <div>
               <GameNav />
             </div>

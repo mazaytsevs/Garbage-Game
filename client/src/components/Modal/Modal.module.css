@@ -72,7 +72,7 @@
   display: flex;
   align-items: center;
   padding: 1rem;
-  height: 150px;
+  height: 30rem;
 }
 
 .modal_header {
@@ -87,7 +87,7 @@
 }
 
 .modal_close {
-  cursor: pointer;
+  cursor: url('../../../public/glove/pointer.png'), pointer;
   padding: 1rem;
   margin: -5rem -1rem -1rem auto;
   /* animation:blowUpContent .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
@@ -104,9 +104,9 @@
 }
 
 .modal_gotovo{
-margin: 0 auto;
+  margin: 0 auto;
   padding: 1rem;
-  cursor: pointer;
+  cursor: url('../../../public/glove/pointer.png'), pointer;
 }
 
 @keyframes appear {

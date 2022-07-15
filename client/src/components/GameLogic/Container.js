@@ -29,14 +29,14 @@ const Container = memo(({
   const [trashSorted, setTrashSorted] = useState(trash);
 
   // для удаления мусора
-  console.log(flag);
+  // console.log(flag);
 
   return (
     <div className="gameBoard">
       <div className="garbageForSort">
-        {/* мысля */}
+        {/* мысля
         <InfoCloudForHomeless />
-        <InfoCloudForLocation />
+        <InfoCloudForLocation /> */}
         <div
           className="trashBag"
           onClick={function () {
@@ -96,7 +96,10 @@ const Container = memo(({
         </div>
       </div>
       {/* MZ -> начало -> рисую бомжа */}
-      <div id="bomzh">
+      <div className="bomzh">
+        {/* мысля */}
+        <InfoCloudForHomeless />
+        <InfoCloudForLocation />
         <Dustbin
           binName={bomzh.id}
           itemType={bomzh.id}

@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getHomelessThunk } from '../../redux/actions/homeless.action';
+import RatSpeaks from '../ratSpeaks/ratSpeaks';
 import './gameBomzh.css';
 
 function GameBomzh() {
@@ -14,6 +15,8 @@ function GameBomzh() {
     dispatch(getHomelessThunk());
   }, []);
 
+  const ratSpeaks = homeless.includes('58');
+  console.log('ratSpeaks', ratSpeaks);
   return (
     <div className="GameBomzh">
       {trashBinsFromDB
@@ -27,6 +30,7 @@ function GameBomzh() {
               />
             </div>
             )}
+      {ratSpeaks ? <RatSpeaks /> : null}
     </div>
   );
 }

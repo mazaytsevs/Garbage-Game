@@ -15,11 +15,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  cursor: url('../public/glove/pointer.png'), auto;
+  cursor: url('../public/glove/original.png'), auto;
 }
-  .modal-active {
+
+button{
+  cursor: url('../public/glove/pointer.png'), pointer;
+}
+.modal-active {
     overflow: hidden;
-  }
+}
 
 
 code {
