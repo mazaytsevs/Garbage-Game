@@ -1,9 +1,11 @@
 import {
   GET_TIME_PROGRESS, CLEAR_TIME_TRASH_RANDOM, CLEAR_OLD_TIME_PROGRESS, DELETE_TIME_PROGRESS,
+  GET_TABLE_TIME_PROGRESS,
 } from '../types/types';
 
 export const getTimeProgress = (data) => ({ type: GET_TIME_PROGRESS, payload: data });
 export const getDeleteTimeProgress = (data) => ({ type: DELETE_TIME_PROGRESS, payload: data });
+export const getTableTimeProgress = (data) => ({ type: GET_TABLE_TIME_PROGRESS, payload: data });
 // export const clearOldTimeProgress = () => (
 //   { type: CLEAR_OLD_TIME_PROGRESS, payload: { trashes: [] } }
 //   );
@@ -59,4 +61,10 @@ export const getDeleteTimeProgressThunk = (id) => async (dispatch) => {
     // dispatch(clearOldTimeTrashRandom());
     dispatch(getDeleteTimeProgress(id));
   }
+};
+
+export const getTableTimeProgressThunk = () => async (dispatch) => {
+  const response = await fetch('/timeprogress/table');
+  const result = await response.json();
+  dispatch(getTableTimeProgress(result));
 };
