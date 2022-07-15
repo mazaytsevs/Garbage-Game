@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTrashes } from '../../helpers';
-import { generateTrashThunk } from '../../redux/actions/actions';
+import { generateTrashThunk, getEndGame, getEndGameThunk } from '../../redux/actions/actions';
 import { changeFlagThunk } from '../../redux/actions/changeFlagAction';
 import { getProgressThunk } from '../../redux/actions/progress.action';
 import { generateTrashRandomThunk } from '../../redux/actions/randomTrashAction';
@@ -58,20 +58,23 @@ function Game() {
     setTimeout(() => setLoading(false), 4000); // do your async call
   };
 
-  // useEffect(() => {
-  //   <EndGame />;
-  // }, progress.score > 12);
-
   componentDidMount();
   console.log('progress', progress.score);
   // для модалки с правилами
   const [rulesModal, setRulesModal] = React.useState(true);
+
+  // для проверки на конец игры
+  useEffect(() => {
+    dispatch(getEndGameThunk(progress.score));
+  }, [progress]);
+  const checkEndGame = useSelector((state) => state.endGame);
+
   return (
     <div>
       {/* MZ ->
       проверка на конец игры, если прогресс 100 то запускается функция с другим компонентом */}
-      {/* {progress.score >= 12
-        ? <EndGame /> : null} */}
+      {checkEndGame
+        ? <EndGame /> : null}
       {/* <EndGame score={progress.score} /> */}
       {loading ? (<Load />)
         : (

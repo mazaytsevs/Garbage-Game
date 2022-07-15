@@ -63,7 +63,7 @@ const Container = memo(({ trashBin, bomzh }) => {
             </div>
           ))}
         </div>
-        <div id="bomzh">
+        {/* <div id="bomzh">
           <Dustbin2
             binName={bomzh.id}
             itemType={bomzh.id}
@@ -71,7 +71,7 @@ const Container = memo(({ trashBin, bomzh }) => {
             // setTrashSorted={setTrashSorted}
             key={bomzh.id}
           />
-        </div>
+        </div> */}
       </div>
     </>
   );

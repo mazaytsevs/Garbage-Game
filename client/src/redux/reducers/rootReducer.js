@@ -10,6 +10,7 @@ import changeFlagReducer from './changeFlagReducer';
 import trashRandomReducer from './trashRandomReducer';
 import timehomelessReducer from './timehomelessReducer';
 import addedTrashReducer from './newAddedTrashReducer';
+import endGameReducer from './endGameReducer';
 
 import { flagReducer } from './flagReducer';
 
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   timehomeless: timehomelessReducer,
   flag: flagReducer,
   addedTrash: addedTrashReducer,
+  endGame: endGameReducer,
 });
 
 export default rootReducer;

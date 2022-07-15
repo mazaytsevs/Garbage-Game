@@ -12,9 +12,9 @@
   font-family:"Lucida handwriting", "Snell Roundhand", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 16px;
 } */
-.divForCursor2{
+/* .divForCursor2{
   cursor: url('../../public/glove/pointer.png'), pointer;
-}
+} */
 div.polaroid2 {
   display: block;
   text-decoration: none;
@@ -30,19 +30,19 @@ div.polaroid2 {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
   -webkit-transition: -webkit-transform 0.5s ease-in;
 }
-div.polaroid:hover,
+/* div.polaroid:hover,
 div.polaroid:focus,
 div.polaroid:active {
   z-index: 999;
   border-color: #6a6a6a;
-  /* -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   transform: rotate(0deg);
-}
-.polaroid img {
+} */
+/* .polaroid img {
   margin: 0 0 15px;
   width: 100%;
   height: 100%;
@@ -50,7 +50,7 @@ div.polaroid:active {
 div img {
   border: none;
   display: block;
-}
+} */
 .photo-album2 {
   /* width: 100%;
   max-width: 70em;
@@ -78,7 +78,7 @@ div img {
   width: 75px;
   height: 75px;
 } */
-.photo-album .medium {
+/* .photo-album .medium {
   width: 200px;
   padding: 13px 13px 26px 13px;
   font-size: 0.8em;
@@ -86,7 +86,7 @@ div img {
 .photo-album .medium img {
   width: 150px;
   height: 100%;
-}
+} */
 /* .photo-album .large {
   width: 300px;
   padding: 20px 20px 30px 20px;
@@ -96,13 +96,13 @@ div img {
   width: 300px;
   height: 340px;
 } */
-.photo-album .img1 {
+/* .photo-album .img1 {
   bottom: 10px;
   right: 365px;
   -webkit-transform: rotate(10deg);
   -moz-transform: rotate(10deg);
   transform: rotate(10deg);
-}
+} */
 /* .photo-album .img2 {
   top: 50px;
   right: 20px;
@@ -110,20 +110,20 @@ div img {
   -moz-transform: rotate(-4deg);
   transform: rotate(-4deg);
 } */
-.photo-album .img2 {
+/* .photo-album .img2 {
   left: 300px;
   top: 0;
   -webkit-transform: rotate(-5deg);
   -moz-transform: rotate(-5deg);
   transform: rotate(-5deg);
-}
-.photo-album .img3 {
+} */
+/* .photo-album .img3 {
   top: 10px;
   left: 400px;
   -webkit-transform: rotate(-20deg);
   -moz-transform: rotate(-20deg);
   transform: rotate(-20deg);
-}
+} */
 /* .photo-album .img5 {
   bottom: 0;
   right: 0;
@@ -131,14 +131,14 @@ div img {
   -moz-transform: rotate(1deg);
   transform: rotate(1deg);
 } */
-.photo-album .img4 {
+/* .photo-album .img4 {
   bottom: 10px;
   right: 156px;
   -webkit-transform: rotate(6deg);
   -moz-transform: rotate(6deg);
   transform: rotate(6deg);
-}
-.photo-album .img5 {
+} */
+/* .photo-album .img5 {
   bottom: 0;
   left: 400px;
   -webkit-transform: rotate(-10deg);
@@ -165,7 +165,7 @@ div img {
   -webkit-transform: rotate(8deg);
   -moz-transform: rotate(8deg);
   transform: rotate(8deg);
-}
+} */
 /* .photo-album .img11 {
   top: 0;
   right: 0;
@@ -173,13 +173,13 @@ div img {
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
 } */
-.photo-album .img9 {
+/* .photo-album .img9 {
   top: 0;
   left: 600px;
   -webkit-transform: rotate(18deg);
   -moz-transform: rotate(18deg);
   transform: rotate(18deg);
-}
+} */
 /* .photo-album .img13 {
   bottom: -20px;
   right: 630px;
@@ -194,20 +194,20 @@ div img {
   -moz-transform: rotate(15deg);
   transform: rotate(15deg);
 } */
-.photo-album .img10 {
+/* .photo-album .img10 {
   left: 120px;
   top: 20px;
   -webkit-transform: rotate(-8deg);
   -moz-transform: rotate(-8deg);
   transform: rotate(-8deg);
-}
+} */
 /* div:hover,
 div:focus {
   z-index: 50000;
 } */
 
 /* стили для мусорных баков */
-.bins {
+/* .bins {
   width: 1500px;
   height: 345px;
 }
@@ -229,7 +229,7 @@ div:focus {
 
 .gameBinsFromDB {
   position: relative;
-  bottom: -70px;
+  bottom: -90px;
   z-index: 1;
   display: flex;
   justify-content: space-around;
@@ -240,67 +240,4 @@ div:focus {
   align-items: center;
   margin-top: 6rem;
   margin-left: 3rem;
-}
-
-/* для крысы начало */
-.sprite-container {
-  height: 50vh; /*100% высоты экрана*/
-  display: flex;
-  align-items: center; /*чтобы картинка была по центру*/
-  margin-left: 20rem;
-  z-index: 99;
-}
-
-.sprite-image {
-  height: 155px; /*высота спрайта (высота одного кадра)*/
-  width: 200px; /*ширина спрайта (ширина одного кадра)*/
-  /* background: url("../../../public/trashes/rat.png"); картинка со спрайтами с позицией в верхнем левом углу (0px 0px) */
-  /* animation: play 0.8s steps(6) infinite, fly 10s ease; */
-  background-size: cover;
-  animation: fly 10s ease;
-  animation-delay: 2s;
-  position: absolute;
-  z-index: 99;
-}
-
-@keyframes play {
-  100% {
-    background-position: -600px; /*ширина картинки со спрайтами*/
-  }
-}
-
-@keyframes fly {
-  0% {
-    -webkit-transform: translate(30px, 45px);
-    transform: translate(30px, 45px);
-  }
-  15% {
-    -webkit-transform: translate(700px, 227px) scaleX(-1);
-    transform: translate(700px, 227px) scaleX(-1);
-  }
-  30% {
-    -webkit-transform: translate(0, 91px);
-    transform: translate(0, 91px);
-  }
-  45% {
-    -webkit-transform: translate(520px, 409px) scaleX(-1);
-    transform: translate(520px, 409px) scaleX(-1);
-  }
-  60% {
-    -webkit-transform: translate(390px, 0);
-    transform: translate(390px, 0);
-  }
-  75% {
-    -webkit-transform: translate(640px, 227px);
-    transform: translate(640px, 227px);
-  }
-  87% {
-    -webkit-transform: translate(770px, 227px) scaleX(-1);
-    transform: translate(770px, 227px) scaleX(-1);
-  }
-  100% {
-    -webkit-transform: translate(1px, 1px);
-    transform: translate(1px, 1px);
-  }
-}
-/* конец крысы */
+} */
