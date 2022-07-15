@@ -27,7 +27,7 @@ function GameNav() {
         <div>
           <p className="score">{`Прогресс ${progress.score || 0}/120`}</p>
         </div>
-        <EasyFinal />
+        {/* <EasyFinal /> */}
       </div>
       <div className="navbar">
         <div className="progressBar">

@@ -66,5 +66,7 @@ export const getDeleteTimeProgressThunk = (id) => async (dispatch) => {
 export const getTableTimeProgressThunk = () => async (dispatch) => {
   const response = await fetch('/timeprogress/table');
   const result = await response.json();
-  dispatch(getTableTimeProgress(result));
+  const resultSorted = [...result].sort(((a, b) => (+a.score > +b.score ? -1 : 1)));
+  console.log('result', resultSorted);
+  dispatch(getTableTimeProgress(resultSorted));
 };
