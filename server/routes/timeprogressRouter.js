@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Sequelize = require('sequelize');
+const { Op } = require('sequelize');
 const { User, Trash, TimeProgress } = require('../db/models');
 const { checkSession } = require('../middlewares/middleware');
 

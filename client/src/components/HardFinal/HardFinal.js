@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Modal from '../Modal/Modal';
 import { getProgressThunk } from '../../redux/actions/progress.action';
 
@@ -8,12 +9,15 @@ import './hardfinal.css';
 function HardFinal({ isOpen, setIsOpen }) {
   const table = useSelector((state) => state.tableProgress);
   const timeProgress = useSelector((state) => state.timeprogress);
-  console.log(table);
+  const navigate = useNavigate();
 
-  console.log(isOpen);
+  function goToStartPage() {
+    navigate('/');
+  }
   return (
     <div className="rulesContainer">
       <Modal
+        someFunc={() => goToStartPage()}
         isVisible={isOpen}
         title={<>Вот это результат!</>}
         content={(
