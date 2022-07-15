@@ -7,9 +7,8 @@ import './GameTrash.css';
 import InfoCloudForHomeless from '../InfoClouds/InfoCloudForHomeless';
 import InfoCloudForLocation from '../InfoClouds/InfoCloudForLocation';
 
-const Container = memo(({
-  trash, trashBin, refreshTrash, bomzh,
-}) => {
+// eslint-disable-next-line object-curly-newline
+const Container = memo(({ trash, trashBin, refreshTrash, bomzh }) => {
   const [flag, setFlag] = useState(false);
 
   const dispatch = useDispatch();
@@ -101,6 +100,7 @@ const Container = memo(({
         <InfoCloudForHomeless />
         <InfoCloudForLocation />
         <Dustbin
+          backgroundImage="/man/lol.png"
           binName={bomzh.id}
           itemType={bomzh.id}
           trashSorted={trashSorted}

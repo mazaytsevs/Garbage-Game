@@ -6,7 +6,6 @@ import { changeFlagThunk } from '../../redux/actions/changeFlagAction';
 import { getProgressThunk } from '../../redux/actions/progress.action';
 import { generateTrashRandomThunk } from '../../redux/actions/randomTrashAction';
 import EndGame from '../EndGame/EndGame';
-
 import GameBomzh from '../GameBomzh/GameBomzh';
 import Container from '../GameLogic/Container';
 import GameNav from '../GameNav/GameNav';

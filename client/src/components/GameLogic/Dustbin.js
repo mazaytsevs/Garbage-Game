@@ -17,6 +17,7 @@ const style = {
   fontSize: '1rem',
   lineHeight: 'normal',
   float: 'left',
+  position: 'relative',
   zIndex: '300',
 };
 // комопонент корзины
@@ -53,6 +54,7 @@ export function Dustbin(props) {
   let oTransform;
   let msTransform;
   let transform;
+  let cursor;
 
   if (isActive) {
     mozЕransform = 'scale(1.2)';
@@ -60,6 +62,7 @@ export function Dustbin(props) {
     oTransform = 'scale(1.2)';
     msTransform = 'scale(1.2)';
     transform = 'scale(1.2)';
+    cursor = 'url(../../../public/glove/grab.png) auto';
   }
   return (
     <div ref={drop} data-testid="dustbin">
@@ -71,6 +74,7 @@ export function Dustbin(props) {
           oTransform,
           msTransform,
           transform,
+          cursor,
           backgroundRepeat: 'no-repeat',
         }}
         src={backgroundImage}

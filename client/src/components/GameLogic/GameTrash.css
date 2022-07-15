@@ -166,6 +166,7 @@ div img {
   align-items: center;
   margin-top: 6vh;
   margin-left: 3vh;
+  cursor: url('../../../public/glove/pointer.png'), pointer;
 }
 
 /* для крысы начало */
@@ -260,3 +261,4 @@ div img {
   z-index: 99;
 }
 /* конец бомжа-контейнера */
+

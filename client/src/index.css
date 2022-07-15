@@ -18,6 +18,10 @@ body {
   cursor: url('../public/glove/original.png'), auto;
 }
 
+a {
+  cursor: url('../public/glove/pointer.png'), pointer;
+}
+
 button{
   cursor: url('../public/glove/pointer.png'), pointer;
 }
