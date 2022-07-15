@@ -13,6 +13,7 @@ import addedTrashReducer from './newAddedTrashReducer';
 import endGameReducer from './endGameReducer';
 
 import { flagReducer } from './flagReducer';
+import trashTimeReducer from './trashTimeReducer';
 
 const rootReducer = combineReducers({
   info: infoReducer,
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
   flag: flagReducer,
   addedTrash: addedTrashReducer,
   endGame: endGameReducer,
+  trashTime: trashTimeReducer,
 });
 
 export default rootReducer;

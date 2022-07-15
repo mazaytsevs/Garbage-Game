@@ -1,3 +1,18 @@
+.primaryBtnStart{
+  font-family: 'Amatic SC', cursive;
+  font-size: 60px;
+  margin-top: 2vh;
+  
+  background: linear-gradient(354.28deg, #8A939A 5.07%, #FFFFFF 86.31%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow: 0px 15px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
 .room {
   // z-index: -1;
   display: flex;
@@ -22,8 +37,8 @@
   margin: auto;
   width: 5000px;
   height: 1px;
-  background-color: rgb(158, 57, 57);
-  //visibility: hidden;
+  background-color: rgb(100, 33, 33);
+  // visibility: hidden;
 }
 
 .sushiplate span {
@@ -31,7 +46,7 @@
   height: 0;
   width: 180px;
   top: -40px;
-  animation: move 45s linear infinite;
+  animation: move 57s linear infinite;
 }
 
 // .sushiplate span:after {
@@ -181,22 +196,51 @@
 .sushiplate span:nth-child(46) {
   animation-delay: -45s;
 }
-// .sushiplate span:nth-child(47) {
-//   animation-delay: -164s;
+.sushiplate span:nth-child(47) {
+  animation-delay: -46s;
+}
+.sushiplate span:nth-child(48) {
+  animation-delay: -47s;
+}
+.sushiplate span:nth-child(49) {
+  animation-delay: -48s;
+}
+.sushiplate span:nth-child(50) {
+  animation-delay: -49s;
+}
+.sushiplate span:nth-child(51) {
+  animation-delay: -50s;
+}
+.sushiplate span:nth-child(52) {
+  animation-delay: -51s;
+}
+.sushiplate span:nth-child(53) {
+  animation-delay: -52s;
+}
+.sushiplate span:nth-child(54) {
+  animation-delay: -53s;
+}
+.sushiplate span:nth-child(55) {
+  animation-delay: -54s;
+}
+.sushiplate span:nth-child(56) {
+  animation-delay: -55s;
+}
+.sushiplate span:nth-child(57) {
+  animation-delay: -56s;
+}
+// .sushiplate span:nth-child(58) {
+//   animation-delay: -57s;
 // }
-// .sushiplate span:nth-child(48) {
-//   animation-delay: -168s;
+// .sushiplate span:nth-child(59) {
+//   animation-delay: -58s;
 // }
-// .sushiplate span:nth-child(49) {
-//   animation-delay: -172s;
+// .sushiplate span:nth-child(60) {
+//   animation-delay: -59s;
 // }
-// .sushiplate span:nth-child(50) {
-//   animation-delay: -176s;
-// }
-
 @keyframes move {
   from {
-    left: -140%;
+    left: -100%;
   }
 
   to {

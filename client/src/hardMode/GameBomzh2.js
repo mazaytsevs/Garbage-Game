@@ -4,7 +4,7 @@ import { getTimeHomelessThunk } from '../redux/actions/timehomeless.action';
 import '../components/GameBomzh/gameBomzh.css';
 
 function GameBomzh2() {
-  const trashBinsFromDB = useSelector((state) => state.trashGenerate?.trashCans);
+  const trashBinsFromDB = useSelector((state) => state.trashTime?.trashCans);
   // eslint-disable-next-line no-unsafe-optional-chaining
   const timehomeless = useSelector((state) => state.timehomeless);
 
