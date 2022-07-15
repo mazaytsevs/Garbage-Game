@@ -12,6 +12,7 @@ import timehomelessReducer from './timehomelessReducer';
 import addedTrashReducer from './newAddedTrashReducer';
 
 import { flagReducer } from './flagReducer';
+import tableTimeProgressReducer from './tableTimeProgressReducer';
 
 const rootReducer = combineReducers({
   info: infoReducer,
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   timehomeless: timehomelessReducer,
   flag: flagReducer,
   addedTrash: addedTrashReducer,
+  tableProgress: tableTimeProgressReducer,
 });
 
 export default rootReducer;

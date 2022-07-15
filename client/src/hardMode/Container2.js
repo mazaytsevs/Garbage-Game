@@ -18,8 +18,8 @@ const Container = memo(({ trashBin }) => {
     }
   };
 
-  const [initialMinute, setInitialMinute] = useState(3);
-  const [initialSeconds, setInitialSeconds] = useState(30);
+  const [initialMinute, setInitialMinute] = useState(0);
+  const [initialSeconds, setInitialSeconds] = useState(23);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -40,7 +40,10 @@ const Container = memo(({ trashBin }) => {
           className="photo-album"
           style={{ overflow: 'hidden', clear: 'both' }}
         >
-          <Timer props={{ initialMinute, initialSeconds, setIsOpen }} />
+          <Timer props={{
+            initialMinute, initialSeconds, isOpen, setIsOpen,
+          }}
+          />
           {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />} */}
         </div>
       ) : null}

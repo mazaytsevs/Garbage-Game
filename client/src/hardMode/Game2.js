@@ -14,11 +14,13 @@ import Rules from '../components/Rules/Rules';
 import '../components/Game/game.css';
 import { getTimeProgressThunk } from '../redux/actions/timeProgress.action';
 import Conveyor from './conveyor/Conveyor';
+import Timer from './Timer';
+import HardFinal from '../components/HardFinal/HardFinal';
 
 function Game() {
   // const [initialMinute, setInitialMinute] = useState(0);
   // const [initialSeconds, setInitialSeconds] = useState(10);
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   // получаем мусорные баки
   const trashBinsFromDB = useSelector(
     (state) => state.trashGenerate?.trashCans,
@@ -63,8 +65,8 @@ function Game() {
       {loading ? (<Load />)
         : (
           <div className={background}>
-            {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
-            <Timer props={{ initialMinute, initialSeconds, setIsOpen }} /> */}
+            {/* {isOpen && <HardFinal isOpen={isOpen} setIsOpen={setIsOpen} />} */}
+            {/* <Timer props={{ isOpen, setIsOpen }} /> */}
 
             {/* <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} /> */}
             <div>
