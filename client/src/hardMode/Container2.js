@@ -4,6 +4,7 @@ import { Box } from '../components/GameLogic/Box';
 import { Dustbin2 } from './Dustbin2';
 // import { ItemTypes } from './ItemTypes';
 import './GameTrash2.css';
+import './conveyor/conveyor.scss';
 import ModalHardMode from './ModalHardMode';
 import Timer from './Timer';
 
@@ -34,16 +35,25 @@ const Container = memo(({ trashBin, bomzh }) => {
           width="200"
         /> */}
       {/* </div> */}
-      <button type="button" style={{ zIndex: 1000 }} onClick={showTrash}>ok</button>
+
       {flag ? (
         <div
           className="photo-album2"
           style={{ overflow: 'hidden', clear: 'both' }}
         >
-          <Timer props={{ initialMinute, initialSeconds, setIsOpen }} />
+          <Timer props={{
+            initialMinute, initialSeconds, isOpen, setIsOpen,
+          }}
+          />
           {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />} */}
         </div>
-      ) : null}
+      ) : (
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button type="button" className="primaryBtnStart" onClick={showTrash}>
+            НАЧАТЬ
+          </button>
+        </div>
+      )}
 
       <div className="bins">
         <div className="GameBins" style={{ display: 'flex' }}>

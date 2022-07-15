@@ -14,14 +14,17 @@ import Rules from '../components/Rules/Rules';
 import '../components/Game/game.css';
 import { getTimeProgressThunk } from '../redux/actions/timeProgress.action';
 import Conveyor from './conveyor/Conveyor';
+import Timer from './Timer';
+import HardFinal from '../components/HardFinal/HardFinal';
+import { generateTimeTrashThunk } from '../redux/actions/trashTimeAction';
 
 function Game() {
   // const [initialMinute, setInitialMinute] = useState(0);
   // const [initialSeconds, setInitialSeconds] = useState(10);
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   // получаем мусорные баки
   const trashBinsFromDB = useSelector(
-    (state) => state.trashGenerate?.trashCans,
+    (state) => state.trashTime?.trashCans,
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
 
@@ -29,11 +32,19 @@ function Game() {
   const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
   // для обращения к бэку
   const dispatch = useDispatch();
-  const trashes = useSelector((state) => state.trashGenerate?.trashes);
+  const trashes = useSelector((state) => state.trashTime?.trashes);
   useEffect(() => {
-    // console.log('MUUUUSOOOOOOOOOR', trashes);
-    dispatch(generateTrashThunk());
+    dispatch(generateTimeTrashThunk());
   }, []);
+
+  // const lala = useSelector(
+  //   (state) => state.trashTime,
+  // );
+
+  // useEffect(() => {
+  //   dispatch(generateTimeTrashThunk());
+  // }, []);
+  // console.log('MUUUUSOOOOOOOOOR', lala);
 
   // функция которая вытаскивает ШЕСТЬ рандомных мусоров из неотгаданных
 
@@ -65,8 +76,8 @@ function Game() {
       {loading ? (<Load />)
         : (
           <div className={background}>
-            {/* {isOpen && <ModalHardMode isOpen={isOpen} setIsOpen={setIsOpen} />}
-            <Timer props={{ initialMinute, initialSeconds, setIsOpen }} /> */}
+            {/* {isOpen && <HardFinal isOpen={isOpen} setIsOpen={setIsOpen} />} */}
+            {/* <Timer props={{ isOpen, setIsOpen }} /> */}
 
             {/* <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} /> */}
             <div>

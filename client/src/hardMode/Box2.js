@@ -11,7 +11,7 @@ const style = {
   // marginRight: '1.5rem',
   // marginBottom: '1.5rem',
   // cursor: 'move',
-  // float: 'left',
+  float: 'left',
 };
 // eslint-disable-next-line import/prefer-default-export
 export const Box = function Box(props) {
@@ -34,16 +34,14 @@ export const Box = function Box(props) {
   const opacity = isDragging ? 0.4 : 1;
   const nashClass = `medium polaroid img${className + 1}`;
   return (
-    <div className="divForCursor2">
-      <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
-        {name}
-        <img
-          style={{ width: '65px', height: '100px' }}
-          cobject-fit="cover"
-          src={image}
-          alt=""
-        />
-      </div>
+    <div ref={drag} style={{ ...style, opacity }}>
+      <img
+        style={{ width: '65px', height: '100px' }}
+        className="divForCursor2"
+        cobject-fit="cover"
+        src={image}
+        alt=""
+      />
     </div>
   );
 };

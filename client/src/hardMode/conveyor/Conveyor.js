@@ -5,7 +5,7 @@ import { Box } from '../Box2';
 import { Dustbin2 } from '../Dustbin2';
 
 export default function Conveyor() {
-  const trashes = useSelector((s) => s.trashGenerate.trashes);
+  const trashes = useSelector((s) => s.trashTime.trashes);
   const flag = useSelector((s) => s.flag);
 
   const trashBinsFromDB = useSelector(
@@ -24,7 +24,7 @@ export default function Conveyor() {
                 score={el.score}
                 id={el.id}
                 key={el.id}
-                name={el.trash_name}
+                // name={el.trash_name}
                 itemType={el.trash_can_id}
                 image={el.trash_img_src}
               />
