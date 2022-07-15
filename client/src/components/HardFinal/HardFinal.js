@@ -39,8 +39,8 @@ function HardFinal({ isOpen, setIsOpen }) {
               Ниже можешь ознакомиться со своим результатом и сравнить его с другими игроками.
               Зови друзей, соревнуйтесь и получайте удовольствие от Garbage Game!
             </p>
-            <p>
-              <table>
+            <div className="forTable">
+              <table className="table">
                 <tr>
                   <th>Имя</th>
                   <th>Результат</th>
@@ -52,7 +52,7 @@ function HardFinal({ isOpen, setIsOpen }) {
                   </tr>
                 ))}
               </table>
-            </p>
+            </div>
           </div>
             )}
         onClose={() => setIsOpen(false)}
