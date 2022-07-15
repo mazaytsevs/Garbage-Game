@@ -17,6 +17,7 @@ const style = {
   fontSize: '1rem',
   lineHeight: 'normal',
   float: 'left',
+  zIndex: '300',
 };
 // комопонент корзины
 export function Dustbin(props) {

@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import classes from './ratSpeaks.module.css';
 
 const ratText = ['привет!', 'я крыса', 'сортируй быстрее!', 'гринпис гордится тобой', ':)))))'];
-const text = ratText[Math.floor(Math.random() * ratText.length)];
-console.log('text', text);
+console.log('randomtext', ratText[Math.floor(Math.random() * ratText.length)]);
 function RatSpeaks() {
   const [ratFlag, setRatFlag] = useState(false);
   const hideRatSpeaks = () => {
     setTimeout(() => setRatFlag(false), 2000);
   };
+  console.log('ratFlag', ratFlag);
   const handleClick = () => {
     setRatFlag(true);
     hideRatSpeaks();
@@ -16,8 +16,8 @@ function RatSpeaks() {
   return (
     <span className={classes.ratSpeaksContainer} onClick={() => handleClick()}>
       {ratFlag ? (
-        <div className={classes.ratSpeaks}>
-          {text}
+        <div className="thought">
+          {ratText[Math.floor(Math.random() * ratText.length)]}
         </div>
       )
         : null}
