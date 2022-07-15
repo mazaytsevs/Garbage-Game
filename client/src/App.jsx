@@ -25,14 +25,13 @@ function App() {
   const [initialMinute, setInitialMinute] = useState(0);
   const [initialSeconds, setInitialSeconds] = useState(10);
   const [isOpen, setIsOpen] = useState(false);
+  const audio = new Audio('/music/gameMusic.m4a');
 
   useEffect(() => {
     dispatch(checkAuth());
   }, []);
   return (
-    <div className="App">
-      {/* {isOpen && <ModalHardMode isOpen={isOpen} />} */}
-      {/* <ModalHardMode isOpen={isOpen} /> */}
+    <div className="App" onMouseEnter={() => audio.play()}>
       <Routes>
         <Route path="/" element={<Navbar />} />
         <Route path="/auth/reg" element={<Registration />} />
@@ -46,11 +45,46 @@ function App() {
           )}
         />
         {/* <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} /> */}
-        <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} />
-        <Route path="/gamerat" element={<PrivateRoute><GameRat /></PrivateRoute>} />
-        <Route path="/timer" element={<PrivateRoute><Timer props={{ initialMinute, initialSeconds, setIsOpen }} /></PrivateRoute>} />
-        <Route path="/lol" element={<PrivateRoute><Conveyor /></PrivateRoute>} />
-        <Route path="/hardmode" element={<PrivateRoute><Game2 /></PrivateRoute>} />
+        <Route
+          path="/game"
+          element={(
+            <PrivateRoute>
+              <Game />
+            </PrivateRoute>
+          )}
+        />
+        <Route
+          path="/gamerat"
+          element={(
+            <PrivateRoute>
+              <GameRat />
+            </PrivateRoute>
+          )}
+        />
+        <Route
+          path="/timer"
+          element={(
+            <PrivateRoute>
+              <Timer props={{ initialMinute, initialSeconds, setIsOpen }} />
+            </PrivateRoute>
+          )}
+        />
+        <Route
+          path="/lol"
+          element={(
+            <PrivateRoute>
+              <Conveyor />
+            </PrivateRoute>
+          )}
+        />
+        <Route
+          path="/hardmode"
+          element={(
+            <PrivateRoute>
+              <Game2 />
+            </PrivateRoute>
+          )}
+        />
         <Route path="/end" element={<EndGame />} />
         <Route path="/endgame" element={<EndScreen />} />
       </Routes>
