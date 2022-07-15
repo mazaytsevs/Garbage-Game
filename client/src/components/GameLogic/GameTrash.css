@@ -176,7 +176,7 @@ div img {
 }
 div:hover,
 div:focus {
-  z-index: 50000;
+  /* z-index: 50000; */
 }
 
 /* стили для мусорных баков */

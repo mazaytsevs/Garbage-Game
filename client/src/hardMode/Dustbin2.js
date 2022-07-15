@@ -42,19 +42,37 @@ export function Dustbin2(props) {
   if (isActive) {
     boxShadow = '10px 5px 5px red';
   }
-
+  const style = {
+    // height: '25vh',
+    // width: '10vw',
+    // marginRight: '1.5rem',
+    // marginBottom: '1.5rem',
+    // color: 'white',
+    // padding: '1rem',
+    // textAlign: 'center',
+    // fontSize: '1rem',
+    // lineHeight: 'normal',
+    float: 'left',
+  };
   return (
     <div
       ref={drop}
-      style={{
-        // ...style,
-        boxShadow,
-        // backgroundImage: `url(${backgroundImage})`,
-        backgroundRepeat: 'no-repeat',
-      }}
       data-testid="dustbin"
     >
-      <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" />
+      {/* <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" /> */}
+      <img
+        width="200"
+        height="250"
+        cobject-fit="cover"
+        src={backgroundImage}
+        alt=""
+        style={{
+          ...style,
+          boxShadow,
+          // backgroundImage: `url(${backgroundImage})`,
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
       {isActive && 'Бросай'}
     </div>
   );
