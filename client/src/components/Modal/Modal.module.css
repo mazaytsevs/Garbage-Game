@@ -78,6 +78,7 @@
 .modal_header {
   border-bottom: 1px solid #dbdbdb;
   justify-content: space-between;
+  height: 120px;
 }
 
 .modal_footer {
