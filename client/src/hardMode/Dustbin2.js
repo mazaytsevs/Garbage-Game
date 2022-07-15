@@ -62,6 +62,7 @@ export function Dustbin2(props) {
     msTransform = 'scale(1.2)';
     transform = 'scale(1.2)';
   }
+
   return (
     <div
       ref={drop}
@@ -74,9 +75,23 @@ export function Dustbin2(props) {
         transform,
         backgroundRepeat: 'no-repeat',
       }}
+
       data-testid="dustbin"
     >
-      <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" />
+      {/* <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" /> */}
+      <img
+        width="200"
+        height="250"
+        cobject-fit="cover"
+        src={backgroundImage}
+        alt=""
+        style={{
+          ...style,
+          boxShadow,
+          // backgroundImage: `url(${backgroundImage})`,
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
       {isActive && 'Бросай'}
     </div>
   );

@@ -23,7 +23,7 @@ export const deleteTrashThunk = (id) => async (dispatch) => {
 };
 
 export const getEndGameThunk = (num) => async (dispatch) => {
-  if (num >= 20) {
+  if (num >= 120) {
     dispatch(getEndGame(true));
   } else {
     dispatch(getEndGame(false));
