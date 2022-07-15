@@ -75,7 +75,6 @@ export function Dustbin2(props) {
         transform,
         backgroundRepeat: 'no-repeat',
       }}
-
       data-testid="dustbin"
     >
       {/* <img width="200" height="250" cobject-fit="cover" src={backgroundImage} alt="" /> */}
@@ -87,7 +86,6 @@ export function Dustbin2(props) {
         alt=""
         style={{
           ...style,
-          boxShadow,
           // backgroundImage: `url(${backgroundImage})`,
           backgroundRepeat: 'no-repeat',
         }}
