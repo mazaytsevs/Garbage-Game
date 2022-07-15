@@ -17,6 +17,7 @@ const style = {
   fontSize: '1rem',
   lineHeight: 'normal',
   float: 'left',
+  zIndex: '300',
 };
 // комопонент корзины
 export function Dustbin(props) {
@@ -42,7 +43,8 @@ export function Dustbin(props) {
       isOver: monitor.isOver(),
       canDrop: monitor.canDrop(),
     }),
-  })); // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
+  }));
+  // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
 
   const isActive = canDrop && isOver;
   const win = isOver;
