@@ -21,6 +21,7 @@ const Container = memo(({ trashBin, bomzh }) => {
 
   const [initialMinute, setInitialMinute] = useState(1);
   const [initialSeconds, setInitialSeconds] = useState(0);
+  
   const [isOpen, setIsOpen] = useState(false);
   // const [trashSorted, setTrashSorted] = useState(trash);
   return (
