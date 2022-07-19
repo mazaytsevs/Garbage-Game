@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './conveyor.scss';
 import { Box } from '../Box2';
-import { Dustbin2 } from '../Dustbin2';
 
 export default function Conveyor() {
   const trashes = useSelector((s) => s.trashTime.trashes);
@@ -17,14 +16,13 @@ export default function Conveyor() {
     <div style={{ position: flag ? 'absolute' : 'relative' }} className="room">
       <div className="belt">
         <div className="sushiplate">
-          {trashes && flag && trashes.map((el) => ( // сделать по клику
+          {trashes && flag && trashes.map((el) => (
             <span>
               <Box
                 style={{ width: '65px', height: '100px' }}
                 score={el.score}
                 id={el.id}
                 key={el.id}
-                // name={el.trash_name}
                 itemType={el.trash_can_id}
                 image={el.trash_img_src}
               />

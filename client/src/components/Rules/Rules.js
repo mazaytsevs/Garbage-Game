@@ -8,7 +8,6 @@ function Rules({ rulesModal, setRulesModal }) {
   const trashCans = useSelector(
     (state) => state.trashGenerate?.trashCans,
   );
-  // console.log('ololololololololololololollo', trashCans);
   return (
     <div className="rulesContainer">
       <Modal
@@ -48,7 +47,6 @@ function Rules({ rulesModal, setRulesModal }) {
             </p>
           </div>
             )}
-        // footer={<button type="button" onClick={() => setRulesModal(false)}> OK </button>}
         onClose={() => setRulesModal(false)}
       />
     </div>

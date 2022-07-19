@@ -46,10 +46,7 @@
   0% {
     border: 10px solid #f3f3f3;
   }
-  /* 75% {
-    border-left: 10px solid #db3434;
-    border-right: 10px solid #db3434;
-  } */
+
   100% {
     border: 10px solid #db3434;;
   }

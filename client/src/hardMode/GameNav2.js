@@ -5,17 +5,13 @@ import Info from '../components/Info/Info';
 import Rules from '../components/Rules/Rules';
 import { getTimeProgressThunk } from '../redux/actions/timeProgress.action';
 
-// import '../components/GameNav/gameNav.css';
-
 function GameNav2() {
   const dispatch = useDispatch();
   const timeProgress = useSelector((state) => state.timeprogress);
   useEffect(() => {
     dispatch(getTimeProgressThunk());
   }, []);
-  console.log('timeprogresssssssssssssssss', timeProgress);
   const navigate = useNavigate();
-  // MARIA -> повесила на кнокпи стейты чтобы открывать и закрывать модалки с инфой и правилами
   const [isModal, setModal] = React.useState(false);
   const [rulesModal, setRulesModal] = React.useState(false);
   return (
@@ -26,7 +22,6 @@ function GameNav2() {
         </div>
       </div>
       <div className="navbar">
-        {/* TODO размер дива ниже должен быть равен ширине икнок справа */}
         <div className="progressBar">
           {Math.floor(timeProgress.score / 20) > 0 && (
             <img

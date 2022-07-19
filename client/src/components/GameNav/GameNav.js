@@ -14,10 +14,7 @@ function GameNav() {
     dispatch(getProgressThunk());
   }, []);
 
-  // console.log('progresssssssssssssssss', progress.score);
-
   const navigate = useNavigate();
-  // MARIA -> повесила на кнокпи стейты чтобы открывать и закрывать модалки с инфой и правилами
   const [isModal, setModal] = React.useState(false);
   const [rulesModal, setRulesModal] = React.useState(false);
 
@@ -27,7 +24,6 @@ function GameNav() {
         <div>
           <p className="score">{`Прогресс ${progress.score || 0}/120`}</p>
         </div>
-        {/* <EasyFinal /> */}
       </div>
       <div className="navbar">
         <div className="progressBar">

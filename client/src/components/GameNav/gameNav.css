@@ -33,8 +33,6 @@
   background-repeat: no-repeat;
   display: flex;
   margin-left: 20px;
-  /* justify-content: space-between; */
-  /* align-items: center; */
 }
 
 .icons {
@@ -58,10 +56,3 @@ input {
   margin-right: 80px;
   margin-top: 8px;
 }
-
-/* .progressBar:first-child {
-  justify-content: flex-start;
-}
-.progressBar:first-child + .progressBarTrashCan2{
-  margin-left: 100px;;
-} */

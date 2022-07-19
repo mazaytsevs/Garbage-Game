@@ -9,7 +9,6 @@ router.get('/check', checkLogin, (req, res) => {
     name: req.session.user.name,
   };
   console.log('enter');
-  
   try {
     res.json(user); // отправляет зарегестрированного юзера и id если такой залогинен
   } catch (err) {
