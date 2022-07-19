@@ -11,44 +11,13 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.25);
-  /* animation-name: appear;
-  animation-duration: 300ms; */
-  /* animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
-  /* animation: scaleUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
   animation: fadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;;
   font-family: 'Amatic SC', cursive;
   font-size: xx-large;
 }
 
-/* .four {
-  z-index:0;
-  transform:scale(1);
-  .modal-background {
-    background:rgba(0,0,0,.7);
-    .modal {
-      animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-    }
-  } */
-  /* + .content {
-    z-index:1;
-    animation:blowUpContent .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-  } */
-  /* &.out {
-    .modal-background {
-      .modal {
-        animation: blowUpModalTwo .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-      }
-    }
-    + .content {
-      animation: blowUpContentTwo .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-    }
-  }
-} */
-
 .modal_dialog {
-  /* width: 30%; */
   max-width: 1050px;
-  /* width: calc(100vh - 400px); */
   background: linear-gradient(177.38deg, #FBFFD2 -79.61%, #F8003B 97.81%);
   position: relative;
   margin: 0 20px;
@@ -59,12 +28,6 @@
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation: scaleBack .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-  
-  /* -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slide-in;
-  animation-duration: 0.5s; */
-  /* animation:blowUpContent .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
 }
 
 .modal_header,
@@ -82,7 +45,6 @@
 }
 
 .modal_footer {
-  /* border-top: 1px solid #dbdbdb; */
   justify-content: space-around;
 
 }
@@ -91,9 +53,6 @@
   cursor: url('../../../public/glove/pointer.png'), pointer;
   padding: 1rem;
   margin: -5rem -1rem -1rem auto;
-  /* animation:blowUpContent .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
-  /* animation: blowUpModalTwo .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
-  /* animation: blowUpContentTwo .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards; */
 }
 
 .modal_body {

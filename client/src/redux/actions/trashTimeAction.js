@@ -7,14 +7,9 @@ export const deleteTimeTrash = (id) => ({ type: DELETE_TIME_TRASH, payload: id }
 export const generateTimeTrashThunk = () => async (dispatch) => {
   const response = await fetch('/game/time');
   const result = await response.json();
-  console.log('RESUUUUULT', result);
   dispatch(generateTimeTrash(result));
 };
 
 export const deleteTimeTrashThunk = (id) => async (dispatch) => {
-  // console.log('ID', id);
   dispatch(deleteTimeTrash(id));
 };
-// export const clearTimeTrashThunk = () => async (dispatch) => {
-//   dispatch(clearTimeTrash());
-// };

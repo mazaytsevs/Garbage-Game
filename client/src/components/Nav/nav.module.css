@@ -22,7 +22,6 @@ span{
     height: 100vh;
     background: url('../../../public/authPics/back2.png') no-repeat;
     background-size: cover;
-    /* padding: 150px 0px 0px 100px ; */
   }
 
   .start {

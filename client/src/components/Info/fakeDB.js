@@ -110,39 +110,3 @@ const trashcan5 = {
 const infoFromBack = [trashcan1, trashcan2, trashcan3, trashcan4, trashcan5];
 
 export default infoFromBack;
-// const info {
-//   id: 1,
-//   trash_can_name: 'Органика',
-//   trash_can_info: 'Тут инфа про вид мусора итд',
-//   trash_can_img_src: 'https://icons.iconarchive.com/icons/vexels/office/1024/trash-icon.png',
-//   trashes: [
-//     {
-//       trash_name: 'Банановая кожура',
-//       trash_img_src: 'https://image.shutterstock.com/image-photo/bananas-skin-isolated-on-white-260nw-178684472.jpg',
-//       info: 'ляля про банан',
-//       score: 100,
-//       bonus: false
-//     },
-//     {
-//       trash_name: 'Яблочный огрызок',
-//       trash_img_src: 'https://e7.pngegg.com/pngimages/371/202/png-clipart-mario-kart-8-super-mario-kart-banana-peel-banana-s-food-text-thumbnail.png',
-//       info: 'ляля яблоко',
-//       score: 400,
-//       bonus: false
-//     },
-//     {
-//       trash_name: 'суп',
-//       trash_img_src: 'https://kaliningradlive.com/wp-content/uploads/2022/07/image_thumb-8.png',
-//       info: 'ляля 1',
-//       score: 300,
-//       bonus: false
-//     },
-//     {
-//       trash_name: 'мидии',
-//       trash_img_src: 'https://kaliningradlive.com/wp-content/uploads/2022/07/image_thumb-8.png',
-//       info: ' ваавава',
-//       score: 200,
-//       bonus: false
-//     }
-//   ]
-// }

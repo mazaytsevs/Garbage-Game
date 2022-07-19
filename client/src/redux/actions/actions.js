@@ -18,7 +18,6 @@ export const generateTrashThunk = () => async (dispatch) => {
 };
 
 export const deleteTrashThunk = (id) => async (dispatch) => {
-  // console.log('ID', id);
   dispatch(deleteTrash(id));
 };
 

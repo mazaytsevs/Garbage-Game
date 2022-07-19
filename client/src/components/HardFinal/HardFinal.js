@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../Modal/Modal';
-import { getProgressThunk } from '../../redux/actions/progress.action';
 
 import './hardfinal.css';
 

@@ -110,10 +110,6 @@ function Navbar() {
         </div>
 
       </div>
-      {/* <button type="submit" className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
-        Open Modal
-      </button>
-      {isOpen && <Modal setIsOpen={setIsOpen} />} */}
     </div>
   );
 }

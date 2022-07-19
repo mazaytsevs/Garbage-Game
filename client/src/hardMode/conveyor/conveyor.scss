@@ -14,15 +14,11 @@
   justify-content: center;
 }
 .room {
-  // z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   margin: auto;
-  // background-color: rgba(254, 254, 254, 0.5);
-  // width: 100vw;
-  // height: 100vh;
   top: 0px;
   bottom: 0;
   left: 0;
@@ -38,7 +34,6 @@
   width: 5000px;
   height: 1px;
   background-color: rgb(100, 33, 33);
-  // visibility: hidden;
 }
 
 .sushiplate span {
@@ -49,13 +44,6 @@
   animation: move 47s linear infinite;
 }
 
-// .sushiplate span:after {
-//   content: "";
-//   position: absolute;
-//   height: 8px;
-//   width: 60px;
-//   background-color: #34495e;
-// }
 .sushiplate span:nth-child(1) {
   animation-delay: 0s;
 }
@@ -229,15 +217,6 @@
 .sushiplate span:nth-child(57) {
   animation-delay: -56s;
 }
-// .sushiplate span:nth-child(58) {
-//   animation-delay: -57s;
-// }
-// .sushiplate span:nth-child(59) {
-//   animation-delay: -58s;
-// }
-// .sushiplate span:nth-child(60) {
-//   animation-delay: -59s;
-// }
 @keyframes move {
   from {
     left: -100%;
