@@ -2,7 +2,7 @@
 Игра, которая научит вас сортировать мусор.
 ___
 
-# Основные технологии, используемые в проекте:
+## Основные технологии, используемые в проекте:
 <img align="left" alt="HTML" width="20px" src="https://img.icons8.com/color/344/html-5--v1.png" />
 <img align="left" alt="CSS" width="20px" src="https://img.icons8.com/color/344/css3.png" />
 <img align="left" alt="JavaScript" width="20px" src="https://img.icons8.com/color/344/javascript--v2.png" />
@@ -14,7 +14,7 @@ ___
 А также: Sequelize, Drag&Drop, Figma и др.
 
 ___
-Механика игры и путь пользователя:
+## Механика игры и путь пользователя:
 
 - Если пользователь не зарегистрирован/авторизирован, начать игру он не может. Если пользователь авторизован, он увидит форму ниже. 
 ![start screen](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/02_start.png?raw=true)
