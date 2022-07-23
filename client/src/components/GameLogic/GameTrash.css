@@ -1,0 +1,264 @@
+
+.garbageForSort {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+.divForCursor{
+  cursor: url('../../../public/glove/pointer.png'), pointer;
+}
+
+/* стили для мусора */
+div.polaroid {
+  display: block;
+  text-decoration: none;
+  padding: 10px 10px 20px 10px;
+  width: 150px;
+  z-index: 2;
+  font-size: 0.7em;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+}
+div.polaroid:hover,
+div.polaroid:focus,
+div.polaroid:active {
+  z-index: 999;
+  border-color: #6a6a6a;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.polaroid img {
+  margin: 0 0 15px;
+  width: 100%;
+  height: 100%;
+
+}
+div img {
+  border: none;
+  display: block;
+}
+.photo-album {
+  position: relative;
+  border-radius: 30px;
+  background-color: rgba(254, 254, 254, 0.5);
+  width: 100%;
+  margin: 0;
+  height: 54vh;
+  margin-top: 2vh;
+  margin-left: 2vw;
+  max-width: 50vw;
+  display: flex;
+  justify-content: center;
+}
+.photo-album .polaroid {
+  position: absolute;
+}
+.photo-album .medium {
+  width: 17vh;
+  padding: 13px 13px 26px 13px;
+  font-size: 0.8em;
+}
+.photo-album .medium img {
+  width: 20vh;
+}
+
+.photo-album .img1 {
+  top: 30vh;
+  left: 15vh;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+.photo-album .img2 {
+  left: 45vh;
+  top: 0;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+.photo-album .img3 {
+  top: 1vh;
+  left: 70vh;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+.photo-album .img4 {
+  top: 18vh;
+  left: 55vh;
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  transform: rotate(6deg);
+}
+.photo-album .img5 {
+  top: 15vh;
+  left: 20vh;
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.photo-album .img6 {
+  top: 27vh;
+  left: 70vh;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+.photo-album .img7 {
+  top: 20vh;
+  left: 0;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+.photo-album .img8 {
+  top: 0;
+  left: 1vh;
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  transform: rotate(8deg);
+}
+.photo-album .img9 {
+  top: 0;
+  left: 20vh;
+  -webkit-transform: rotate(18deg);
+  -moz-transform: rotate(18deg);
+  transform: rotate(18deg);
+}
+.photo-album .img10 {
+  left: 35vh;
+  top: 20vh;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+
+.bins {
+  width: 1500px;
+  height: 345px;
+}
+
+.GameBins {
+  position: fixed;
+  bottom: 8vh;
+  left: 4vh;
+}
+
+.gameBinsDno {
+  max-height: 118px;
+  height: 118px;
+  border-radius: 700px/60px;
+  background: #ec8f8f;
+  opacity: 0.3;
+  bottom: 0;
+}
+
+.gameBinsFromDB {
+  position: relative;
+  bottom: -7vh;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.trashBag {
+  display: flex;
+  align-items: center;
+  margin-top: 6vh;
+  margin-left: 3vh;
+  cursor: url('../../../public/glove/pointer.png'), pointer;
+}
+
+/* для крысы начало */
+#sprite-container {
+  position: fixed;
+  z-index: 1500;
+  top: 85vh;
+  left: 10vh;
+  z-index: 2000;
+}
+
+#sprite-image {
+  height: 105px; /*высота спрайта (высота одного кадра)*/
+  width: 100px; /*ширина спрайта (ширина одного кадра)*/
+  background: url('../../../public/rat/ratRuns.png'); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+  /* animation: play 0.8s steps(6) infinite, fly 10s ease; */
+  background-size: cover;
+  animation: play 0.8s steps(6) infinite, run 8s ease infinite;
+  animation-delay: 2s;
+  position: absolute; 
+  z-index: 2000;
+}
+
+@keyframes play {
+  100% {
+    background-position: -600px; /*ширина картинки со спрайтами*/
+  }
+}
+
+@keyframes chaotic {
+  0% {
+    -webkit-transform: translate(30px, 45px);
+    transform: translate(30px, 45px);
+  }
+  15% {
+    -webkit-transform: translate(700px, 227px) scaleX(-1);
+    transform: translate(700px, 227px) scaleX(-1);
+  }
+  30% {
+    -webkit-transform: translate(0, 91px);
+    transform: translate(0, 91px);
+  }
+  45% {
+    -webkit-transform: translate(520px, 409px) scaleX(-1);
+    transform: translate(520px, 409px) scaleX(-1);
+  }
+  60% {
+    -webkit-transform: translate(390px, 0);
+    transform: translate(390px, 0);
+  }
+  75% {
+    -webkit-transform: translate(640px, 227px);
+    transform: translate(640px, 227px);
+  }
+  87% {
+    -webkit-transform: translate(770px, 227px) scaleX(-1);
+    transform: translate(770px, 227px) scaleX(-1);
+  }
+  100% {
+    -webkit-transform: translate(1px, 1px);
+    transform: translate(1px, 1px);
+  }
+}
+
+@keyframes run {
+  0% {
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+  }
+  50% {
+    -webkit-transform: translate(150vh, -1%);
+    transform: translate(150vh, -1%);
+  }
+  75% {
+    -webkit-transform: translate(150vh, -1%) scaleX(-1);
+    transform: translate(150vh, -1%) scaleX(-1);
+  }
+  100% {
+    -webkit-transform: translate(0%, -1%) scaleX(-1);
+    transform: translate(0%, -1%) scaleX(-1);
+  }
+}
+/* конец крысы */
+
+/* начало человека-контейнера */
+.man{
+  right: 1vw;
+  bottom: -4vh;
+  width: 250px;
+  height: 450px;
+  position: absolute;
+  z-index: 99;
+}
+/* конец человека-контейнера */
+

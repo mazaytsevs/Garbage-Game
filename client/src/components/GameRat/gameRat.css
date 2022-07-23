@@ -1,0 +1,58 @@
+.sprite-container {
+  height: 50vh; /*100% высоты экрана*/
+  display: flex;
+  align-items: center; /*чтобы картинка была по центру*/
+  margin-left: 20rem;
+}
+
+.sprite-image {
+  height: 155px; /*высота спрайта (высота одного кадра)*/
+  width: 200px; /*ширина спрайта (ширина одного кадра)*/
+  background: url("../../../public/trashes/rat.png"); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+  /* animation: play 0.8s steps(6) infinite, fly 10s ease; */
+  background-size: cover;
+  animation: fly 10s ease;
+  animation-delay: 2s;
+  position: absolute; 
+}
+
+@keyframes play {
+  100% {
+      background-position: -600px; /*ширина картинки со спрайтами*/
+  }
+}
+
+@keyframes fly {
+  0% {
+    -webkit-transform: translate(30px, 45px);
+    transform: translate(30px, 45px);
+  }
+  15%{
+    -webkit-transform: translate(700px, 227px) scaleX(-1);
+    transform: translate(700px, 227px) scaleX(-1);
+  }
+  30%{
+    -webkit-transform: translate(0, 91px);
+    transform: translate(0, 91px);
+  }
+  45%{
+    -webkit-transform: translate(520px, 409px) scaleX(-1);
+    transform: translate(520px, 409px) scaleX(-1);
+  }
+  60%{
+    -webkit-transform: translate(390px, 0) ;
+    transform: translate(390px, 0);
+  }
+  75%{
+    -webkit-transform: translate(640px, 227px);
+    transform: translate(640px, 227px) ;
+  }
+  87%{
+    -webkit-transform: translate(770px, 227px) scaleX(-1);
+    transform: translate(770px, 227px) scaleX(-1);
+  }
+  100% {
+    -webkit-transform: translate(1px, 1px);
+    transform: translate(1px, 1px);
+  }
+}

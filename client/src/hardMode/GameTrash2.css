@@ -1,0 +1,28 @@
+.GameBins {
+  position: fixed;
+  bottom: 80px;
+  left: 40px;
+}
+
+.divForCursor2{
+  cursor: url('../../public/glove/pointer.png'), pointer;
+}
+div.polaroid2 {
+  display: block;
+  text-decoration: none;
+  padding: 10px 10px 20px 10px;
+  width: 150px;
+  z-index: 2;
+  font-size: 0.7em;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+}
+.photo-album2 {
+  margin-right: 0rem;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.photo-album2 .polaroid {
+  position: absolute;
+}

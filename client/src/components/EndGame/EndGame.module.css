@@ -1,0 +1,127 @@
+.rulesText{
+  font-size: 40px;
+  color: white;
+}
+
+.imgBomzh{
+  margin-left: 200px;
+}
+
+.passportPic{
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 10px 10px rgba(241, 238, 238, 0.856);
+}
+
+.passportFlyContainer {
+  position:fixed;
+  z-index: 1500;
+  top: 10vh; 
+  left: 155vh;
+}
+
+.passportFlyImg {
+  height: 105px; /*высота спрайта (высота одного кадра)*/
+  width: 70px; /*ширина спрайта (ширина одного кадра)*/
+  background: url("../../../public/endgame/passport.png"); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+  background-size: cover;
+  animation: rotate 8s ease, fly 8s ease;
+  /* animation-delay: 1s; */
+  position: absolute; 
+  z-index: 1500;
+}
+
+.catWalksContainer {
+  position:fixed;
+  z-index: 1500;
+  top: 80vh; 
+  left: 190vh;
+}
+
+.catWalksImg {
+  height: 155px; /*высота спрайта (высота одного кадра)*/
+  width: 155px; /*ширина спрайта (ширина одного кадра)*/
+  background: url("../../../public/endgame/cat.png"); /*картинка со спрайтами с позицией в верхнем левом углу (0px 0px)*/
+  background-size: cover;
+  animation: walk 3s ease;
+  animation-fill-mode: forwards; 
+  position: absolute; 
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  z-index: 1500;
+}
+
+.endscreen{
+  width: 100%;
+  height: 100vh;
+  background: url('../../../public/endgame/background_endgame1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* что то для речи кота */
+.tooltip {
+  height: 280px;
+  width: 400px;
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+  font-weight: bolder;
+  background: linear-gradient(177.38deg, #FBFFD2 -79.61%, #F8003B 97.81%);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-family: 'Amatic SC', cursive;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.catWalksImg:hover .tooltip {
+  top: -180%;
+  left: -90%;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.catWalksImg:hover span,
+.catWalksImg:hover.tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+/* конец речи кота */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fly {
+  100% {
+    -webkit-transform: translate(0, 50vh);
+    transform: translate(0, 50vh);
+  }
+}
+
+@keyframes walk {
+  100% {
+    -webkit-transform: translate(-40vh, 0);
+    transform: translate(-40vh, 0);
+  }
+}

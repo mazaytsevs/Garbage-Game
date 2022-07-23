@@ -1,0 +1,105 @@
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.modal {
+  background: url('../../../../public/authPics/backReg.png');
+  width: 400px;
+  height: 600px;
+  z-index: 100;
+  background-size: 100%;
+  position: relative;
+}
+
+.input1 {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 300px;
+  height: 49px;
+  left: 50px;
+  top: 220px;
+}
+
+.input2 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 300px;
+  height: 49px;
+  left: 50px;
+  top: 339px;
+}
+
+.input3 {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 300px;
+  height: 49px;
+  left: 50px;
+  top: 458px;
+}
+
+.buttonIn {
+  position: absolute;
+  width: 107px;
+  height: 63px;
+  left: 157px;
+  top: 517px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.headIn {
+  position: absolute;
+  width: 254px;
+  height: 63px;
+  left: 73px;
+  top: 74px;
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 63px;
+  background: linear-gradient(354.28deg, #eff0f1 5.07%, #ffffff 86.31%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  mix-blend-mode: normal;
+  text-shadow: 0px 15px 4px rgba(0, 0, 0, 0.25);
+}
+.ready {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 63px;
+  background: linear-gradient(354.28deg, #eff0f1 5.07%, #ffffff 86.31%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  mix-blend-mode: normal;
+  text-shadow: 0px 15px 4px rgba(0, 0, 0, 0.25);
+}
+.forReady {
+  display: flex;
+}
+.no {
+  position: absolute;
+  left: 87%;
+  right: 0;
+  top: 5%;
+  bottom: 0;
+}
+.no2 {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
