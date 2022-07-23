@@ -37,7 +37,7 @@ ___
 
 ![hardmode_start](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/07hardmode.png?raw=true)
 ![hardmode](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/08hardmode2.png?raw=true)
-- По истечению времени в режиме "конвейер" выходит модальное окно с таблицей лидеров. Пока что в ней только Alex, пора составить ему конкуренцию!
+- По истечении времени в режиме "конвейер" выходит модальное окно с таблицей лидеров. Пока что в ней только Alex, пора составить ему конкуренцию!
 
 
 ![hardmode_modal](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/09hardmode3.png?raw=true)
