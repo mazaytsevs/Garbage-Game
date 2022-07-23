@@ -15,23 +15,17 @@ import Rules from '../Rules/Rules';
 import './game.css';
 
 function Game() {
-  // получаем мусорные баки
   const dispatch = useDispatch();
   const trashBinsFromDB = useSelector(
     (state) => state.trashGenerate?.trashCans,
   );
   const trashWithoutMan = trashBinsFromDB?.slice(0, trashBinsFromDB.length - 1);
-  // const audio = new Audio('/music/gameMusic.m4a');
-  // audio.play();
-  // получаем мусор
   const trashes = useSelector((state) => state.trashGenerate?.trashes);
   const trashRandom = useSelector((state) => state.trashRandom);
   const [bagPic, setBagPic] = useState('/trashbag/trashbag.png');
 
-  // MZ -> начало -> получаю бомжа-контейнера
   // eslint-disable-next-line no-unsafe-optional-chaining
   const bomzh = trashBinsFromDB && trashBinsFromDB[trashBinsFromDB.length - 1];
-  // MZ -> конец -> получаю бомжа-контейнера
   useEffect(() => {
     dispatch(generateTrashThunk());
   }, []);
@@ -51,18 +45,14 @@ function Game() {
 
   const { background } = progress;
 
-  // для лоудера
   const [loading, setLoading] = useState(true);
   const componentDidMount = () => {
-    setTimeout(() => setLoading(false), 4000); // do your async call
+    setTimeout(() => setLoading(false), 4000);
   };
 
   componentDidMount();
-  console.log('progress', progress.score);
-  // для модалки с правилами
   const [rulesModal, setRulesModal] = React.useState(true);
 
-  // для проверки на конец игры
   useEffect(() => {
     dispatch(getEndGameThunk(progress.score));
   }, [progress]);
@@ -70,19 +60,14 @@ function Game() {
 
   return (
     <div>
-      {/* MZ ->
-      проверка на конец игры, если прогресс 100 то запускается функция с другим компонентом */}
       {checkEndGame
         ? <EndGame /> : null}
-      {/* <EndGame score={progress.score} /> */}
       {loading ? (<Load />)
         : (
           <div className={background}>
-            {/*  MZ -> модалка с правилами теперь только при прогрессе 0 */}
             {progress.score == null
               ? <Rules rulesModal={rulesModal} setRulesModal={setRulesModal} />
               : null}
-            {/* MZ -> конец проверок */}
             <div>
               <GameNav />
             </div>
@@ -91,7 +76,6 @@ function Game() {
                 trash={trashRandom}
                 trashBin={trashWithoutMan}
                 refreshTrash={refreshTrash}
-                // MZ -> передаю бомжа-контейнера
                 bomzh={bomzh}
               />
             </div>

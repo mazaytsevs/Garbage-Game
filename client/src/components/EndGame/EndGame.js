@@ -19,7 +19,6 @@ function EndGame() {
     (hidePassport());
   }, []);
   const showCat = (isModal === false && passport === false);
-  console.log('showCat', showCat);
   return (
     <div>
       {passport

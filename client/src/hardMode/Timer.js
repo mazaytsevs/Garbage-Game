@@ -4,8 +4,6 @@ import HardFinal from '../components/HardFinal/HardFinal';
 import styles from './Modal.module.css';
 import { getTableTimeProgressThunk } from '../redux/actions/timeProgress.action';
 
-console.log(styles);
-
 function Timer({ props }) {
   const dispatch = useDispatch();
   const {

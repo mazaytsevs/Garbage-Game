@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import React, { memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Box } from './Box';
@@ -20,22 +21,13 @@ const Container = memo(({ trash, trashBin, refreshTrash, bomzh }) => {
       res[item.id] = true;
     }
     return res;
-    // eslint-disable-next-line max-len
-  }; // начальное состояние видимости, по дефолту тру, передавай это в компонент бокс, и если у соответствующего итема будет false то присваивай стиль display: none
-
+  };
   const visibilityInitState = getVisibilityInitState();
-  // const [visible, setVisible] = useState(visibilityInitState);
   const [trashSorted, setTrashSorted] = useState(trash);
-
-  // для удаления мусора
-  // console.log(flag);
 
   return (
     <div className="gameBoard">
       <div className="garbageForSort">
-        {/* мысля
-        <InfoCloudForHomeless />
-        <InfoCloudForLocation /> */}
         <div
           className="trashBag"
           onClick={function () {
@@ -94,9 +86,7 @@ const Container = memo(({ trash, trashBin, refreshTrash, bomzh }) => {
           ))}
         </div>
       </div>
-      {/* MZ -> начало -> рисую бомжа */}
       <div className="bomzh">
-        {/* мысля */}
         <InfoCloudForHomeless />
         <InfoCloudForLocation />
         <Dustbin
@@ -108,7 +98,6 @@ const Container = memo(({ trash, trashBin, refreshTrash, bomzh }) => {
           key={bomzh.id}
         />
       </div>
-      {/* MZ -> конец -> рисую бомжа */}
     </div>
   );
 });

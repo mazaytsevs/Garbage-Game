@@ -20,11 +20,9 @@ router.get('/', async (req, res) => {
         bonus: trash.bonus,
       })),
     }));
-    // res.send(info);
     res.json(info);
 
     // ДЛЯ ФРОНТА ВСТАВЛЯЕМ ЭТО
-    // res.render('info', { info });
   } catch (err) {
     console.log('Не получилось отобразить информацию', err);
   }

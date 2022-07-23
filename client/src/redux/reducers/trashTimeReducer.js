@@ -11,8 +11,6 @@ const trashTimeReducer = (state = initialState, action) => {
   switch (type) {
     case GENERATE_TIME_TRASH:
       return payload;
-    // case CLEAR_TIME_TRASH:
-    //   return payload;
     case DELETE_TIME_TRASH:
       const newState = {
         ...state,

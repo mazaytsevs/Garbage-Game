@@ -4,7 +4,7 @@
 input {
   cursor: url('../../../public/glove/pointer.png'), pointer;
 }
-span{
+span {
   cursor: url('../../../public/glove/pointer.png'), pointer;
 }
 .backAuth {
@@ -22,7 +22,6 @@ span{
     height: 100vh;
     background: url('../../../public/authPics/back2.png') no-repeat;
     background-size: cover;
-    /* padding: 150px 0px 0px 100px ; */
   }
 
   .start {

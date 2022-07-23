@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { SET_USER, DELETE_USER } from '../types/types';
 import * as endPoints from '../../config/endPoints';
 import { disableLoader, enableLoader } from './loaderAction';
@@ -21,19 +22,15 @@ export const getUserFromServer = (id) => async (dispatch) => {
 
 export const signUp = (payload, navigate) => async (dispatch) => {
   dispatch(enableLoader());
-  // console.log(payload);
   try {
     const response = await fetch(endPoints.signUp(), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      // for cookie
       credentials: 'include',
       body: JSON.stringify(payload),
     });
-    // console.log(response);
-    // console.log(navigate);
     if (response.status === 200) {
       const user = await response.json();
       dispatch(setUser(user));
