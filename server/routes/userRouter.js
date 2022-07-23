@@ -26,7 +26,6 @@ router.post('/reg', async (req, res) => {
 
   try {
     if (name && password && email) {
-      console.log('REQ BODY-------> SIGNUP', JSON.parse(JSON.stringify(req.body)));
       const newUser = await User.create({
         name,
         email,
