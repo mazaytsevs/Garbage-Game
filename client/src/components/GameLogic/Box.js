@@ -7,7 +7,7 @@ const style = {
 };
 // eslint-disable-next-line import/prefer-default-export
 export const Box = function Box(props) {
-  const { name, itemType, id, score, className, image, bonus } = props;
+  const { name, itemType, id, visible, setVisible, score, className, image, bonus } = props;
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'box',
     item: { name, itemType, id, score, image, bonus },
@@ -32,7 +32,6 @@ export const Box = function Box(props) {
         )
         : (
           <div className={nashClass} ref={drag} style={{ ...style, opacity }}>
-            {/* {name} */}
             <img cobject-fit="cover" src={image} alt="" />
           </div>
         )}

@@ -14,7 +14,6 @@ const trashGeneratereducer = (state = initialState, action) => {
     case GENERATE_TRASH:
       return payload;
     case DELETE_TRASH:
-
       const newState = {
         ...state,
         trashes: state.trashes.filter((trash) => trash.id !== payload),

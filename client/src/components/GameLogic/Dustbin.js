@@ -20,15 +20,12 @@ const style = {
   position: 'relative',
   zIndex: '300',
 };
-// комопонент корзины
 export function Dustbin(props) {
   const dispatch = useDispatch();
 
   const { backgroundImage, binName } = props;
   const [{ canDrop, isOver }, drop] = useDrop(() => ({
     accept: 'box',
-    // drop сработает когда бросаем итем в корзину, тут добавь удаление итемки,
-    // передаю сюда пропсом функцию установки визибл для итема и вызови в ondrop
 
     drop: (item) => {
       if (item.itemType === binName) {
@@ -45,7 +42,6 @@ export function Dustbin(props) {
       canDrop: monitor.canDrop(),
     }),
   }));
-  // чтобы вызывать всякую хуйню, которая пришла снаружи, выше, добавляем в этот массив
 
   const isActive = canDrop && isOver;
   const win = isOver;
@@ -80,7 +76,6 @@ export function Dustbin(props) {
         src={backgroundImage}
         alt=""
       />
-      {/* {isActive && 'Бросай'} */}
     </div>
   );
 }

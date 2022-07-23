@@ -47,7 +47,7 @@ function Game() {
 
   const [loading, setLoading] = useState(true);
   const componentDidMount = () => {
-    setTimeout(() => setLoading(false), 4000); // do your async call
+    setTimeout(() => setLoading(false), 4000);
   };
 
   componentDidMount();
@@ -59,6 +59,8 @@ function Game() {
 
   return (
     <div>
+      {checkEndGame
+        ? <EndGame /> : null}
       {loading ? (<Load />)
         : (
           <div className={background}>

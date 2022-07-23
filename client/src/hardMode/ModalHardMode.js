@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './Modal.module.css';
 
 function ModalHardMode({ isOpen, setIsOpen }) {
-  console.log(isOpen);
   return (
     <div className={styles.centered}>
       <div className={styles.modal}>

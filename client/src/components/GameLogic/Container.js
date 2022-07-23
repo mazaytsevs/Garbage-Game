@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import React, { memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Box } from './Box';
@@ -20,9 +21,7 @@ const Container = memo(({ trash, trashBin, refreshTrash, bomzh }) => {
       res[item.id] = true;
     }
     return res;
-    // eslint-disable-next-line max-len
   };
-
   const visibilityInitState = getVisibilityInitState();
   const [trashSorted, setTrashSorted] = useState(trash);
 

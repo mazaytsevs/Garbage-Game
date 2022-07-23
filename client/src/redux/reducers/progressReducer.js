@@ -16,5 +16,3 @@ const progressReducer = (state = initialState, action) => {
 };
 
 export default progressReducer;
-
-// setTrashSorted(((prev) => prev.filter((el) => el.id !== item.id)))

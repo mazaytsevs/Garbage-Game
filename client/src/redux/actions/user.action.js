@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { SET_USER, DELETE_USER } from '../types/types';
 import * as endPoints from '../../config/endPoints';
 import { disableLoader, enableLoader } from './loaderAction';

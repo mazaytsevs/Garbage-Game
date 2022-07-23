@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getProgressThunk } from '../../redux/actions/progress.action';
-import EasyFinal from '../EasyFinal/EasyFinal';
 import Info from '../Info/Info';
 import Rules from '../Rules/Rules';
 import './gameNav.css';

@@ -4,7 +4,6 @@ import './InfoCloudForLocation.css';
 
 function InfoCloudForLocation() {
   const [flag, setFlag] = useState(false);
-  const [localProgress, setLocalProgress] = useState(0);
 
   const progress = useSelector(
     (state) => state.progress,

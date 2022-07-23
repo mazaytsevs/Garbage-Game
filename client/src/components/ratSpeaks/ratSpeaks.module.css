@@ -1,16 +1,16 @@
 .ratSpeaksContainer{
-  height: 80px;
-  width: 100px;
+  height: 150px;
+  width: 300px;
   position: absolute;
-  top: 50vh;
-  left: 170vh;
-  z-index: 1000;
+  top: 59vh;
+  left: 175vh;
+  z-index: 10000;
 }
 .ratSpeaks::before {
   position: absolute;
   content: "";
   height: 8px;
-  width: 8px;
+  width: 12px;
   background: #ffffff;
   bottom: -3px;
   left: 50%;

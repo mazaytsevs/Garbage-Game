@@ -19,31 +19,25 @@ export function Dustbin2(props) {
   };
   const dispatch = useDispatch();
   // eslint-disable-next-line object-curly-newline
-  const {
-    backgroundImage,
-    binName,
-    score,
-    trashSorted,
-    setTrashSorted,
-    setScore,
-  } = props;
-  const [{ canDrop, isOver }, drop] = useDrop(() => ({
-    accept: 'box',
-    // eslint-disable-next-line max-len
-    drop: (item) => {
-      if (item.itemType === binName) {
-        console.log('item', item);
-        dispatch(postTimeProgressThunk(item));
-        dispatch(deleteTimeTrashThunk(item.id));
-      }
-      return { name: binName };
-    },
-    collect: (monitor) => ({
-      isOver: monitor.isOver(),
-      canDrop: monitor.canDrop(),
-    }),
-  }));
+  const { backgroundImage, binName, score, trashSorted, setTrashSorted, setScore } = props;
+  const [{ canDrop, isOver }, drop] = useDrop(
+    () => ({
+      accept: 'box',
+      // eslint-disable-next-line max-len
 
+      drop: (item) => {
+        if (item.itemType === binName) {
+          dispatch(postTimeProgressThunk(item));
+          dispatch(deleteTimeTrashThunk(item.id));
+        }
+        return { name: binName };
+      },
+      collect: (monitor) => ({
+        isOver: monitor.isOver(),
+        canDrop: monitor.canDrop(),
+      }),
+    }),
+  );
   const isActive = canDrop && isOver;
   const win = isOver;
   let mozЕransform;

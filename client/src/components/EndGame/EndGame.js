@@ -19,7 +19,6 @@ function EndGame() {
     (hidePassport());
   }, []);
   const showCat = (isModal === false && passport === false);
-  console.log('showCat', showCat);
   return (
     <div>
       {passport
@@ -41,6 +40,7 @@ function EndGame() {
                 то переходите на сайт
                 <h1>Хочу домой</h1>
                 Геннадий сейчас так и сделает!
+
                 <Link
                   to="/endgame"
                 >

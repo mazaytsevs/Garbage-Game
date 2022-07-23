@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import Info from './components/Info/Info';
-import Rules from './components/Rules/Rules';
 import Game from './components/Game/Game';
 import Navbar from './components/Nav/Navbar';
 import PrivateRoute from './components/PrivateRouter/PrivateRouter';
@@ -41,7 +39,6 @@ function App() {
             </PrivateRoute>
           )}
         />
-        {/* <Route path="/game" element={<PrivateRoute><Game /></PrivateRoute>} /> */}
         <Route
           path="/game"
           element={(

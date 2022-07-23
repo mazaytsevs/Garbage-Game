@@ -12,14 +12,14 @@ function RatSpeaks() {
     hideRatSpeaks();
   };
   return (
-    <span className={classes.ratSpeaksContainer} onClick={() => handleClick()}>
+    <div className={classes.ratSpeaksContainer} onClick={() => handleClick()}>
       {ratFlag ? (
         <div className="thought">
           {ratText[Math.floor(Math.random() * ratText.length)]}
         </div>
       )
         : null}
-    </span>
+    </div>
   );
 }
 

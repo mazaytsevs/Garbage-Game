@@ -14,10 +14,7 @@ const trashRandomReducer = (state = initialState, action) => {
     case DELETE_TRASH_RANDOM:
       return state.filter((trash) => trash.id !== payload);
     case CLEAR_TRASH_RANDOM:
-      console.log('IM HERE');
       return payload;
-    // case CLEAR_TIME_TRASH_RANDOM:
-    //   return payload;
     default:
       return state;
   }

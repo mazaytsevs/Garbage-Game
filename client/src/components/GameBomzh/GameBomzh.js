@@ -16,7 +16,6 @@ function GameBomzh() {
   }, []);
 
   const ratSpeaks = homeless.includes('58');
-  console.log('ratSpeaks', ratSpeaks);
   return (
     <div className="GameBomzh">
       {trashBinsFromDB

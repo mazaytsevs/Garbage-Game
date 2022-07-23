@@ -11,7 +11,6 @@ import { deleteAddedTrashThunk } from '../../redux/actions/newAddedTrashAction';
 function Navbar() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  // console.log(user);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLog, setIsOpenLog] = useState(false);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Info.module.css';
 import Modal from '../Modal/Modal';
 
