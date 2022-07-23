@@ -1,7 +1,6 @@
 /* eslint-disable object-curly-newline */
 import React from 'react';
 import { useDrag } from 'react-dnd';
-import GameRat from '../GameRat/GameRat';
 import './GameTrash.css';
 
 const style = {

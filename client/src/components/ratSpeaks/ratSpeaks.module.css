@@ -1,4 +1,3 @@
-
 .ratSpeaksContainer{
   height: 150px;
   width: 300px;
@@ -7,7 +6,6 @@
   left: 175vh;
   z-index: 10000;
 }
-
 .ratSpeaks::before {
   position: absolute;
   content: "";

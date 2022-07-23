@@ -30,10 +30,8 @@ function Game() {
   };
   componentDidMount();
   const bomzh = trashBinsFromDB && trashBinsFromDB[trashBinsFromDB.length - 1];
-
   return (
     <div>
-
       {loading ? (<Load />)
         : (
           <div className={background}>

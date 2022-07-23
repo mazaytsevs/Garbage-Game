@@ -1,5 +1,4 @@
 .lvl-1 {
-  /* position: absolute; */
   width: 100%;
   height: 100vh;
   background: url('../../../public/backBround/level-1.png');
@@ -10,7 +9,6 @@
 }
 
 .lvl-2 {
-  /* position: absolute; */
   width: 100%;
   height: 100vh;
   background: url('../../../public/backBround/level-2.png');
@@ -21,7 +19,6 @@
 }
 
 .lvl-3 {
-  /* position: absolute; */
   width: 100%;
   height: 100vh;
   background: url('../../../public/backBround/level-3.png');

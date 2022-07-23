@@ -52,7 +52,6 @@ function Game() {
 
   componentDidMount();
   const [rulesModal, setRulesModal] = React.useState(true);
-
   useEffect(() => {
     dispatch(getEndGameThunk(progress.score));
   }, [progress]);

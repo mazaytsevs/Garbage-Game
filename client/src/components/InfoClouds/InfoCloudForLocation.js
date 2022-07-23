@@ -18,7 +18,6 @@ function InfoCloudForLocation() {
       setTimeout(() => setFlag(false), 4000);
     }
   }, [progress]);
-
   const location = (+progress.score >= 40) ? 'Канализационный люк' : 'Рублёвские мусорки';
 
   return (
