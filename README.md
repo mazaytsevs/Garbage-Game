@@ -16,6 +16,8 @@ ___
 ___
 ## Механика игры и путь пользователя:
 - Если пользователь не зарегистрирован/авторизирован, начать игру он не может. Если пользователь авторизован, он увидит форму ниже. 
+
+
 ![start screen](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/02_start.png?raw=true)
 - В приложении используется Loader для тайм-аута при обращении к базе данных.
 ![loader](https://github.com/alterkate/Garbage-Game/blob/dev/client/public/screens/03_loader.png?raw=true)
