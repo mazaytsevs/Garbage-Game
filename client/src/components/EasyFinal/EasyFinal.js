@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../Modal/Modal';
 import { getProgressThunk } from '../../redux/actions/progress.action';
-
 import './easyfinal.css';
 
 function EasyFinal() {
