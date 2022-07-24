@@ -12,7 +12,7 @@ ___
 <img align="left" alt="PostgreSQL" width="30px" src="https://img.icons8.com/color/344/postgreesql.png" />
 <br/>
 <br/>
-А также: Sequelize, Drag&Drop, Figma и др.
+А также: Sequelize, sessions, Drag&Drop, Figma и др.
 
 ___
 ## Механика игры и путь пользователя:
