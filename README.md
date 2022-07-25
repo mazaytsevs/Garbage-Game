@@ -9,6 +9,7 @@ ___
 <img align="left" alt="React" width="60px" src="https://img.icons8.com/color/344/react-native.png" />
 <img align="left" alt="Redux" width="60px" src="https://img.icons8.com/color/344/redux.png" />
 <img align="left" alt="NodeJS" width="60px" src="https://img.icons8.com/fluency/344/node-js.png" />
+<img align="left" alt="Express" width="60px" src="https://stickker.net/wp-content/uploads/2016/01/express.svg_.png" />
 <img align="left" alt="PostgreSQL" width="60px" src="https://img.icons8.com/color/344/postgreesql.png" />
 <br/>
 <br/>
