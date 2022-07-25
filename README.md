@@ -3,15 +3,17 @@
 ___
 
 ## Основные технологии, используемые в проекте:
-<img align="left" alt="HTML" width="30px" src="https://img.icons8.com/color/344/html-5--v1.png" />
-<img align="left" alt="CSS" width="30px" src="https://img.icons8.com/color/344/css3.png" />
-<img align="left" alt="JavaScript" width="30px" src="https://img.icons8.com/color/344/javascript--v2.png" />
-<img align="left" alt="React" width="30px" src="https://img.icons8.com/color/344/react-native.png" />
-<img align="left" alt="Redux" width="30px" src="https://img.icons8.com/color/344/redux.png" />
-<img align="left" alt="NodeJS" width="30px" src="https://img.icons8.com/fluency/344/node-js.png" />
-<img align="left" alt="PostgreSQL" width="30px" src="https://img.icons8.com/color/344/postgreesql.png" />
+<img align="left" alt="HTML" width="60px" src="https://img.icons8.com/color/344/html-5--v1.png" />
+<img align="left" alt="CSS" width="60px" src="https://img.icons8.com/color/344/css3.png" />
+<img align="left" alt="JavaScript" width="60px" src="https://img.icons8.com/color/344/javascript--v2.png" />
+<img align="left" alt="React" width="60px" src="https://img.icons8.com/color/344/react-native.png" />
+<img align="left" alt="Redux" width="60px" src="https://img.icons8.com/color/344/redux.png" />
+<img align="left" alt="NodeJS" width="60px" src="https://img.icons8.com/fluency/344/node-js.png" />
+<img align="left" alt="PostgreSQL" width="60px" src="https://img.icons8.com/color/344/postgreesql.png" />
 <br/>
 <br/>
+<br/>
+
 А также: Sequelize, sessions, Drag&Drop, Figma и др.
 
 ___
